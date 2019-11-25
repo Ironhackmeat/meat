@@ -24,6 +24,7 @@ let users = [{
       bio: "Hello, I am Alice. I love baking and drink (often at the same time)",
       specs: {
         vegan: false,
+        dairyFree: false,
         veg: true,
         glutenFree: false,
          ShellFishAllergy: false,
@@ -38,6 +39,7 @@ let users = [{
            bio: "Hello, I am Bob. I enjoy long romatic walks to my fridge...",
            specs: {
              vegan: false,
+             dairyFree: true,
              veg: false,
              glutenFree: false,
              ShellFishAllergy: false,

@@ -10,12 +10,17 @@ const userSchema = new Schema({
   bio: String,
   specs: {
     vegan: Boolean,
+    dairyFree: Boolean,
     veg: Boolean,
     glutenFree: Boolean,
     ShellFishAllergy: Boolean,
     nutAllergy: Boolean,
   },
-  Rating: Number,
+  Rating: {
+    type: Number,
+    min: 0,
+    max: 10
+  },
   favoriteRecipes: [],
   Events: {
     type: Schema.Types.ObjectId,
