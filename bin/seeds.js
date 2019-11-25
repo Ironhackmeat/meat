@@ -66,7 +66,7 @@ let events = [
       dairyFree: false,
       veg: false,
       vegan: false, 
-      shelfish: false,
+      shellfish: false,
       nuts: true,
     },
     type: "dinner",

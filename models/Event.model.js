@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+const mongoose = require('../configs/mongoose.config')
 const Schema = mongoose.Schema
 
 // Aquí el esquema
@@ -18,12 +18,12 @@ const eventSchema = new Schema(
         },
         type: {
           type: String,
-          enum: [breakfast, brunch, lunch, dinner]
+          enum: ["breakfast", "brunch", "lunch", "dinner"]
         },
         status: {
           type: String,
-          enum: [open, closed],
-          default: open,
+          enum: ["open", "closed"],
+          default: "open",
         },
         date: Date,
         time: String,
