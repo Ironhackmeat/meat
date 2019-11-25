@@ -40,6 +40,7 @@ require('./passport')(app);
 //---BASE URL---//
 app.use('/', require('./routes/index.routes'));
 app.use('/auth', require('./routes/auth.routes'));
+app.use('/event', require('./routes/event.routes'));
 
 
 module.exports = app;
