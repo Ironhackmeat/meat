@@ -1,21 +1,11 @@
 // node bin/seeds.js
 
-const mongoose = require("mongoose");
+const mongoose = require("../configs/mongoose.config");
 const bcrypt = require("bcrypt");
 const User = require("../models/User.model");
 
 const bcryptSalt = 10;
 
-mongoose
-  .connect('mongodb://localhost/meat', {
-    useNewUrlParser: true
-  })
-  .then(x => {
-    console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
-  })
-  .catch(err => {
-    console.error('Error connecting to mongo', err)
-  });
 
 let users = [{
       username: "alice",
