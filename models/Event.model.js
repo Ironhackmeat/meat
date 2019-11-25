@@ -18,12 +18,12 @@ const eventSchema = new Schema(
         },
         type: {
           type: String,
-          enum: [breakfast, brunch, lunch, dinner]
+          enum: ["breakfast", "brunch", "lunch", "dinner"]
         },
         status: {
           type: String,
-          enum: [open, closed],
-          default: open,
+          enum: ["open", "closed"],
+          default: "open",
         },
         date: Date,
         time: String,
