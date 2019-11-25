@@ -1,7 +1,14 @@
 <h1>TESTING</h1>
 <div class="container">
-  div.row
+  <div class="row">
+    <div class="col-md-3 profile-box">
+      {{#with user}}
+      Hola!.. {{this.username}}
+      <br>
+      About me: {{this.bio}}
+      <br>
+      Rating: {{this.rating}}
+      {{/with}}
+    </div>
+  </div>
 </div>
-{{#with user}}
-HOLA {{this.username}}
-{{/with}}
