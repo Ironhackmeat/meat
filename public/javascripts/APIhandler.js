@@ -8,9 +8,10 @@ class APIHandler {
       .then(response => response.data.hits)
 
   }
+  getFilters() {
+    return axios.post(this.BASE_URL )
+  }
 }
-
-
 
 
 

@@ -3,19 +3,21 @@ window.onload = () => {
   const container = document.getElementsByClassName("recipe-container")[0]
   console.log(document)
 
-  document.getElementById('see-list').addEventListener('click', function (event) {
+  document.getElementById('see-list').addEventListener('click', function () {
     edamamAPI.getFullList().then(recipes => {
       console.log(recipes, 'wtf is this')
       container.innerHTML = ""
-      for (let i = 0; i < recipes.length; i++) {
+      for (let i = 0; i < recipes.length; i++) {    //this should change to foreach
         container.innerHTML +=
           `<div class="recipe-info"> 
       <div class="name">${recipes[i].recipe.label}</div>
       <div class="occupation">${recipes[i].recipe.url}</div>
-      </div>`;
+      </div>`
       }
-    });
-  });
+    })
+  })
+
+
 }
 
 

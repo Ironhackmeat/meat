@@ -1,14 +1,47 @@
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 <div class="container">
+
   <h1>All Recipes</h1>
-
-  <div class="recipe-container">
-
+<div class="row">
+  <div class= "col-md-8 recipe-container">
 
     <button id="see-list">See all recipes</button>
-
   </div>
+
+  <div class= "col-md-4">
+    <div class="form-check">
+      <input name="veg" type="checkbox" class="form-check-input" id="vegetarian">
+      <label class="form-check-label" for="vegetarian">Vegetarian</label>
+    </div>
+<br>
+    <div class="form-check">
+      <input name="vegan" type="checkbox" class="form-check-input" id="vegan">
+      <label class="form-check-label" for="vegan">Vegan</label>
+    </div>
+<br>
+    <div class="form-check">
+      <input name="dairyFree" type="checkbox" class="form-check-input" id="dairyFree">
+      <label class="form-check-label" for="dairyFree">Dairy-Free</label>
+    </div>
+<br>
+    <div class="form-check">
+      <input name="glutenFree" type="checkbox" class="form-check-input" id="glutenFree">
+      <label class="form-check-label" for="glutenFree">Gluten-Free</label>
+    </div>
+<br>
+    <div class="form-check">
+      <input name="nutAllergy" type="checkbox" class="form-check-input" id="nutAllergy">
+      <label class="form-check-label" for="nutAllergy">Nut Allergy</label>
+    </div>
+<br>
+    <div class="form-check">
+      <input name="shellfishAllergy" type="checkbox" class="form-check-input" id="shellfishAllergy">
+      <label class="form-check-label" for="shellfishAllergyy">Shellfish Allergy</label>
+    </div>
+  </div>
+
+</div>
 
 </div>
 
