@@ -11,3 +11,9 @@ a {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+#map {
+  height: 50vh;
+  width: 80vw;
+}
+

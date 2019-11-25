@@ -1,9 +1,11 @@
 const express = require("express");
 const passport = require('passport');
 const router = express.Router();
+const multer = require('multer')
+const uploadCloud = require('../configs/cloudinary.config');
 const {
   ensureLoggedIn,
-  ensureLoggedOut
+
 } = require('connect-ensure-login');
 const User = require("../models/User.model");
 
@@ -26,13 +28,24 @@ router.post("/login", passport.authenticate("local", {
 }));
 
 //---SIGNUP---//
-router.get("/signup", (req, res, next) => {
-  res.render("auth/signup");
-});
+router.get("/signup", (req, res, next) => res.render("auth/signup"))
 
-router.post("/signup", (req, res, next) => {
-  const username = req.body.username;
-  const password = req.body.password;
+router.post("/signup", uploadCloud.single('imgFile'), (req, res, next) => {
+  const {
+    username,
+    email,
+    password,
+    vegan,
+    dairyFree,
+    veg,
+    glutenFree,
+    ShellfishAllergy,
+    nutAllergy,
+  } = req.body
+  const imgPath = req.file.url
+  const imgName = req.file.originalname
+
+  console.log(req)
   if (username === "" || password === "") {
     res.render("auth/signup", {
       message: "Indicate username and password"
@@ -55,13 +68,29 @@ router.post("/signup", (req, res, next) => {
 
     const newUser = new User({
       username,
-      password: hashPass
+      password: hashPass,
+      email,
+      imgPath,
+      imgName,
+      vegan,
+      dairyFree,
+      veg,
+      glutenFree,
+      ShellfishAllergy,
+      nutAllergy,
     });
 
     newUser.save()
       .then(() => {
+        passport.authenticate("local", {
+          successRedirect: "/",
+          failureRedirect: "/auth/login",
+          failureFlash: true,
+          passReqToCallback: true
+        })
         res.redirect("/");
       })
+
       .catch(err => {
         res.render("auth/signup", {
           message: "Something went wrong"
