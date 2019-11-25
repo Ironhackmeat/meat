@@ -5,9 +5,19 @@ const Event = require('../models/Event.model');
 
 
 
-// GET => Nos sacamos una lista de todos los places
+
+// router.get('/', (req, res, next) => {
+// 	Event.find({}, (error, eventsFromDB) => {
+// 		if (error) {
+// 			next(error);
+// 		} else {
+// 			res.render('event/index', { events: eventsFromDB });
+// 		}
+// 	});
+// });
 
 router.get('/', (req, res, next) => res.render('event/index'))
+
 
 router.get('/api', (req, res, next) => {
 	Event.find()
