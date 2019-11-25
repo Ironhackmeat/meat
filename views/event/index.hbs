@@ -1,0 +1,132 @@
+<h1>Index!</h1>
+<h2>Tengo la index view de los events</h2>
+
+{{!-- <p>Create a new event<a></a></p>
+
+<p>See all the events</p> --}}
+
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-ml-6">
+
+      <p>Siempre que quieras, whenever you want! Check our current ongoing events!!</p>
+
+      <form action="/event" method="POST" id="form-container">
+        <label for="name">Name</label>
+        <input id="name" type="text" name="name" placeholder="Name of the event">
+
+        <br><br>
+
+        <label for="description">Description</label>
+        <input id="description" type="text" name="description" placeholder="Keywords to search">
+
+        <br><br>
+
+        <label for="type">Choose</label>
+
+        <select for="type" name="type">
+          <option value="breakfast">Breakfast</option>
+          <option value="brunch">Brunch</option>
+          <option value="lunch">Lunch</option>
+          <option value="dinner">Dinner</option>
+        </select>    
+
+        <br><br>
+
+        <label for="specs">Gluten-free</label>
+        <input id="glutenfree" type="checkbox" name="specs">
+
+        <br><br>
+
+          <label for="specs">Dairy-free</label>
+        <input id="glutenfree" type="checkbox" name="specs">
+
+        <br><br>
+          <label for="specs">Veg</label>
+        <input id="glutenfree" type="checkbox" name="specs">
+
+        <br><br>
+
+          <label for="specs">Vegan</label>
+        <input id="glutenfree" type="checkbox" name="specs">
+
+        <br><br>
+
+          <label for="specs">Shellfish</label>
+        <input id="glutenfree" type="checkbox" name="specs">
+
+        <br><br>
+
+            <label for="specs">Nuts</label>
+        <input id="glutenfree" type="checkbox" name="specs">
+
+        <br><br>
+
+        <label for="date">Date of the event</label>
+        <input id="date" type="date" name="date">
+
+        <br><br>
+
+        <label for="time">Time</label>
+        <input id="time" type="text" name="time" placeholder="00:00">
+
+        <br><br>
+
+        <label for="address">Address</label>
+        <input id="address" type="text" name="address" placeholder="Calle Pez">
+
+        <br><br>
+
+        <label for="addressnumber">Address Number</label>
+        <input id="addressnumber" type="number" name="addressnumber" placeholder="19">
+
+        <br><br>
+
+        <label for="forks">How many guests do you want?</label>
+        <input id="forks" type="number" name="forks" placeholder="4">
+
+        <br>
+
+        {{#if message }}
+          <div class="error-message">{{ message }}</div>
+        {{/if}}
+
+        <br><br>
+
+        <button>Search</button>
+
+          <br><br>
+
+
+        <p class="account-message">
+          Don't have an account yet?
+          <a href="/auth/signup">Signup</a>
+        </p>
+
+      </form>
+
+    </div>
+
+    <div class="col-ml-6">
+          <figure id="map"></figure>
+    </div>
+
+
+  </div>
+
+
+
+
+</div>
+
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script src="/javascripts/mainmap.js"></script>
+
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDG88rK2sVwRDbZIJautuIZpNt32kAQpSU&callback=initMap">
+  </script>
