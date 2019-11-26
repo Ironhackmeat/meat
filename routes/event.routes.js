@@ -18,6 +18,13 @@ const Event = require('../models/Event.model');
 
 router.get('/', (req, res, next) => res.render('event/index'))
 
+router.get('/map', (req, res, next) => res.render('event/seemap'))
+router.get('/show', (req, res, next) => {
+    res.render('event/show')  
+}
+)
+
+
 
 router.get('/api', (req, res, next) => {
 	Event.find()
