@@ -16,13 +16,11 @@ const Event = require('../models/Event.model');
 // 	});
 // });
 
-router.get('/', (req, res, next) => res.render('event/index'))
+router.get('/', (req, res, next) => res.render('events/index'))
 
-router.get('/map', (req, res, next) => res.render('event/seemap'))
-router.get('/show', (req, res, next) => {
-    res.render('event/show')  
-}
-)
+router.get('/map', (req, res, next) => res.render('events/seemap'))
+router.get('/show', (req, res, next) => res.render('events/show') )
+router.get('/create', (req, res, next) => res.render('events/create') )
 
 
 
@@ -45,10 +43,7 @@ router.get('/api/:id', (req, res, next) => {
 
 
 
-
-// router.get('/new', (req, res, next) => res.render('places/new'))
-
-// // POST => Creamos un nuevo place  y lo pasamos a la DB
+// POST => Crear un nuevo evento y guardarlo en la base de datos
 
 // router.post('/', (req, res, next) => {
 
@@ -168,15 +163,4 @@ module.exports = router;
 
 
 
-// © 2019 GitHub, Inc.
-// Terms
-// Privacy
-// Security
-// Status
-// Help
-// Contact GitHub
-// Pricing
-// API
-// Training
-// Blog
-// About
+
