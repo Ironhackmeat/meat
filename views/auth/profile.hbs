@@ -3,12 +3,41 @@
   <div class="row">
     <div class="col-md-3 profile-box">
       {{#with user}}
-      Hola!.. {{this.username}}
+      <img class="img-div" src="{{this.imgPath}}" alt="{{this.username}} photo">
+      <h3>Hola!.. {{this.username}}</h3>
       <br>
-      About me: {{this.bio}}
+      <strong>Email:</strong> {{this.email}}
       <br>
-      Rating: {{this.rating}}
+      <strong>About me:</strong> {{this.bio}}
+      <br>
+      <strong>Rating:</strong> {{this.Rating}}/10
       {{/with}}
+    </div>
+    <div class="col-md-3"></div>
+    <div class="col-md-5">
+      <h2>Activity</h2>
+{{!-- 
+      <fieldset class="star-rating">
+        <legend class="star-rating__title">RATING</legend>
+        <div class="star-rating__stars">
+          <input class="star-rating__input" type="radio" name="rating" value="1" id="rating-1" />
+          <label class="star-rating__label" for="rating-1" aria-label="One"></label>
+          <input class="star-rating__input" type="radio" name="rating" value="2" id="rating-2" />
+          <label class="star-rating__label" for="rating-2" aria-label="Two"></label>
+          <input class="star-rating__input" type="radio" name="rating" value="3" id="rating-3" />
+          <label class="star-rating__label" for="rating-3" aria-label="Three"></label>
+          <input class="star-rating__input" type="radio" name="rating" value="4" id="rating-4" />
+          <label class="star-rating__label" for="rating-4" aria-label="Four"></label>
+          <input class="star-rating__input" type="radio" name="rating" value="5" id="rating-5" />
+          <label class="star-rating__label" for="rating-5" aria-label="Five"></label>
+          <div class="star-rating__focus"></div>
+        </div>
+      </fieldset> --}}
+
+      <div class="test">
+        holii
+      </div>
+
     </div>
   </div>
 </div>

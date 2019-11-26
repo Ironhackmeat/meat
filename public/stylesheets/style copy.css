@@ -96,8 +96,7 @@ a {
 } */
 
 .test {
-  background-image: url("../images/on-star.png");
+  background-image: url("images/on-star.png");
   width: 100px;
   height: 100px;
-  background-size: 20px;
 }
