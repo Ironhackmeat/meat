@@ -10,7 +10,7 @@
 
       <h2>Tu próximo evento está muy cerca. Sólo tienes que crearlo :-)</h2>
 
-      <form action="/event" method="POST" id="form-container">
+      <form action="/events/create" method="POST" id="form-container">
         <label for="name">Name</label>
         <input id="name" type="text" name="name" placeholder="Name of the event">
 
@@ -32,32 +32,32 @@
 
         <br><br>
 
-        <label for="specs">Gluten-free</label>
-        <input id="glutenfree" type="checkbox" name="specs">
+        <label for="glutenfree">Gluten-free</label>
+        <input value="true" id="glutenfree" type="checkbox" name="glutenfree">
 
         <br><br>
 
-          <label for="specs">Dairy-free</label>
-        <input id="glutenfree" type="checkbox" name="specs">
+          <label for="dairyfree">Dairy-free</label>
+        <input value="true" id="dairyfree" type="checkbox" name="dairyfree">
 
         <br><br>
-          <label for="specs">Veg</label>
-        <input id="glutenfree" type="checkbox" name="specs">
-
-        <br><br>
-
-          <label for="specs">Vegan</label>
-        <input id="glutenfree" type="checkbox" name="specs">
+          <label for="veg">Veg</label>
+        <input value="true" id="veg" type="checkbox" name="veg">
 
         <br><br>
 
-          <label for="specs">Shellfish</label>
-        <input id="glutenfree" type="checkbox" name="specs">
+          <label for="vegan">Vegan</label>
+        <input value="true" id="vegan" type="checkbox" name="vegan">
 
         <br><br>
 
-            <label for="specs">Nuts</label>
-        <input id="glutenfree" type="checkbox" name="specs">
+          <label for="shellfish">Shellfish</label>
+        <input value="true" id="shellfish" type="checkbox" name="shellfish">
+
+        <br><br>
+
+            <label for="nuts">Nuts</label>
+        <input value="true" id="nuts" type="checkbox" name="nuts">
 
         <br><br>
 

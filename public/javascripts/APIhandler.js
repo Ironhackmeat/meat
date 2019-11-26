@@ -3,6 +3,8 @@ class APIHandler {
     this.BASE_URL = baseUrl;
   }
 
+// -------------------- filtering by checkboxes -------------------------------//
+
   getFullList() {
     return axios.get(this.BASE_URL + "?q=all&app_id=edb96150&app_key=8a70cb8c5186d89d4e451e5f99236bb3&from=0&to=100")
       .then(response => response.data.hits)
@@ -29,13 +31,13 @@ class APIHandler {
       .then(response => response.data.hits)
   }
 
-  getFiltersShellFish() {
-    return axios.get(this.BASE_URL + "?q=health=shellfish-free&app_id=edb96150&app_key=8a70cb8c5186d89d4e451e5f99236bb3&from=0&to=100")
+  getFiltersShellfish() {
+    return axios.get(this.BASE_URL + "?q=&app_id=edb96150&app_key=8a70cb8c5186d89d4e451e5f99236bb3&from=0&to=100&excluded=fish")
       .then(response => response.data.hits)
   }
 
   getFiltersNuts() {
-    return axios.get(this.BASE_URL + "?q=health=tree-nut-free&health=peanut-free&app_id=edb96150&app_key=8a70cb8c5186d89d4e451e5f99236bb3&from=0&to=100")
+    return axios.get(this.BASE_URL + "?q=health=peanut-nut-free&app_id=edb96150&app_key=8a70cb8c5186d89d4e451e5f99236bb3&from=0&to=100")
       .then(response => response.data.hits)
   }
 }
@@ -44,17 +46,3 @@ class APIHandler {
 
 
 
-// const api = axios.create ({
-//   baseURL: "https://api.edamam.com/search"
-// })
-
-//   getFullList() {
-//     return axios.get(`${this.api.baseURL}?q=all&app_id=edb96150&app_key=8a70cb8c5186d89d4e451e5f99236bb3`)
-//       .then(responseFromAPI => {
-//         console.log('Response from API is: ', responseFromAPI.data)
-
-//         return responseFromAPI.data
-//       })
-//   }
-
-// module.exports = APIHandler

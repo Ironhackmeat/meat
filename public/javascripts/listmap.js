@@ -20,9 +20,9 @@ function geocodeAddress(geocoder, events, resultsMap) {
           map: resultsMap,
           position: results[0].geometry.location
         });
-      } else {
+      } /*else {
         alert('Geocode was not successful for the following reason: ' + status);
-      }
+      }*/
     }))
   }
 
@@ -50,6 +50,7 @@ function initMap() {
   var geocoder = new google.maps.Geocoder();
 
 getAllEventsFromTheAPI(geocoder, map)
+
 
   
 }
