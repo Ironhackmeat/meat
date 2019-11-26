@@ -31,11 +31,7 @@ const eventSchema = new Schema(
         recipePath: String,
         imgName:  String,
         imgPath: String, 
-        location: {
-          address: String,
-          addressnumber: Number,
-          city: String
-        },
+        address: String,
         forks: Number,
         guests: [{ type: Schema.Types.ObjectId, ref: 'User' }]
     },

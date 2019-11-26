@@ -1,75 +1,50 @@
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 <div class="container">
 
-  <h2>Signup</h2>
+  <h1>All Recipes</h1>
+<div class="row">
+  <div class= "col-md-8 recipe-container">
 
-  <form action="/auth/signup" method="POST" id="form-container" enctype="multipart/form-data">
+    <button id="see-list">See all recipes</button>
+  </div>
 
-    <div class="form-group">
-      <label for="username">Username</label>
-      <input name="username" type="text" class="form-control" id="username" placeholder="Enter E-mail">
-    </div>
-
-    <div class="form-group">
-      <label for="email">E-mail</label>
-      <input name="email" type="email" class="form-control" id="email" placeholder="Enter Username">
-    </div>
-
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input name="password" type="password" class="form-control" id="password" placeholder="Password">
-    </div>
-
-    <div class='form-group'>
-      <label for='photo'>Profile Picture</label>
-      <input name='imgFile' type='file' id='photo'>
-    </div>
-
-    <br>
-
-    <p>Please let us know your dietary requirements:</p>
-
+  <div class= "col-md-4">
     <div class="form-check">
       <input name="veg" type="checkbox" class="form-check-input" id="vegetarian">
       <label class="form-check-label" for="vegetarian">Vegetarian</label>
     </div>
-
+<br>
     <div class="form-check">
       <input name="vegan" type="checkbox" class="form-check-input" id="vegan">
       <label class="form-check-label" for="vegan">Vegan</label>
     </div>
-
+<br>
     <div class="form-check">
       <input name="dairyFree" type="checkbox" class="form-check-input" id="dairyFree">
       <label class="form-check-label" for="dairyFree">Dairy-Free</label>
     </div>
-
+<br>
     <div class="form-check">
       <input name="glutenFree" type="checkbox" class="form-check-input" id="glutenFree">
       <label class="form-check-label" for="glutenFree">Gluten-Free</label>
     </div>
-
+<br>
     <div class="form-check">
       <input name="nutAllergy" type="checkbox" class="form-check-input" id="nutAllergy">
       <label class="form-check-label" for="nutAllergy">Nut Allergy</label>
     </div>
-
+<br>
     <div class="form-check">
       <input name="shellfishAllergy" type="checkbox" class="form-check-input" id="shellfishAllergy">
       <label class="form-check-label" for="shellfishAllergyy">Shellfish Allergy</label>
     </div>
+  </div>
 
-  </form>
-  
-    <br><br>
-
-    {{#if message }}
-    <div class="error-message">{{ message }}</div>
-    {{/if}}
-
-    <button>Create account</button>
-
-    <p class="account-message">
-      Do you already have an account?
-      <a href="/auth/login">Login</a>
-    </p>
 </div>
+
+</div>
+
+
+<script type="text/javascript" src="javascripts/APIhandler.js"></script>
+<script type="text/javascript" src="javascripts/index.js"></script>
