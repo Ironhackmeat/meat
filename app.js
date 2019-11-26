@@ -41,6 +41,7 @@ require('./passport')(app);
 app.use('/', require('./routes/index.routes'));
 app.use('/auth', require('./routes/auth.routes'));
 app.use('/event', require('./routes/event.routes'));
+app.use('/recipes', require('./routes/recipe.routes'));
 
 
 module.exports = app;
