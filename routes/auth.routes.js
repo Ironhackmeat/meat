@@ -101,6 +101,7 @@ router.post("/signup", uploadCloud.single('imgFile'), (req, res, next) => {
 
 //---PROFILE---//
 router.get('/profile', ensureLoggedIn('/login'), (req, res) => {
+  console.log(req.user, "plis")
   res.render('auth/profile', {
     user: req.user
   });

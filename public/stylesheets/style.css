@@ -10,13 +10,16 @@ a {
 .profile-box {
   padding: 10px;
   border: 2px solid black;
-  text-align: center;
 }
 
 .img-div {
   width: 250px;
   height: 250px;
   border-radius: 250px;
+}
+
+.box-profile {
+  margin-top: 50px
 }
 
 /*# sourceMappingURL=style.css.map */
@@ -27,19 +30,18 @@ a {
 }
 
 /*---RATING---*/
-
-/* .star-rating__stars {
+.star-rating__stars {
   position: relative;
-  height: 5rem;
-  width: 25rem;
-  background: url(off.svg);
-  background-size: 5rem 5rem;
+  height: 2.5rem;
+  width: 12.5rem;
+  background: url("../images/off-star.png");
+  background-size: 2.5rem 2.5rem;
 }
 
 .star-rating__label {
   position: absolute;
   height: 100%;
-  background-size: 5rem 5rem;
+  background-size: 2.5rem 2.5rem;
 }
 
 .star-rating__input {
@@ -79,14 +81,14 @@ a {
 .star-rating__input:checked+.star-rating__label,
 .star-rating__input:focus+.star-rating__label,
 .star-rating__label:hover {
-  background-image: url(on.svg);
+  background-image: url("../images/on-star.png");
 }
 
 .star-rating__label:hover~.star-rating__label {
-  background-image: url(off.svg);
+  background-image: url("../images/off-star.png");
 }
 
-.star-rating__input:focus~.star-rating__focus {
+/* .star-rating__input:focus~.star-rating__focus {
   position: absolute;
   top: -.25em;
   right: -.25em;
@@ -94,10 +96,3 @@ a {
   left: -.25em;
   outline: 0.25rem solid lightblue;
 } */
-
-.test {
-  background-image: url("../images/on-star.png");
-  width: 100px;
-  height: 100px;
-  background-size: 20px;
-}
