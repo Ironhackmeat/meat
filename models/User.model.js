@@ -13,7 +13,7 @@ const userSchema = new Schema({
     dairyFree: Boolean,
     veg: Boolean,
     glutenFree: Boolean,
-    ShellFishAllergy: Boolean,
+    shellFishAllergy: Boolean,
     nutAllergy: Boolean,
   },
   Rating: {
@@ -22,10 +22,10 @@ const userSchema = new Schema({
     max: 10
   },
   favoriteRecipes: [],
-  Events: {
+  events: [{
     type: Schema.Types.ObjectId,
     ref: "Event"
-  }
+  }]
 }, {
   timestamps: true
 });
