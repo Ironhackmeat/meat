@@ -10,9 +10,11 @@ function getAllEventsFromTheAPI(geocoder, map) {
 
 function geocodeAddress(geocoder, events, resultsMap) {
 
-
-  events.forEach( elm => 
-  
+  console.log(events)
+  events.forEach( elm => {
+    console.log(elm.address)
+    
+    if(!elm.address) return
     geocoder.geocode({'address': elm.address}, function(results, status) {
       if (status === 'OK') {
         resultsMap.setCenter(results[0].geometry.location);
@@ -23,23 +25,27 @@ function geocodeAddress(geocoder, events, resultsMap) {
       } /*else {
         alert('Geocode was not successful for the following reason: ' + status);
       }*/
-    }))
-  }
+    })
 
+    
+
+
+  })
+  }
 
 var geocoder;
 var map;
 
 
-function initialize() {
-  geocoder = new google.maps.Geocoder();
-  var latlng = new google.maps.LatLng(-34.397, 150.644);
-  var mapOptions = {
-    zoom: 11,
-    center: latlng
-  }
-  map = new google.maps.Map(document.getElementById('map'), mapOptions);
-}
+// function initialize() {
+//   geocoder = new google.maps.Geocoder();
+//   var latlng = new google.maps.LatLng(-34.397, 150.644);
+//   var mapOptions = {
+//     zoom: 11,
+//     center: latlng
+//   }
+//   map = new google.maps.Map(document.getElementById('map'), mapOptions);
+// }
 
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
@@ -50,7 +56,6 @@ function initMap() {
   var geocoder = new google.maps.Geocoder();
 
 getAllEventsFromTheAPI(geocoder, map)
-
 
   
 }

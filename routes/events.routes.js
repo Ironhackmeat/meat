@@ -16,9 +16,8 @@ const Event = require('../models/Event.model');
 // 	});
 // });
 
-router.get('/', (req, res, next) => res.render('events/index'))
+router.get('/search', (req, res, next) => res.render('events/search'))
 
-router.get('/map', (req, res, next) => res.render('events/seemap'))
 router.get('/show', (req, res, next) => res.render('events/show') )
 router.get('/create', (req, res, next) => res.render('events/create') )
 
