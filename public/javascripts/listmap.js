@@ -1,7 +1,7 @@
 //Donde empieza a existir uno y cuando llega al punto que interesa
 
 function getAllEventsFromTheAPI(geocoder, map) {
-  axios.get("/event/api")
+  axios.get("/events/api")
     .then(response => 
       geocodeAddress(geocoder, response.data.events, map))
     .catch(error => console.log(error))
@@ -20,29 +20,12 @@ function geocodeAddress(geocoder, events, resultsMap) {
           map: resultsMap,
           position: results[0].geometry.location
         });
-      } else {
+      } /*else {
         alert('Geocode was not successful for the following reason: ' + status);
-      }
+      }*/
     }))
   }
 
-
-// function placeEvents(events, map) {
-
-//   events.forEach(elm => {
-
-//     console.log(elm.location.coordinates[1])
-
-//     const center = { elm.location.coordinates[1], lng: elm.location.coordinates[0] }
-
-//     new google.maps.Marker({
-//       position: center,
-//       map: map,
-//       title: elm.name
-//     });
-
-//   })
-// }
 
 var geocoder;
 var map;
@@ -52,7 +35,7 @@ function initialize() {
   geocoder = new google.maps.Geocoder();
   var latlng = new google.maps.LatLng(-34.397, 150.644);
   var mapOptions = {
-    zoom: 8,
+    zoom: 11,
     center: latlng
   }
   map = new google.maps.Map(document.getElementById('map'), mapOptions);
@@ -60,7 +43,7 @@ function initialize() {
 
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 8,
+    zoom: 11,
     center: {lat: 40.416681, 
     lng: -3.703751}
   });
@@ -68,7 +51,7 @@ function initMap() {
 
 getAllEventsFromTheAPI(geocoder, map)
 
-  // geocodeAddress(geocoder, map, events);
+
   
 }
 

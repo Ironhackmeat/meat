@@ -1,0 +1,116 @@
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-ml-6">
+
+              <br><br>
+
+
+      <h2>Tu próximo evento está muy cerca. Sólo tienes que crearlo :-)</h2>
+
+      <form action="/events/create" method="POST" id="form-container">
+        <label for="name">Name</label>
+        <input id="name" type="text" name="name" placeholder="Name of the event">
+
+        <br><br>
+
+        <label for="description">Description</label>
+        <input id="description" type="text" name="description" placeholder="Keywords to search">
+
+        <br><br>
+
+        <label for="type">Choose</label>
+
+        <select for="type" name="type">
+          <option value="breakfast">Breakfast</option>
+          <option value="brunch">Brunch</option>
+          <option value="lunch">Lunch</option>
+          <option value="dinner">Dinner</option>
+        </select>    
+
+        <br><br>
+
+        <label for="glutenfree">Gluten-free</label>
+        <input value="true" id="glutenfree" type="checkbox" name="glutenfree">
+
+        <br><br>
+
+          <label for="dairyfree">Dairy-free</label>
+        <input value="true" id="dairyfree" type="checkbox" name="dairyfree">
+
+        <br><br>
+          <label for="veg">Veg</label>
+        <input value="true" id="veg" type="checkbox" name="veg">
+
+        <br><br>
+
+          <label for="vegan">Vegan</label>
+        <input value="true" id="vegan" type="checkbox" name="vegan">
+
+        <br><br>
+
+          <label for="shellfish">Shellfish</label>
+        <input value="true" id="shellfish" type="checkbox" name="shellfish">
+
+        <br><br>
+
+            <label for="nuts">Nuts</label>
+        <input value="true" id="nuts" type="checkbox" name="nuts">
+
+        <br><br>
+
+        <label for="date">Date of the event</label>
+        <input id="date" type="date" name="date">
+
+        <br><br>
+
+        <label for="time">Time</label>
+        <input id="time" type="text" name="time" placeholder="00:00">
+
+        <br><br>
+
+        <label for="address">Address</label>
+        <input id="address" type="text" name="address" placeholder="Calle Pez 9 Madrid">
+
+        <br><br>
+
+        <label for="forks">How many guests do you want?</label>
+        <input id="forks" type="number" name="forks" placeholder="4">
+
+        <br>
+
+        {{#if message }}
+          <div class="error-message">{{ message }}</div>
+        {{/if}}
+
+        <br><br>
+
+        <button>Create your next event</button>
+
+        <br><br>
+
+
+      </form>
+
+    </div>
+
+    <div class="col-ml-6">
+
+          <figure id="map"></figure>
+    </div>
+
+  </div>
+
+
+
+</div>
+
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script src="/javascripts/listmap.js"></script>
+
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDG88rK2sVwRDbZIJautuIZpNt32kAQpSU&callback=initMap"></script>
