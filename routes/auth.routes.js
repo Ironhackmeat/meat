@@ -31,6 +31,7 @@ router.post("/login", passport.authenticate("local", {
 router.get("/signup", (req, res, next) => res.render("auth/signup"))
 
 router.post("/signup", uploadCloud.single('imgFile'), (req, res, next) => {
+  console.log(req.body)
   const {
     username,
     email,
@@ -39,13 +40,14 @@ router.post("/signup", uploadCloud.single('imgFile'), (req, res, next) => {
     dairyFree,
     veg,
     glutenFree,
-    ShellfishAllergy,
+    shellFishAllergy,
     nutAllergy,
   } = req.body
+
   const imgPath = req.file.url
   const imgName = req.file.originalname
 
-  console.log(req)
+
   if (username === "" || password === "") {
     res.render("auth/signup", {
       message: "Indicate username and password"
@@ -72,12 +74,14 @@ router.post("/signup", uploadCloud.single('imgFile'), (req, res, next) => {
       email,
       imgPath,
       imgName,
-      vegan,
-      dairyFree,
-      veg,
-      glutenFree,
-      ShellfishAllergy,
-      nutAllergy,
+      specs: {
+        vegan,
+        dairyFree,
+        veg,
+        glutenFree,
+        shellFishAllergy,
+        nutAllergy,
+      }
     });
 
     newUser.save()
@@ -105,6 +109,12 @@ router.get('/profile', ensureLoggedIn('/login'), (req, res) => {
     user: req.user
   });
 });
+
+//---PROFILE EDIT---//
+router.get('/profile/edit', ensureLoggedIn('/login'), (req, res) => {
+  res.render('auth/edit-profile', {user: req.user})
+})
+
 
 //---LOGOUT---//
 router.get("/logout", (req, res) => {

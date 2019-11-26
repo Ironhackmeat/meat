@@ -1,24 +1,28 @@
-<h1>TESTING</h1>
-<div class="container">
-  <div class="row">
+<div class="container box-profile">
+  <div class="row justify-content-center">
     <div class="col-md-3 profile-box">
       {{#with user}}
       <img class="img-div" src="{{this.imgPath}}" alt="{{this.username}} photo">
+      <br>
+      <hr>
       <h3>Hola!.. {{this.username}}</h3>
       <br>
-      <strong>Email:</strong> {{this.email}}
+      <strong>Email:</strong>
       <br>
-      <strong>About me:</strong> {{this.bio}}
+      {{this.email}}
       <br>
-      <strong>Rating:</strong> {{this.Rating}}/10
-      {{/with}}
-    </div>
-    <div class="col-md-3"></div>
-    <div class="col-md-5">
-      <h2>Activity</h2>
-{{!-- 
+      <br>
+      <strong>About me:</strong>
+      <br>
+      {{this.bio}}
+      <br>
+      <br>
+      <strong>Rating:</strong>
+      <br>
+      {{this.Rating}}/10
+      <br>
+      <br>
       <fieldset class="star-rating">
-        <legend class="star-rating__title">RATING</legend>
         <div class="star-rating__stars">
           <input class="star-rating__input" type="radio" name="rating" value="1" id="rating-1" />
           <label class="star-rating__label" for="rating-1" aria-label="One"></label>
@@ -32,12 +36,46 @@
           <label class="star-rating__label" for="rating-5" aria-label="Five"></label>
           <div class="star-rating__focus"></div>
         </div>
-      </fieldset> --}}
-
-      <div class="test">
-        holii
-      </div>
-
+      </fieldset>
+      <br>
+      <hr>
+      <strong>Dietry especs:</strong>
+      <br>
+      <br>
+      {{#if this.specs.vegan}}
+      -Vegan
+      {{/if}}
+      <br>
+      {{#if this.specs.dairyFree}}
+      -Dairy Free
+      {{/if}}
+      {{#if this.specs.veg}}
+      -Veg
+      {{/if}}
+      {{#if this.specs.glutenFree}}
+      -Gluten Free
+      {{/if}}
+      {{#if this.specs.shellFishAllergy}}
+      -Shellfish Allergy
+      {{/if}}
+      {{#if this.specs.nutAllergy}}
+      -Nut Allergy
+      {{/if}}
+      <br>
+      <br>
+      <hr>
+      <button><a href="/auth/profile/edit">Edit</a></button>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-4">
+      <h2>Favorites</h2>
+    </div>
+    <div class="col-md-4">
+      <h2>Activity</h2>
+      {{#each this.events}}
+      <li>Has asistido al evento: <strong>{{this.name}}</strong></li>
+      {{/each}}
+      {{/with}}
     </div>
   </div>
 </div>

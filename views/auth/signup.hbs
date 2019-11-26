@@ -29,36 +29,36 @@
     <p>Please let us know your dietary requirements:</p>
 
     <div class="form-check">
-      <input name="veg" type="checkbox" class="form-check-input" id="vegetarian">
+      <input name="veg" type="checkbox" class="form-check-input" id="vegetarian" value="true">
       <label class="form-check-label" for="vegetarian">Vegetarian</label>
     </div>
 
     <div class="form-check">
-      <input name="vegan" type="checkbox" class="form-check-input" id="vegan">
+      <input name="vegan" type="checkbox" class="form-check-input" id="vegan" value="true">
       <label class="form-check-label" for="vegan">Vegan</label>
     </div>
 
     <div class="form-check">
-      <input name="dairyFree" type="checkbox" class="form-check-input" id="dairyFree">
+      <input name="dairyFree" type="checkbox" class="form-check-input" id="dairyFree" value="true">
       <label class="form-check-label" for="dairyFree">Dairy-Free</label>
     </div>
 
     <div class="form-check">
-      <input name="glutenFree" type="checkbox" class="form-check-input" id="glutenFree">
+      <input name="glutenFree" type="checkbox" class="form-check-input" id="glutenFree" value="true">
       <label class="form-check-label" for="glutenFree">Gluten-Free</label>
     </div>
 
     <div class="form-check">
-      <input name="nutAllergy" type="checkbox" class="form-check-input" id="nutAllergy">
+      <input name="nutAllergy" type="checkbox" class="form-check-input" id="nutAllergy" value="true">
       <label class="form-check-label" for="nutAllergy">Nut Allergy</label>
     </div>
 
     <div class="form-check">
-      <input name="shellfishAllergy" type="checkbox" class="form-check-input" id="shellfishAllergy">
-      <label class="form-check-label" for="shellfishAllergyy">Shellfish Allergy</label>
+      <input name="shellFishAllergy" type="checkbox" class="form-check-input" id="shellFishAllergy" value="true">
+      <label class="form-check-label" for="shellFishAllergyy">Shellfish Allergy</label>
     </div>
 
-  
+
     <br><br>
 
     {{#if message }}
@@ -69,8 +69,8 @@
 
   </form>
 
-    <p class="account-message">
-      Do you already have an account?
-      <a href="/auth/login">Login</a>
-    </p>
+  <p class="account-message">
+    Do you already have an account?
+    <a href="/auth/login">Login</a>
+  </p>
 </div>

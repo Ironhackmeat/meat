@@ -33,7 +33,7 @@ const eventSchema = new Schema(
         imgPath: String, 
         address: String,
         forks: Number,
-        guests: [{ type: Schema.Types.ObjectId, ref: 'User' }]
+        guests: [{ type: Schema.Types.ObjectId, ref: 'User'}]
     },
     {
         timestamps: true
