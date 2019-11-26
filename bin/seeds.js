@@ -72,11 +72,7 @@ let events = [
     type: "dinner",
     date: 12/12/2019,
     time: "21:00",
-    location: {
-      address: "Calle Pez",
-      addressnumber: 9,
-      city: "Madrid"
-    },
+    address: "Calle Pez 9 Madrid",
     forks: 4
   },
   {
@@ -93,11 +89,7 @@ let events = [
     type: "lunch",
     date: 12/12/2019,
     time: "13:00",
-    location: {
-      address: "Calle Alcalá",
-      addressnumber: 12,
-      city: "Madrid"
-    },
+    address: "Calle Alcalá 26 Madrid",
     forks: 6
   },
   
