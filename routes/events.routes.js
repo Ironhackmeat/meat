@@ -42,15 +42,34 @@ router.get('/api/:id', (req, res, next) => {
 });
 
 
+router.post('/create', (req, res) => {
+
+	// const newEventsInputs = document.querySelectorAll('#form-container input')
+
+
+// const glutenfree = req.body.specs.glutenfree
+
+// const specs = {glutenfree, dairyfree, veg, vegan, shellfish, nuts} = req.body
+	
+	const { name, description, type, glutenfree, dairyfree, veg, vegan, shellfish, nuts, date, time, address, forks } = req.body
+
+Event.create({ name, description, type, specs: {glutenfree, dairyfree, veg, vegan, shellfish, nuts}, date, time, address, forks })
+		.then(x => {
+			res.redirect('/events/show')
+			console.log(req.body)
+		}
+			)
+		.catch(err => console.log(err))
+
+})
+
+
+
+
 
 // POST => Crear un nuevo evento y guardarlo en la base de datos
 
 // router.post('/', (req, res, next) => {
-
-// 	let location = {
-// 		type: 'Point',
-// 		coordinates: [req.body.longitude, req.body.latitude]
-// 	}
 
 // 	const newPlace = new Place({
 // 		name: req.body.name,
