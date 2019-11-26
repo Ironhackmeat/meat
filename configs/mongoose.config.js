@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
-
+console.log(`${process.env.DB}`)
 mongoose
-  .connect('mongodb://localhost/meat', {
+  .connect(`${process.env.DB}`, {
     useNewUrlParser: true
   })
   .then(x => {
