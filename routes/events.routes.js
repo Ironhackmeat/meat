@@ -44,9 +44,9 @@ router.get('/api/:id', (req, res, next) => {
 
 // const newEventsInputs = document.querySelectorAll('#form-container input')
 
-router.get("/:id", (req, res) => {
+router.get("/:id", ensureLoggedIn("/auth/login"), (req, res) => {
 	Event.findById(req.params.id)
-		.populate("User")
+		.populate("host")
 		.then(theEvent => {
 			res.render("events/details", {
 				event: theEvent
