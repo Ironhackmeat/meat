@@ -44,9 +44,12 @@ router.post("/signup", uploadCloud.single('imgFile'), (req, res, next) => {
     nutAllergy,
   } = req.body
 
-  const imgPath = req.file.url
-  const imgName = req.file.originalname
-
+  let imgPath
+  let imgName
+  if (req.file) {
+    imgPath = req.file.url
+    imgName = req.file.originalname
+  }
 
   if (username === "" || password === "") {
     res.render("auth/signup", {
@@ -111,15 +114,14 @@ router.get('/profile', ensureLoggedIn('/auth/login'), (req, res) => {
 });
 
 //---PROFILE EDIT RENDER FORM---//
-router.get('/profile/edit', [ensureLoggedIn('/login'), uploadCloud.single('imgFile')], (req, res) => {
+router.get('/profile/edit', ensureLoggedIn('/login'), (req, res) => {
   res.render('auth/edit-profile', {
     user: req.user
   })
 })
 
 //---PROFILE EDIT SEND FORM---//
-router.post('/profile/edit', (req, res) => {
-  console.log(req.body)
+router.post('/profile/edit', uploadCloud.single('imgFile'), (req, res) => {
   const {
     email,
     bio,
@@ -131,8 +133,12 @@ router.post('/profile/edit', (req, res) => {
     nutAllergy
   } = req.body
 
-  const imgPath = req.file.url
-  const imgName = req.file.originalname
+  let imgPath
+  let imgName
+  if (req.file) {
+    imgPath = req.file.url
+    imgName = req.file.originalname
+  }
 
   User.findByIdAndUpdate(req.user._id, {
       email,
@@ -155,7 +161,6 @@ router.post('/profile/edit', (req, res) => {
     .catch(err => console.log(err))
 
 })
-
 
 //---LOGOUT---//
 router.get("/logout", (req, res) => {
