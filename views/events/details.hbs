@@ -1,0 +1,43 @@
+ {{#with event}}
+ <div style="margin-left: 20px">
+  <h1 style="font-weight: 100">{{this.name}}</h1>
+
+  <br>
+  <p><strong>Descripción:</strong> {{this.description}}</p>
+  <br>
+  <p><strong>Type of event:</strong> {{this.type}}</p>
+  <br>
+  <p><strong>Any specifications to be aware of?</strong> 
+  
+  {{#if this.specs.glutenfree}} Glutenfree | {{/if}}
+  {{#if this.specs.dairyfree}} DairyFree | {{/if}}
+  {{#if this.specs.vegan}} Vegan | {{/if}}
+  {{#if this.specs.veg}} Veg | {{/if}}
+  {{#if this.specs.shellfish}} Shellfish | {{/if}}
+  {{#if this.specs.nuts}} Nuts | {{/if}}
+  
+  </p>
+  <br>
+  <p><strong>Date:</strong> {{this.date}}</p>
+  <br>
+  <p><strong>Time:</strong> {{this.time}}</p>
+  <br>
+  <p><strong>Address:</strong> {{this.address}}</p>
+  <br>
+  <p><strong>Number of guests:</strong> {{this.forks}}</p>
+
+ <h4>Like this event??? <a href="#" id="sendMail">Send an event request!</a></h4>
+
+</div>
+
+ {{/with}}
+
+
+
+ {{!-- <p><strong>Longitud: </strong> {{coaster.length}}m | <strong>Inversiones: </strong> {{coaster.inversions}}</p>
+
+ <hr>
+
+ <h5>Sobre el parque</h5>
+ <p><strong>Nombre</strong>: {{coaster.park.name}}</p>
+ <p><strong>Descripción</strong>: {{coaster.park.description}}</p> --}}

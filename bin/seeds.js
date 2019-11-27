@@ -1,5 +1,7 @@
 // node bin/seeds.js
 
+require('dotenv').config();
+
 const mongoose = require("../configs/mongoose.config");
 const bcrypt = require("bcrypt");
 const User = require("../models/User.model");
