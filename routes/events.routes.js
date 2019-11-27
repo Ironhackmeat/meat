@@ -2,6 +2,9 @@ const express = require('express');
 const router  = express.Router();
 
 const Event = require('../models/Event.model');
+const User = require('../models/User.model');
+const mailer = require('../configs/nodemailer.config')
+
 
 
 
@@ -41,15 +44,17 @@ router.get('/api/:id', (req, res, next) => {
 });
 
 
+router.get('/:id', (req, res) => {
+	Event.findById(req.params.id)
+		.populate('User')
+		.then(theEvent => {
+			res.render('events/details', { event: theEvent })
+		})
+		.catch(err => console.log(err))
+ })
+
 router.post('/create', (req, res) => {
 
-	// const newEventsInputs = document.querySelectorAll('#form-container input')
-
-
-// const glutenfree = req.body.specs.glutenfree
-
-// const specs = {glutenfree, dairyfree, veg, vegan, shellfish, nuts} = req.body
-	
 	const { name, description, type, glutenfree, dairyfree, veg, vegan, shellfish, nuts, date, time, address, forks } = req.body
 
 Event.create({ name, description, type, specs: {glutenfree, dairyfree, veg, vegan, shellfish, nuts}, date, time, address, forks })
@@ -63,27 +68,39 @@ Event.create({ name, description, type, specs: {glutenfree, dairyfree, veg, vega
 })
 
 
+// function getToken() {
+// 	const characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+// 	let token = '';
+// 	for (let i = 0; i < 25; i++) {
+// 			token += characters[Math.floor(Math.random() * characters.length )];
+// 	}
+// 	return token
+// }
 
+// const confirmationCode = getToken()
 
+// document.getElementById("sendMail").addEventListener(click, function () {
 
-// POST => Crear un nuevo evento y guardarlo en la base de datos
-
-// router.post('/', (req, res, next) => {
-
-// 	const newPlace = new Place({
-// 		name: req.body.name,
-// 		type: req.body.type,
-// 		location
-// 	});
-
-// 	newPlace.save((error) => {
-// 		if (error) {
-// 			next(error);
-// 		} else {
-// 			res.redirect('/places');
-// 		}
-//   })
+// mailer.sendMail({
+// 	from: '"M\'EAT 👻" request@meat-app.com',
+// 	to: User.email, //El email del Host que va a celebrar el event
+// 	subject: "New request for your event!!!",
+// 	text: `http://localhost:3000/auth/confirm/${confirmationCode}`,
+// 	html: `<b>http://localhost:3000/auth/confirm/${confirmationCode}</b>`
 // })
+// .then ( x => res.redirect("/events/show"))
+// // .then(info => res.render('email-sent', { email, subject, message, info }))
+// .catch(error => console.log(error));
+
+// })
+
+ 
+
+
+
+
+
+
 
 
 // // GET => Editamos los places
@@ -147,24 +164,6 @@ Event.create({ name, description, type, specs: {glutenfree, dairyfree, veg, vega
 // 	});
 // });
 
-
-
-// router.get('/api', (req, res, next) => {
-// 	Place.find()
-// 		.then(allPlacesFromDB => res.status(200).json({ places: allPlacesFromDB }))
-// 		.catch(err => next(err))
-// });
-
-// router.get('/api/:id', (req, res, next) => {
-// 	let placeId = req.params.id;
-// 	Place.findOne({ _id: placeId }, (error, onePlaceFromDB) => {
-// 		if (error) {
-// 			next(error)
-// 		} else {
-// 			res.status(200).json({ place: onePlaceFromDB });
-// 		}
-// 	});
-// });
 
 // // GET => get the details of one restaurant
 // router.get('/:place_id', (req, res, next) => {
