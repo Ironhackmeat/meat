@@ -39,6 +39,7 @@ router.get('/api', (req, res, next) => {
 
 router.get('/api/:id', (req, res, next) => {
 	let eventId = req.params.id;
+	console.log(eventId)
 	Event.findOne({
 		_id: eventId
 	}, (error, oneEventFromDB) => {

@@ -3,25 +3,26 @@ window.onload = () => {
   const container = document.getElementsByClassName("recipe-container")[0]
 
 
+// ---------------------- changing to ONE function ------------------------//
+
+// document.getElementsByClass("recipe-filter").addEventListener('change', function() {
+//    forEach (elm => elm.checked) {
+//      edamamAPI.getFilter(elm).then(recipes => {
+//        container.innerHTML = ""
+//        for (let i = 0; i < recipes.length; i++) {
+//          container.innerHTML +=
+//            `<div class="recipe-info"> 
+//          <div class="name">${recipes[i].recipe.label}</div>
+//          <br>
+//          <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
+//          </div>
+//          <br> <hr> <br> 
+//        }
+//      })
+//    }
+// })
 
   // ------------------ filtering by checkboxes --------------------------//
-
-  // document.getElementsByClass("recipe-filter").addEventListener('change', function() {
-  //    forEach (elm => elm.checked) {
-  //      edamamAPI.getFilter(elm).then(recipes => {
-  //        container.innerHTML = ""
-  //        for (let i = 0; i < recipes.length; i++) {
-  //          container.innerHTML +=
-  //            `<div class="recipe-info"> 
-  //          <div class="name">${recipes[i].recipe.label}</div>
-  //          <br>
-  //          <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
-  //          </div>
-  //          <br> <hr> <br> 
-  //        }
-  //      })
-  //    }
-  // })
 
   //   // full list of recipes
   document.getElementById('see-all').addEventListener('change', function () {
