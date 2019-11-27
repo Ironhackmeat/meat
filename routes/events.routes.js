@@ -1,5 +1,6 @@
 const express = require('express');
 const router  = express.Router();
+const {ensureLoggedIn} = require('connect-ensure-login');
 
 const Event = require('../models/Event.model');
 
@@ -41,7 +42,7 @@ router.get('/api/:id', (req, res, next) => {
 });
 
 
-router.post('/create', (req, res) => {
+router.post('/create', ensureLoggedIn('/login'), (req, res) => {
 
 	// const newEventsInputs = document.querySelectorAll('#form-container input')
 
@@ -52,7 +53,7 @@ router.post('/create', (req, res) => {
 	
 	const { name, description, type, glutenfree, dairyfree, veg, vegan, shellfish, nuts, date, time, address, forks } = req.body
 
-Event.create({ name, description, type, specs: {glutenfree, dairyfree, veg, vegan, shellfish, nuts}, date, time, address, forks })
+Event.create({name, description, type, specs: {glutenfree, dairyfree, veg, vegan, shellfish, nuts}, date, time, address, forks })
 		.then(x => {
 			res.redirect('/events/show')
 			console.log(req.body)
