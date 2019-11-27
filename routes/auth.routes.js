@@ -44,9 +44,12 @@ router.post("/signup", uploadCloud.single('imgFile'), (req, res, next) => {
     nutAllergy,
   } = req.body
 
-  const imgPath = req.file.url
-  const imgName = req.file
-
+  let imgPath
+  let imgName
+  if (req.file) {
+    imgPath = req.file.url
+    imgName = req.file.originalname
+  }
 
   if (username === "" || password === "") {
     res.render("auth/signup", {
@@ -104,17 +107,60 @@ router.post("/signup", uploadCloud.single('imgFile'), (req, res, next) => {
 });
 
 //---PROFILE---//
-router.get('/profile', ensureLoggedIn('/login'), (req, res) => {
+router.get('/profile', ensureLoggedIn('/auth/login'), (req, res) => {
   res.render('auth/profile', {
     user: req.user
   });
 });
 
-//---PROFILE EDIT---//
+//---PROFILE EDIT RENDER FORM---//
 router.get('/profile/edit', ensureLoggedIn('/login'), (req, res) => {
-  res.render('auth/edit-profile', {user: req.user})
+  res.render('auth/edit-profile', {
+    user: req.user
+  })
 })
 
+//---PROFILE EDIT SEND FORM---//
+router.post('/profile/edit', uploadCloud.single('imgFile'), (req, res) => {
+  const {
+    email,
+    bio,
+    vegan,
+    dairyFree,
+    veg,
+    glutenFree,
+    shellFishAllergy,
+    nutAllergy
+  } = req.body
+
+  let imgPath
+  let imgName
+  if (req.file) {
+    imgPath = req.file.url
+    imgName = req.file.originalname
+  }
+
+  User.findByIdAndUpdate(req.user._id, {
+      email,
+      bio,
+      imgPath,
+      imgName,
+      specs: {
+        vegan,
+        dairyFree,
+        veg,
+        glutenFree,
+        shellFishAllergy,
+        nutAllergy
+      },
+    })
+    .then(x => {
+      res.redirect('/auth/profile')
+      console.log(req.body)
+    })
+    .catch(err => console.log(err))
+
+})
 
 //---LOGOUT---//
 router.get("/logout", (req, res) => {

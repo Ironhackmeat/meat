@@ -5,8 +5,11 @@ const userSchema = new Schema({
   username: String,
   password: String,
   email: String,
-  imgPath: String,
-  imgName: String,
+  imgPath: {
+    type: String,
+    default: "https://res.cloudinary.com/darzjo72b/image/upload/v1574854446/meat/default-profile-icon-24_a6zics.jpg"
+  },
+  imgName: {type: String, default: "Profile Image"},
   bio: String,
   specs: {
     vegan: Boolean,
