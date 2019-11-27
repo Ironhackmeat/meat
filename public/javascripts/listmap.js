@@ -21,13 +21,28 @@ function geocodeAddress(geocoder, events, resultsMap) {
         var marker = new google.maps.Marker({
           map: resultsMap,
           position: results[0].geometry.location
+
+
+          
         });
       } /*else {
         alert('Geocode was not successful for the following reason: ' + status);
       }*/
+
+      var contentString = '<h2>' + elm.name + '</h2>'+'<br>'+'<span>This event is a</span>'+'<span>  '+ elm.type +'</span>'+'<span>!!!</span>'+'<br><br>'+'<p>Check for more details</p>'+'<a href="/events/'+elm._id+'">here</a>'
+
+      var infowindow = new google.maps.InfoWindow({
+      content: contentString
+      })
+  
+      marker.addListener('click', function() {
+      infowindow.open(map, marker)
+      console.log(contentString)
+      });
+  
+
     })
 
-    
 
 
   })
@@ -57,7 +72,10 @@ function initMap() {
 
 getAllEventsFromTheAPI(geocoder, map)
 
-  
+      
+
+
+
 }
 
 
