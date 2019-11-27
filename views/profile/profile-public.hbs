@@ -1,4 +1,85 @@
-<div class="container">
-
-
+<div class="container box-profile">
+  <div class="row justify-content-center">
+    <div class="col-md-3 profile-box">
+      <p>hola</p>
+      {{#with profile}}
+      <img class="img-div" src="{{this.imgPath}}" alt="{{this.username}} photo">
+      <br>
+      <hr>
+      <h3>Hola!.. {{this.username}}</h3>
+      <br>
+      <strong>Email:</strong>
+      <br>
+      {{this.email}}
+      <br>
+      <br>
+      <strong>About me:</strong>
+      <br>
+      "{{this.bio}}"
+      <br>
+      <br>
+      <strong>Rating:</strong>
+      <br>
+      {{this.Rating}}/10
+      <br>
+      <br>
+      <fieldset class="star-rating">
+        <div class="star-rating__stars">
+          <input class="star-rating__input" type="radio" name="rating" value="1" id="rating-1" />
+          <label class="star-rating__label" for="rating-1" aria-label="One"></label>
+          <input class="star-rating__input" type="radio" name="rating" value="2" id="rating-2" />
+          <label class="star-rating__label" for="rating-2" aria-label="Two"></label>
+          <input class="star-rating__input" type="radio" name="rating" value="3" id="rating-3" />
+          <label class="star-rating__label" for="rating-3" aria-label="Three"></label>
+          <input class="star-rating__input" type="radio" name="rating" value="4" id="rating-4" />
+          <label class="star-rating__label" for="rating-4" aria-label="Four"></label>
+          <input class="star-rating__input" type="radio" name="rating" value="5" id="rating-5" />
+          <label class="star-rating__label" for="rating-5" aria-label="Five"></label>
+          <div class="star-rating__focus"></div>
+        </div>
+      </fieldset>
+      <br>
+      <hr>
+      <strong>Dietry especs:</strong>
+      <br>
+      <br>
+      {{#if this.specs.vegan}}
+      -Vegan
+      {{/if}}
+      <br>
+      {{#if this.specs.dairyFree}}
+      -Dairy Free
+      {{/if}}
+      {{#if this.specs.veg}}
+      -Veg
+      {{/if}}
+      {{#if this.specs.glutenFree}}
+      -Gluten Free
+      {{/if}}
+      {{#if this.specs.shellFishAllergy}}
+      -Shellfish Allergy
+      {{/if}}
+      {{#if this.specs.nutAllergy}}
+      -Nut Allergy
+      {{/if}}
+      <br>
+      <br>
+      <hr>
+   
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-4">
+      <h2>Favorite Recipes</h2>
+      {{#each this.favoriteRecipes}}
+      <li><strong>{{this}}</strong></li>
+      {{/each}}
+    </div>
+    <div class="col-md-4">
+      <h2>Activity</h2>
+      {{#each this.events}}
+      <li>Ha asistido al evento: <strong><a href="/events/{{this._id}}">{{this.name}}</a></strong></li>
+      {{/each}}
+      {{/with}}
+    </div>
+  </div>
 </div>

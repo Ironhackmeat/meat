@@ -37,6 +37,12 @@
         <p><strong>Address:</strong> {{this.address}}</p>
         <br>
         <p><strong>Number of guests:</strong> {{this.forks}}</p>
+        
+        {{#each this.guests}}
+
+        <p> <strong>Guests: </strong><a href="/profile/{{this._id}}">{{this.username}}, </a></p>
+        {{/each}}
+        
 
         <p>Like this event?<a href="/events/email/{{_id}}" id="sendMail">Send an event request!</a></h4>
 
