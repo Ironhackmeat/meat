@@ -9,6 +9,7 @@ passport.serializeUser((loggedInUser, cb) => {
 passport.deserializeUser((userIdFromSession, cb) => {
   User.findById(userIdFromSession)
     .populate('events')
+    .populate('guests')
     .then(userDocument => {
       cb(null, userDocument);
     })
