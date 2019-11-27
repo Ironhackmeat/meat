@@ -1,13 +1,6 @@
-let link = document.getElementById("sendMail")
 
 
-link.addEventListener('click', () => {
-console.log("papapapapapapapapapapa")
-})
 
-// axios.post("/events/details")
-// .then( x => sendEmail() )
-// .catch(error => console.log(error))
 
 
 

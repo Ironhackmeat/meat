@@ -15,6 +15,71 @@ router.get('/show', (req, res) => res.render('events/show'))
 
 router.get('/create', ensureLoggedIn("/auth/login"), (req, res) => res.render('events/create'))
 
+router.get('/email/:id',  (req, res) => {
+
+	Event.findById(req.params.id)
+	.populate("host")
+	.then(theEvent => {
+		let token = "popino"
+
+		mailer.sendMail({
+					from: '"M\'EAT 👻" request@meat-app.com',
+					to: `${theEvent.host.email}`, //El email del Host que va a celebrar el event
+					subject: "New request for your event!!!",
+					text: `http://localhost:3000/events/confirm?host=${theEvent._id}&guestID=${req.user._id}`,
+					html: `<b>http://localhost:3000/events/confirm?host=${theEvent._id}&guestID=${req.user._id}</b>`
+				})
+			})
+		})
+
+
+router.get(`/confirm`, (req, res) => {
+	console.log('I did enter bitches')
+	let eventId = req.query.host
+
+// findOneAndUpdate(conditions, update, options, (error, doc) => {
+	console.log(eventId)
+	Event.findOne({_id: eventId})
+		.then( elm => {
+			let newArr = elm.guests
+
+			newArr.includes(req.user._id) ? null : newArr.push(req.user._id)
+			console.log(newArr)
+			Event.update({_id: eventId} , {guests: newArr})
+			.then(info => {
+				console.log(info)
+
+				Event.findById(eventId).then(e => console.log(e))
+			})
+			.catch(err => console.log(err))			
+
+			})
+
+	.catch(err => console.log(err));
+	
+})
+	
+
+	// router.get('/route', (req, res, next) => {
+
+	// 	if(event.guests.includes(req.user)) => show message ("already accepted")
+	// 	else push to an array in mongoose
+
+
+	// });
+
+	/*
+
+comprobar si el user esta ya en el evento (user, events.guest)
+				si está redirigir a OK
+				si no
+						guardar en evento, el guest.
+				
+*/
+
+
+	
+
 
 
 router.get('/api', (req, res, next) => {
@@ -29,6 +94,7 @@ router.get('/api/:id', (req, res, next) => {
 	let eventId = req.params.id;
 	Event.findOne({
 		_id: eventId
+	
 	}, (error, oneEventFromDB) => {
 		if (error) {
 			next(error)
@@ -39,10 +105,6 @@ router.get('/api/:id', (req, res, next) => {
 		}
 	});
 });
-
-
-
-// const newEventsInputs = document.querySelectorAll('#form-container input')
 
 router.get("/:id", ensureLoggedIn("/auth/login"), (req, res) => {
 	Event.findById(req.params.id)
@@ -114,22 +176,6 @@ router.post("/create", (req, res) => {
 	
 
 
-// router.post('/details', (req, res, next) => {
-
-// mailer.sendMail({
-// 	from: '"M\'EAT 👻" request@meat-app.com',
-// 	to: 'teikvk@gmail.com', //El email del Host que va a celebrar el event
-//   subject: "New request for your event!!!",
-//   text: `Hola`,
-// 	html: `<p>Hola</p>`
-// 	// text: `http://localhost:3000/auth/confirm/${confirmationCode}`,
-// 	// html: `<b>http://localhost:3000/auth/confirm/${confirmationCode}</b>`
-// })
-// .then ( x => res.redirect("/events/show"))
-// // .then(info => res.render('email-sent', { email, subject, message, info }))
-// .catch(error => console.log(error));
-
-// })
 
 
 module.exports = router;
