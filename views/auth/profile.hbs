@@ -68,12 +68,15 @@
     </div>
     <div class="col-md-1"></div>
     <div class="col-md-4">
-      <h2>Favorites</h2>
+      <h2>Favorite Recipes</h2>
+      {{#each this.favoriteRecipes}}
+      <li><strong>{{this}}</strong></li>
+      {{/each}}
     </div>
     <div class="col-md-4">
       <h2>Activity</h2>
       {{#each this.events}}
-      <li>Has asistido al evento: <strong>{{this.name}}</strong></li>
+      <li>Has asistido al evento: <strong><a href="/events/{{this._id}}">{{this.name}}</a></strong></li>
       {{/each}}
       {{/with}}
     </div>
