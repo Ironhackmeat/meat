@@ -4,14 +4,19 @@ class APIHandler {
   }
 
   // -------------------- FILTERING BY CHECKBOXES -------------------------------//
-
+ 
+  // getFilter(query, []) {
+  //   return axios.get(this.BASE_URL + `q=${query}&app_id=edb96150&app_key=8a70cb8c5186d89d4e451e5f99236bb3&from=0&to=100`)
+  //  .then(response => response.data.hits)
+  // }
+// ----------------------------------------------------------- //
+  
   getFullList() {
     return axios.get(this.BASE_URL + "q=all&app_id=edb96150&app_key=8a70cb8c5186d89d4e451e5f99236bb3&from=0&to=100")
       .then(response => response.data.hits)
-
   }
 
-  //requirements
+  // //requirements
   getFiltersGF() {
     return axios.get(this.BASE_URL + "q=gluten&app_id=edb96150&app_key=8a70cb8c5186d89d4e451e5f99236bb3&from=0&to=100")
       .then(response => response.data.hits)
@@ -42,7 +47,7 @@ class APIHandler {
       .then(response => response.data.hits)
   }
 
-  //mealtype
+  // //mealtype
 
   getFiltersBreakfast() {
     return axios.get(this.BASE_URL + "q=breakfast&app_id=edb96150&app_key=8a70cb8c5186d89d4e451e5f99236bb3&from=0&to=100")
@@ -64,7 +69,7 @@ class APIHandler {
       .then(response => response.data.hits)
   }
 
-  //DIET
+  // //DIET
   getFiltersBalanced() {
     return axios.get(this.BASE_URL + "q=&app_id=edb96150&app_key=8a70cb8c5186d89d4e451e5f99236bb3&from=0&to=100&diet=balanced")
       .then(response => response.data.hits)
@@ -85,10 +90,10 @@ class APIHandler {
       .then(response => response.data.hits)
   }
 
-  // -------------------------- SEARCH WHAT IS IN YOUR FRIDGE ------------------------------- //
+  // // -------------------------- SEARCH WHAT IS IN YOUR FRIDGE ------------------------------- //
 
-  getIngredients(ingredient) {
-    return axios.get(this.BASE_URL + `?q=${ingredient}&app_id=edb96150&app_key=8a70cb8c5186d89d4e451e5f99236bb3&from=0&to=100`)
+  getIngredients(ingredients) {
+    return axios.get(this.BASE_URL + `q=${ingredients}&app_id=edb96150&app_key=8a70cb8c5186d89d4e451e5f99236bb3&from=0&to=100`)
       .then(response => response.data.hits)
   }
 
