@@ -1,5 +1,8 @@
 const express = require('express');
-const router  = express.Router();
+const router = express.Router();
+const {
+	ensureLoggedIn
+} = require('connect-ensure-login');
 
 const Event = require('../models/Event.model');
 const User = require('../models/User.model');
@@ -19,54 +22,94 @@ const mailer = require('../configs/nodemailer.config')
 // 	});
 // });
 
-router.get('/search', (req, res, next) => res.render('events/search'))
+router.get('/search', (req, res) => res.render('events/search'))
 
-router.get('/show', (req, res, next) => res.render('events/show') )
-router.get('/create', (req, res, next) => res.render('events/create') )
+router.get('/show', (req, res) => res.render('events/show'))
+router.get('/create', ensureLoggedIn("/auth/login"), (req, res) => res.render('events/create'))
 
 
 
 router.get('/api', (req, res, next) => {
 	Event.find()
-		.then(allEventsFromDB => res.status(200).json({ events: allEventsFromDB }))
+		.then(allEventsFromDB => res.status(200).json({
+			events: allEventsFromDB
+		}))
 		.catch(err => next(err))
 });
 
 router.get('/api/:id', (req, res, next) => {
 	let eventId = req.params.id;
-	Event.findOne({ _id: eventId }, (error, oneEventFromDB) => {
+	Event.findOne({
+		_id: eventId
+	}, (error, oneEventFromDB) => {
 		if (error) {
 			next(error)
 		} else {
-			res.status(200).json({ event: oneEventFromDB });
+			res.status(200).json({
+				event: oneEventFromDB
+			});
 		}
 	});
 });
 
 
-router.get('/:id', (req, res) => {
+
+// const newEventsInputs = document.querySelectorAll('#form-container input')
+
+router.get("/:id", (req, res) => {
 	Event.findById(req.params.id)
-		.populate('User')
+		.populate("User")
 		.then(theEvent => {
-			res.render('events/details', { event: theEvent })
+			res.render("events/details", {
+				event: theEvent
+			});
 		})
-		.catch(err => console.log(err))
- })
+		.catch(err => console.log(err));
+});
 
-router.post('/create', (req, res) => {
+router.post("/create", (req, res) => {
+	const {
+		name,
+		description,
+		type,
+		glutenfree,
+		dairyfree,
+		veg,
+		vegan,
+		shellfish,
+		nuts,
+		date,
+		time,
+		address,
+		forks
+	} = req.body;
 
-	const { name, description, type, glutenfree, dairyfree, veg, vegan, shellfish, nuts, date, time, address, forks } = req.body
+	const host = req.user
 
-Event.create({ name, description, type, specs: {glutenfree, dairyfree, veg, vegan, shellfish, nuts}, date, time, address, forks })
+	Event.create({
+			host,
+			name,
+			description,
+			type,
+			specs: {
+				glutenfree,
+				dairyfree,
+				veg,
+				vegan,
+				shellfish,
+				nuts
+			},
+			date,
+			time,
+			address,
+			forks
+		})
 		.then(x => {
-			res.redirect('/events/show')
-			console.log(req.body)
-		}
-			)
-		.catch(err => console.log(err))
-
-})
-
+			res.redirect("/events/show");
+			console.log(req.body);
+		})
+		.catch(err => console.log(err));
+});
 
 // function getToken() {
 // 	const characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -93,15 +136,6 @@ Event.create({ name, description, type, specs: {glutenfree, dairyfree, veg, vega
 // .catch(error => console.log(error));
 
 // })
-
- 
-
-
-
-
-
-
-
 
 // // GET => Editamos los places
 
@@ -145,13 +179,11 @@ Event.create({ name, description, type, specs: {glutenfree, dairyfree, veg, vega
 // //   const { name, type, location } = req.body
 // //   const place = req.query.place
 
-
 // //   Place.findByIdAndUpdate(place, { name, type, location })
 // //     .then(res.redirect('/places'))
 // //     .catch(err => console.log('error!!', err))
 
 // // })
-
 
 // // DELETE => remove the restaurant from the DB
 // router.get('/:place_id/delete', (req, res, next) => {
@@ -164,7 +196,6 @@ Event.create({ name, description, type, specs: {glutenfree, dairyfree, veg, vega
 // 	});
 // });
 
-
 // // GET => get the details of one restaurant
 // router.get('/:place_id', (req, res, next) => {
 // 	Place.findById(req.params.place_id, (error, place) => {
@@ -176,8 +207,5 @@ Event.create({ name, description, type, specs: {glutenfree, dairyfree, veg, vega
 // 	});
 // });
 
+
 module.exports = router;
-
-
-
-

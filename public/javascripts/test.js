@@ -5,6 +5,7 @@ window.onload = () => {
   const check = [vegetarian, vegan, glutenFree]
 
   // ------------------ filtering by checkboxes --------------------------//
+  
   check.forEach((elm) => {
     document.getElementById(elm).addEventListener('change', function () {
       if (this.checked) {
