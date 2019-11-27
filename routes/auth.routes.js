@@ -134,7 +134,6 @@ router.post('/profile/edit', (req, res) => {
   const imgPath = req.file.url
   const imgName = req.file.originalname
 
-
   User.findByIdAndUpdate(req.user._id, {
       email,
       bio,
