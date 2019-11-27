@@ -24,7 +24,7 @@ const userSchema = new Schema({
     min: 0,
     max: 10
   },
-  favoriteRecipes: [],
+  favoriteRecipes: [String],
   events: [{
     type: Schema.Types.ObjectId,
     ref: "Event"

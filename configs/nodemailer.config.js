@@ -5,8 +5,10 @@ let transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
         user: 'ironhackmeat@gmail.com',
-        pass: `${process.env.NODEMAILER_PASSWORD}`
+        pass: process.env.NODEMAILER_PASSWORD
     }
 })
 
 module.exports = transporter
+
+// process.env.NODEMAILER_PASSWORD

@@ -1,31 +1,84 @@
 const express = require('express');
 const router = express.Router();
+const Event = require('../models/Event.model');
+const User = require('../models/User.model');
+const mailer = require('../configs/nodemailer.config')
 const {
 	ensureLoggedIn
 } = require('connect-ensure-login');
 
-const Event = require('../models/Event.model');
-const User = require('../models/User.model');
-const mailer = require('../configs/nodemailer.config')
 
-
-
-
-
-// router.get('/', (req, res, next) => {
-// 	Event.find({}, (error, eventsFromDB) => {
-// 		if (error) {
-// 			next(error);
-// 		} else {
-// 			res.render('event/index', { events: eventsFromDB });
-// 		}
-// 	});
-// });
 
 router.get('/search', (req, res) => res.render('events/search'))
 
 router.get('/show', (req, res) => res.render('events/show'))
+
 router.get('/create', ensureLoggedIn("/auth/login"), (req, res) => res.render('events/create'))
+
+router.get('/email/:id',  (req, res) => {
+
+	Event.findById(req.params.id)
+	.populate("host")
+	.then(theEvent => {
+		let token = "popino"
+
+		mailer.sendMail({
+					from: '"M\'EAT 👻" request@meat-app.com',
+					to: `${theEvent.host.email}`, //El email del Host que va a celebrar el event
+					subject: "New request for your event!!!",
+					text: `http://localhost:3000/events/confirm?host=${theEvent._id}&guestID=${req.user._id}`,
+					html: `<b>http://localhost:3000/events/confirm?host=${theEvent._id}&guestID=${req.user._id}</b>`
+				})
+			})
+		})
+
+
+router.get(`/confirm`, (req, res) => {
+	console.log('I did enter bitches')
+	let eventId = req.query.host
+
+// findOneAndUpdate(conditions, update, options, (error, doc) => {
+	console.log(eventId)
+	Event.findOne({_id: eventId})
+		.then( elm => {
+			let newArr = elm.guests
+
+			newArr.includes(req.user._id) ? null : newArr.push(req.user._id)
+			console.log(newArr)
+			Event.update({_id: eventId} , {guests: newArr})
+			.then(info => {
+				console.log(info)
+
+				Event.findById(eventId).then(e => console.log(e))
+			})
+			.catch(err => console.log(err))			
+
+			})
+
+	.catch(err => console.log(err));
+	
+})
+	
+
+	// router.get('/route', (req, res, next) => {
+
+	// 	if(event.guests.includes(req.user)) => show message ("already accepted")
+	// 	else push to an array in mongoose
+
+
+	// });
+
+	/*
+
+comprobar si el user esta ya en el evento (user, events.guest)
+				si está redirigir a OK
+				si no
+						guardar en evento, el guest.
+				
+*/
+
+
+	
 
 
 
@@ -42,6 +95,7 @@ router.get('/api/:id', (req, res, next) => {
 	console.log(eventId)
 	Event.findOne({
 		_id: eventId
+	
 	}, (error, oneEventFromDB) => {
 		if (error) {
 			next(error)
@@ -52,10 +106,6 @@ router.get('/api/:id', (req, res, next) => {
 		}
 	});
 });
-
-
-
-// const newEventsInputs = document.querySelectorAll('#form-container input')
 
 router.get("/:id", ensureLoggedIn("/auth/login"), (req, res) => {
 	Event.findById(req.params.id)
@@ -112,79 +162,6 @@ router.post("/create", (req, res) => {
 		.catch(err => console.log(err));
 });
 
-// function getToken() {
-// 	const characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-// 	let token = '';
-// 	for (let i = 0; i < 25; i++) {
-// 			token += characters[Math.floor(Math.random() * characters.length )];
-// 	}
-// 	return token
-// }
-
-// const confirmationCode = getToken()
-
-// document.getElementById("sendMail").addEventListener(click, function () {
-
-// mailer.sendMail({
-// 	from: '"M\'EAT 👻" request@meat-app.com',
-// 	to: User.email, //El email del Host que va a celebrar el event
-// 	subject: "New request for your event!!!",
-// 	text: `http://localhost:3000/auth/confirm/${confirmationCode}`,
-// 	html: `<b>http://localhost:3000/auth/confirm/${confirmationCode}</b>`
-// })
-// .then ( x => res.redirect("/events/show"))
-// // .then(info => res.render('email-sent', { email, subject, message, info }))
-// .catch(error => console.log(error));
-
-// })
-
-// // GET => Editamos los places
-
-// router.get('/:place_id/update', (req, res, next) => {
-// 	Place.findById(req.params.place_id, (error, place) => {
-// 		if (error) {
-// 			next(error);
-// 		} else {
-// 			res.render('places/update', { place });
-// 		}
-// 	});
-// });
-
-// // POST => save updates in the database
-// router.post('/:place_id', (req, res, next) => {
-// 	Place.findById(req.params.place_id, (error, place) => {
-// 		if (error) {
-// 			next(error);
-// 		} else {
-// 			place.name = req.body.name;
-// 			place.type = req.body.type;
-// 			place.save(error => {
-// 				if (error) {
-// 					next(error);
-// 				} else {
-// 					res.redirect(`/places`);
-// 				}
-// 			});
-// 		}
-// 	});
-// });
-
-// // router.get('/:place_id/update', (req, res) => {
-// //   const place = req.query.place
-// //   Place.findById(place)
-// //     .then(thePlace => res.render('places/update', thePlace))
-// //     .catch(err => console.log('error!!', err))
-// // })
-
-// // router.post('/:place_id', (req, res) => {
-// //   const { name, type, location } = req.body
-// //   const place = req.query.place
-
-// //   Place.findByIdAndUpdate(place, { name, type, location })
-// //     .then(res.redirect('/places'))
-// //     .catch(err => console.log('error!!', err))
-
-// // })
 
 // // DELETE => remove the restaurant from the DB
 // router.get('/:place_id/delete', (req, res, next) => {
@@ -197,16 +174,9 @@ router.post("/create", (req, res) => {
 // 	});
 // });
 
-// // GET => get the details of one restaurant
-// router.get('/:place_id', (req, res, next) => {
-// 	Place.findById(req.params.place_id, (error, place) => {
-// 		if (error) {
-// 			next(error);
-// 		} else {
-// 			res.render('places/show', { place: place });
-// 		}
-// 	});
-// });
+	
+
+
 
 
 module.exports = router;
