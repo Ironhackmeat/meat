@@ -7,6 +7,7 @@ router.get('/:id', (req, res) => {
   .then(profile => res.render('profile/profile-public', {
     profile: profile
   }))
-})
+  		.catch(err => console.log(err));
+  		})
 
 module.exports = router
