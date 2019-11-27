@@ -1,14 +1,23 @@
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 <div class="container">
-<h1>What's in your Fridge?</h1>
+  <h1>What's in your Fridge?</h1>
 
-<input id="ingredients" type="text" />
-<button id="button">Get Recipe</button>
+  <input id="ingredients" type="text" />
+  <button id="fridgeButton">Get Recipe</button>
 
-<br> <hr> <br>
+  <br>
+  <hr> <br>
+  <div class="fridge-container">
 
-<p id="recipeName"></p>
-<br>
-<p id="recipeUrl"></p>
+    <p>
+      Search for the ingrediets you have in your fridge to get a matching recipe. <br>
+      Seperate each ingredient by a comma
+    </p>
 
+  </div>
 
 </div>
+
+<script type="text/javascript" src="../javascripts/APIhandler.js"></script>
+<script type="text/javascript" src="../javascripts/fridge.js"></script>

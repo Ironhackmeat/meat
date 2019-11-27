@@ -3,10 +3,27 @@ window.onload = () => {
   const container = document.getElementsByClassName("recipe-container")[0]
 
 
-  // ------------------ FILTERING BY CHECKBOXES --------------------------//
 
+  // ------------------ filtering by checkboxes --------------------------//
 
-  // full list of recipes
+  // document.getElementsByClass("recipe-filter").addEventListener('change', function() {
+  //    forEach (elm => elm.checked) {
+  //      edamamAPI.getFilter(elm).then(recipes => {
+  //        container.innerHTML = ""
+  //        for (let i = 0; i < recipes.length; i++) {
+  //          container.innerHTML +=
+  //            `<div class="recipe-info"> 
+  //          <div class="name">${recipes[i].recipe.label}</div>
+  //          <br>
+  //          <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
+  //          </div>
+  //          <br> <hr> <br> 
+  //        }
+  //      })
+  //    }
+  // })
+
+  //   // full list of recipes
   document.getElementById('see-all').addEventListener('change', function () {
     if (this.checked) {
       edamamAPI.getFullList().then(recipes => {
@@ -16,7 +33,7 @@ window.onload = () => {
             `<div class="recipe-info"> 
       <div class="name">${recipes[i].recipe.label}</div>
       <br>
-       <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
+      <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
       </div>
       <br> <hr> <br> `
         }
@@ -24,7 +41,8 @@ window.onload = () => {
     }
   })
 
-  // gluten-free recipes
+
+  //   // gluten-free recipes
   document.getElementById('glutenFree').addEventListener('change', function () {
     if (this.checked) {
       edamamAPI.getFiltersGF().then(recipes => {
@@ -34,7 +52,7 @@ window.onload = () => {
             `<div class="recipe-info"> 
            <div class="name">${recipes[i].recipe.label}</div>
            <br>
-            <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
+           <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
            </div>
            <br> <hr> <br> `
         }
@@ -44,7 +62,7 @@ window.onload = () => {
         container.innerHTML = ""
         for (let i = 0; i < recipes.length; i++) { // foreach?
           container.innerHTML +=
-            `<div class="recipe-info"> 
+            `<div class="recipe-info">
       <div class="name">${recipes[i].recipe.label}</div>
       <br>
        <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
@@ -55,7 +73,7 @@ window.onload = () => {
     }
   })
 
-  // Veg recipes
+  //   // Veg recipes
   document.getElementById('vegetarian').addEventListener('change', function () {
     if (this.checked) {
       edamamAPI.getFiltersVeg().then(recipes => {
@@ -65,8 +83,7 @@ window.onload = () => {
             `<div class="recipe-info"> 
            <div class="name">${recipes[i].recipe.label}</div>
            <br>
-            <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
-           </div>
+           <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
            <br> <hr> <br> `
         }
       })
@@ -75,7 +92,7 @@ window.onload = () => {
         container.innerHTML = ""
         for (let i = 0; i < recipes.length; i++) { // foreach?
           container.innerHTML +=
-            `<div class="recipe-info"> 
+            `<div class="recipe-info">
       <div class="name">${recipes[i].recipe.label}</div>
       <br>
        <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
@@ -86,7 +103,7 @@ window.onload = () => {
     }
   })
 
-  // Vegan recipes
+  //   // Vegan recipes
   document.getElementById('vegan').addEventListener('change', function () {
     if (this.checked) {
       edamamAPI.getFiltersVegan().then(recipes => {
@@ -96,7 +113,7 @@ window.onload = () => {
             `<div class="recipe-info"> 
            <div class="name">${recipes[i].recipe.label}</div>
            <br>
-            <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
+           <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
            </div>
            <br> <hr> <br> `
         }
@@ -106,10 +123,10 @@ window.onload = () => {
         container.innerHTML = ""
         for (let i = 0; i < recipes.length; i++) { // foreach?
           container.innerHTML +=
-            `<div class="recipe-info"> 
+            `<div class="recipe-info">
       <div class="name">${recipes[i].recipe.label}</div>
       <br>
-       <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
+      <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
       </div>
       <br> <hr> <br> `
         }
@@ -117,7 +134,7 @@ window.onload = () => {
     }
   })
 
-  // shellfish free recipes
+  //   // shellfish free recipes
   document.getElementById('shellfishFree').addEventListener('change', function () {
     if (this.checked) {
       edamamAPI.getFiltersShellfish().then(recipes => {
@@ -127,7 +144,7 @@ window.onload = () => {
             `<div class="recipe-info"> 
            <div class="name">${recipes[i].recipe.label}</div>
            <br>
-            <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
+          <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
            </div>
            <br> <hr> <br> `
         }
@@ -137,7 +154,7 @@ window.onload = () => {
         container.innerHTML = ""
         for (let i = 0; i < recipes.length; i++) { // foreach?
           container.innerHTML +=
-            `<div class="recipe-info"> 
+            `<div class="recipe-info">
       <div class="name">${recipes[i].recipe.label}</div>
       <br>
        <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
@@ -148,7 +165,7 @@ window.onload = () => {
     }
   })
 
-  // nut free recipes
+  //   // nut free recipes
   document.getElementById('nutFree').addEventListener('change', function () {
     if (this.checked) {
       edamamAPI.getFiltersNuts().then(recipes => {
@@ -158,7 +175,7 @@ window.onload = () => {
             `<div class="recipe-info"> 
            <div class="name">${recipes[i].recipe.label}</div>
            <br>
-            <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
+           <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
            </div>
            <br> <hr> <br> `
         }
@@ -168,7 +185,7 @@ window.onload = () => {
         container.innerHTML = ""
         for (let i = 0; i < recipes.length; i++) { // foreach?
           container.innerHTML +=
-            `<div class="recipe-info"> 
+            `<div class="recipe-info">
       <div class="name">${recipes[i].recipe.label}</div>
       <br>
        <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
@@ -179,7 +196,7 @@ window.onload = () => {
     }
   })
 
-  // dairy free recipes
+  //   // dairy free recipes
   document.getElementById('dairyFree').addEventListener('change', function () {
     if (this.checked) {
       edamamAPI.getFiltersDairy().then(recipes => {
@@ -189,8 +206,7 @@ window.onload = () => {
             `<div class="recipe-info"> 
            <div class="name">${recipes[i].recipe.label}</div>
            <br>
-            <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
-           </div>
+          <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
            <br> <hr> <br> `
         }
       })
@@ -199,7 +215,7 @@ window.onload = () => {
         container.innerHTML = ""
         for (let i = 0; i < recipes.length; i++) { // foreach?
           container.innerHTML +=
-            `<div class="recipe-info"> 
+            `<div class="recipe-info">
       <div class="name">${recipes[i].recipe.label}</div>
       <br>
        <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
@@ -210,15 +226,14 @@ window.onload = () => {
     }
   })
 
-  //breakfast
-
+  //   //breakfast
   document.getElementById('breakfast').addEventListener('change', function () {
     if (this.checked) {
       edamamAPI.getFiltersBreakfast().then(recipes => {
         container.innerHTML = ""
         for (let i = 0; i < recipes.length; i++) {
           container.innerHTML +=
-            `<div class="recipe-info"> 
+            `<div class="recipe-info">
            <div class="name">${recipes[i].recipe.label}</div>
            <br>
             <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
@@ -231,7 +246,7 @@ window.onload = () => {
         container.innerHTML = ""
         for (let i = 0; i < recipes.length; i++) { // foreach?
           container.innerHTML +=
-            `<div class="recipe-info"> 
+            `<div class="recipe-info">
       <div class="name">${recipes[i].recipe.label}</div>
       <br>
        <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
@@ -242,14 +257,14 @@ window.onload = () => {
     }
   })
 
-  //lunch
+  //   //lunch
   document.getElementById('lunch').addEventListener('change', function () {
     if (this.checked) {
       edamamAPI.getFiltersLunch().then(recipes => {
         container.innerHTML = ""
         for (let i = 0; i < recipes.length; i++) {
           container.innerHTML +=
-            `<div class="recipe-info"> 
+            `<div class="recipe-info">
            <div class="name">${recipes[i].recipe.label}</div>
            <br>
             <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
@@ -262,7 +277,7 @@ window.onload = () => {
         container.innerHTML = ""
         for (let i = 0; i < recipes.length; i++) { // foreach?
           container.innerHTML +=
-            `<div class="recipe-info"> 
+            `<div class="recipe-info">
       <div class="name">${recipes[i].recipe.label}</div>
       <br>
        <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
@@ -273,14 +288,14 @@ window.onload = () => {
     }
   })
 
-  //snack
+  //   //snack
   document.getElementById('snack').addEventListener('change', function () {
     if (this.checked) {
       edamamAPI.getFiltersSnack().then(recipes => {
         container.innerHTML = ""
         for (let i = 0; i < recipes.length; i++) {
           container.innerHTML +=
-            `<div class="recipe-info"> 
+            `<div class="recipe-info">
            <div class="name">${recipes[i].recipe.label}</div>
            <br>
             <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
@@ -293,7 +308,7 @@ window.onload = () => {
         container.innerHTML = ""
         for (let i = 0; i < recipes.length; i++) { // foreach?
           container.innerHTML +=
-            `<div class="recipe-info"> 
+            `<div class="recipe-info">
       <div class="name">${recipes[i].recipe.label}</div>
       <br>
        <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
@@ -304,163 +319,159 @@ window.onload = () => {
     }
   })
 
-  //dinner
-    document.getElementById('dinner').addEventListener('change', function () {
-      if (this.checked) {
-        edamamAPI.getFiltersDinner().then(recipes => {
-          container.innerHTML = ""
-          for (let i = 0; i < recipes.length; i++) {
-            container.innerHTML +=
-              `<div class="recipe-info"> 
+  //   //dinner
+  document.getElementById('dinner').addEventListener('change', function () {
+    if (this.checked) {
+      edamamAPI.getFiltersDinner().then(recipes => {
+        container.innerHTML = ""
+        for (let i = 0; i < recipes.length; i++) {
+          container.innerHTML +=
+            `<div class="recipe-info">
            <div class="name">${recipes[i].recipe.label}</div>
            <br>
             <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
            </div>
            <br> <hr> <br> `
-          }
-        })
-      } else {
-        edamamAPI.getFullList().then(recipes => {
-          container.innerHTML = ""
-          for (let i = 0; i < recipes.length; i++) { // foreach?
-            container.innerHTML +=
-              `<div class="recipe-info"> 
-      <div class="name">${recipes[i].recipe.label}</div>
-      <br>
-       <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
-      </div>
-      <br> <hr> <br> `
-          }
-        })
-      }
-    })
-
-    //balanced
-      document.getElementById('balanced').addEventListener('change', function () {
-        if (this.checked) {
-          edamamAPI.getFiltersBalanced().then(recipes => {
-            container.innerHTML = ""
-            for (let i = 0; i < recipes.length; i++) {
-              container.innerHTML +=
-                `<div class="recipe-info"> 
-           <div class="name">${recipes[i].recipe.label}</div>
-           <br>
-            <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
-           </div>
-           <br> <hr> <br> `
-            }
-          })
-        } else {
-          edamamAPI.getFullList().then(recipes => {
-            container.innerHTML = ""
-            for (let i = 0; i < recipes.length; i++) { // foreach?
-              container.innerHTML +=
-                `<div class="recipe-info"> 
-      <div class="name">${recipes[i].recipe.label}</div>
-      <br>
-       <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
-      </div>
-      <br> <hr> <br> `
-            }
-          })
         }
       })
-
-    //protein
-      document.getElementById('highProtein').addEventListener('change', function () {
-        if (this.checked) {
-          edamamAPI.getFiltersProtein().then(recipes => {
-            container.innerHTML = ""
-            for (let i = 0; i < recipes.length; i++) {
-              container.innerHTML +=
-                `<div class="recipe-info"> 
-           <div class="name">${recipes[i].recipe.label}</div>
-           <br>
-            <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
-           </div>
-           <br> <hr> <br> `
-            }
-          })
-        } else {
-          edamamAPI.getFullList().then(recipes => {
-            container.innerHTML = ""
-            for (let i = 0; i < recipes.length; i++) { // foreach?
-              container.innerHTML +=
-                `<div class="recipe-info"> 
+    } else {
+      edamamAPI.getFullList().then(recipes => {
+        container.innerHTML = ""
+        for (let i = 0; i < recipes.length; i++) { // foreach?
+          container.innerHTML +=
+            `<div class="recipe-info">
       <div class="name">${recipes[i].recipe.label}</div>
       <br>
        <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
       </div>
       <br> <hr> <br> `
-            }
-          })
         }
       })
-      //carb
-        document.getElementById('lowCarb').addEventListener('change', function () {
-          if (this.checked) {
-            edamamAPI.getFiltersCarb().then(recipes => {
-              container.innerHTML = ""
-              for (let i = 0; i < recipes.length; i++) {
-                container.innerHTML +=
-                  `<div class="recipe-info"> 
+    }
+  })
+
+  //   //balanced
+  document.getElementById('balanced').addEventListener('change', function () {
+    if (this.checked) {
+      edamamAPI.getFiltersBalanced().then(recipes => {
+        container.innerHTML = ""
+        for (let i = 0; i < recipes.length; i++) {
+          container.innerHTML +=
+            `<div class="recipe-info">
            <div class="name">${recipes[i].recipe.label}</div>
            <br>
             <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
            </div>
            <br> <hr> <br> `
-              }
-            })
-          } else {
-            edamamAPI.getFullList().then(recipes => {
-              container.innerHTML = ""
-              for (let i = 0; i < recipes.length; i++) { // foreach?
-                container.innerHTML +=
-                  `<div class="recipe-info"> 
+        }
+      })
+    } else {
+      edamamAPI.getFullList().then(recipes => {
+        container.innerHTML = ""
+        for (let i = 0; i < recipes.length; i++) { // foreach?
+          container.innerHTML +=
+            `<div class="recipe-info">
       <div class="name">${recipes[i].recipe.label}</div>
       <br>
        <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
       </div>
       <br> <hr> <br> `
-              }
-            })
-          }
-        })
-        //fat
-          document.getElementById('lowFat').addEventListener('change', function () {
-            if (this.checked) {
-              edamamAPI.getFiltersFat().then(recipes => {
-                container.innerHTML = ""
-                for (let i = 0; i < recipes.length; i++) {
-                  container.innerHTML +=
-                    `<div class="recipe-info"> 
+        }
+      })
+    }
+  })
+
+  //   //protein
+  document.getElementById('highProtein').addEventListener('change', function () {
+    if (this.checked) {
+      edamamAPI.getFiltersProtein().then(recipes => {
+        container.innerHTML = ""
+        for (let i = 0; i < recipes.length; i++) {
+          container.innerHTML +=
+            `<div class="recipe-info">
            <div class="name">${recipes[i].recipe.label}</div>
            <br>
             <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
            </div>
            <br> <hr> <br> `
-                }
-              })
-            } else {
-              edamamAPI.getFullList().then(recipes => {
-                container.innerHTML = ""
-                for (let i = 0; i < recipes.length; i++) { // foreach?
-                  container.innerHTML +=
-                    `<div class="recipe-info"> 
+        }
+      })
+    } else {
+      edamamAPI.getFullList().then(recipes => {
+        container.innerHTML = ""
+        for (let i = 0; i < recipes.length; i++) { // foreach?
+          container.innerHTML +=
+            `<div class="recipe-info">
       <div class="name">${recipes[i].recipe.label}</div>
       <br>
        <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
       </div>
       <br> <hr> <br> `
-                }
-              })
-            }
-          })
+        }
+      })
+    }
+  })
 
-  // -------------------------- SEARCH WHAT IS IN YOUR FRIDGE ------------------------------- //
+  //   //carb
+  document.getElementById('lowCarb').addEventListener('change', function () {
+    if (this.checked) {
+      edamamAPI.getFiltersCarb().then(recipes => {
+        container.innerHTML = ""
+        for (let i = 0; i < recipes.length; i++) {
+          container.innerHTML +=
+            `<div class="recipe-info">
+           <div class="name">${recipes[i].recipe.label}</div>
+           <br>
+            <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
+           </div>
+           <br> <hr> <br> `
+        }
+      })
+    } else {
+      edamamAPI.getFullList().then(recipes => {
+        container.innerHTML = ""
+        for (let i = 0; i < recipes.length; i++) { // foreach?
+          container.innerHTML +=
+            `<div class="recipe-info">
+      <div class="name">${recipes[i].recipe.label}</div>
+      <br>
+       <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
+      </div>
+      <br> <hr> <br> `
+        }
+      })
+    }
+  })
 
-//   document.getElementById('ingredients').onkeyup = () => {
-//     const ingredient = document.getElementById('ingredients').value
-//     getIngredients(ingredient)
-//   }
- }
+  //   //fat
+  document.getElementById('lowFat').addEventListener('change', function () {
+    if (this.checked) {
+      edamamAPI.getFiltersFat().then(recipes => {
+        container.innerHTML = ""
+        for (let i = 0; i < recipes.length; i++) {
+          container.innerHTML +=
+            `<div class="recipe-info">
+           <div class="name">${recipes[i].recipe.label}</div>
+           <br>
+            <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
+           </div>
+           <br> <hr> <br> `
+        }
+      })
+    } else {
+      edamamAPI.getFullList().then(recipes => {
+        container.innerHTML = ""
+        for (let i = 0; i < recipes.length; i++) { // foreach?
+          container.innerHTML +=
+            `<div class="recipe-info">
+      <div class="name">${recipes[i].recipe.label}</div>
+      <br>
+       <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
+      </div>
+      <br> <hr> <br> `
+        }
+      })
+    }
+  })
+
+}

@@ -1,0 +1,95 @@
+<br><br>
+
+<h2>Searchea todos los events que quieras!!!</h2>
+
+{{!-- <p>Create a new event<a></a></p>
+
+<p>See all the events</p> --}}
+
+<br><br>
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-ml-6">
+
+
+      <form action="/event" method="POST" id="form-container">
+
+        <label for="status">Only open events</label>
+        <input id="status" type="checkbox" name="status">
+
+        <br><br>
+
+        <label for="type">Choose the type of event you want to attend</label><span style="margin-right: 15px"></span> 
+
+
+        <select for="type" name="type">
+          <option value="breakfast">Breakfast</option>
+          <option value="brunch">Brunch</option>
+          <option value="lunch">Lunch</option>
+          <option value="dinner">Dinner</option>
+        </select>    
+
+        <br><br>
+
+        <span style="margin-right: 15px">Specify if you have any specific wish:</span>
+
+        <label for="specs">Gluten-free</label>
+        <input id="glutenfree" type="checkbox" name="specs">
+
+         <span style="margin-right: 15px"></span> 
+
+        <label for="specs">Dairy-free</label>
+        <input id="glutenfree" type="checkbox" name="specs">
+
+                 <span style="margin-right: 15px"></span> 
+
+          <label for="specs">Veg</label>
+        <input id="glutenfree" type="checkbox" name="specs">
+
+                         <span style="margin-right: 15px"></span> 
+
+
+          <label for="specs">Vegan</label>
+        <input id="glutenfree" type="checkbox" name="specs">
+
+                 <span style="margin-right: 15px"></span> 
+
+          <label for="specs">Shellfish</label>
+        <input id="glutenfree" type="checkbox" name="specs">
+
+                 <span style="margin-right: 15px"></span> 
+
+            <label for="specs">Nuts</label>
+        <input id="glutenfree" type="checkbox" name="specs">
+
+        <br><br>
+
+        <button>Search</button>
+
+          <br><br>
+
+      </form>
+
+    </div>
+
+    <div class="col-ml-6">
+
+          <figure id="map"></figure>
+    </div>
+
+  </div>
+
+
+
+</div>
+
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script src="/javascripts/listmap.js"></script>
+
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDG88rK2sVwRDbZIJautuIZpNt32kAQpSU&callback=initMap"></script>
