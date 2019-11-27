@@ -37,6 +37,6 @@ function initMap() {
     }
   )
 
-  getAllEventsFromTheAPI(map)
+  getAllEventsFromTheAPI(geocoder, map)
 }
 

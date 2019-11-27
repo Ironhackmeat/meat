@@ -28,6 +28,10 @@ a {
   height: 50vh;
   width: 80vw;
 }
+#onemap {
+  height: 90vh;
+  width: 45vw;
+}
 
 /*---RATING---*/
 .star-rating__stars {

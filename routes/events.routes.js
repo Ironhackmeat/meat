@@ -58,7 +58,7 @@ router.get('/api/:id', (req, res, next) => {
 
 router.get("/:id", (req, res) => {
 	Event.findById(req.params.id)
-		.populate("User")
+		.populate("host")
 		.then(theEvent => {
 			res.render("events/details", {
 				event: theEvent

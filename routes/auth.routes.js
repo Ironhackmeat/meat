@@ -45,7 +45,7 @@ router.post("/signup", uploadCloud.single('imgFile'), (req, res, next) => {
   } = req.body
 
   const imgPath = req.file.url
-  const imgName = req.file.originalname
+  const imgName = req.file
 
 
   if (username === "" || password === "") {
