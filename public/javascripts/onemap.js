@@ -1,10 +1,12 @@
 function initMap() {
   var map = new google.maps.Map(document.getElementById('onemap'), {
+
     zoom: 11,
     center: {
       lat: 40.416681,
-      lng: -3.703751
-    }
+      lng: -3.703751,
+    },
+    styles: mapStyles.orange
   })
   var geocoder = new google.maps.Geocoder();
   getEvent(geocoder, map)
@@ -27,10 +29,17 @@ function geocodeAddress(geocoder, event, resultsMap) {
     if (status === 'OK') {
       resultsMap.setCenter(results[0].geometry.location);
 
+              var image = {
+        url: "https://res.cloudinary.com/darzjo72b/image/upload/v1574945951/meat/rojo_gqgjjw.png",
+        scaledSize: new google.maps.Size(20, 100),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(0, 0)
+              }
+
       var marker = new google.maps.Marker({
         map: resultsMap,
-        position: results[0].geometry.location
-
+        position: results[0].geometry.location,
+        icon: image
       });
     }
   })
