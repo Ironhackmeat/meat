@@ -8,7 +8,12 @@ body {
   color: rgb(84, 83, 82)
 }
 a {
-  color: black;
+  color: rgb(84, 83, 82);
+}
+
+a:hover {
+  text-decoration: none;
+  font-weight: bold;
 }
 
 h1{
@@ -29,6 +34,10 @@ nav {
 
 nav a {
     color: white;
+}
+
+nav a:hover {
+  color:white;  
 }
 
 
@@ -95,12 +104,13 @@ video {
   bottom: 0; 
   left: 0; 
   right: 0;
-  margin-bottom: 0
+  margin-bottom: 0;
 }
 
 #onemap {
   height: 100%;
   width: 100%;
+  box-shadow: 1px 3px 5px rgb(84, 83, 82);
 }
 
 #createmap {
@@ -182,6 +192,18 @@ video {
   font-size: 2.5rem;
   text-transform: uppercase
 }
+
+#details-username {
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
+.details-container a:hover {
+  color: #E24A00
+}
+
+
+
 
 /*-------------------------- CREATE DETAILS --------------------*/
 

@@ -137,6 +137,8 @@ router.get(`/confirm`, (req, res) => {
 		})
 		.catch(err => console.log(err));
 
+		res.render("events/confirm")
+
 })
 
 
