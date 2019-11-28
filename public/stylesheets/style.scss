@@ -11,7 +11,19 @@ a {
 
 /* ------------------------------ index --------------------------- */
 
+video {
+  position: fixed;
 
+  top: 40%;
+  left: 50%;
+
+  width: 100vw;
+  height: 70vh;
+  overflow: hidden;
+  object-fit: cover;
+  z-index: -100;
+  transform: translate(-50%, -50%);
+}
 
 /* ----------------------------- profile ------------------------- */
 
@@ -34,8 +46,9 @@ a {
 
 
 #map {
-  height: 50vh;
-  width: 80vw;
+  height: 60vh;
+  width: 60vw;
+
 }
 
 #onemap {

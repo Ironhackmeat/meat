@@ -51,18 +51,20 @@ nav a {
 /* ------------------------------ index --------------------------- */
 
 video {
-  position: fixed;
-
-  top: 40%;
-  left: 50%;
-
   width: 100vw;
   height: 70vh;
-  overflow: hidden;
+
   object-fit: cover;
   z-index: -100;
-  transform: translate(-50%, -50%);
 }
+/* ------------------------------ signup --------------------------- */
+
+.background {
+  background: url(https://res.cloudinary.com/darzjo72b/image/upload/v1574944609/meat/tomato2_dzpahx.jpg);
+  background-size: cover;
+
+}
+
 
 /* ----------------------------- profile ------------------------- */
 
@@ -85,8 +87,8 @@ video {
 
 /*# sourceMappingURL=style.css.map */
 #map {
-  height: 50vh;
-  width: 80vw;
+  height: 60vh;
+  width: 60vw;
 }
 
 #onemap {

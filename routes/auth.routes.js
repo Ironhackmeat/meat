@@ -29,7 +29,8 @@ router.post("/login", passport.authenticate("local", {
 }));
 
 //---SIGNUP---//
-router.get("/signup", ensureLoggedOut('/logout'), (req, res, next) => res.render("auth/signup"))
+router.get("/signup", ensureLoggedOut('/'), (req, res, next) => res.render("auth/signup", 
+))
 
 router.post("/signup", uploadCloud.single('imgFile'), (req, res, next) => {
   console.log(req.body)
@@ -109,16 +110,12 @@ router.post("/signup", uploadCloud.single('imgFile'), (req, res, next) => {
 
 //---PROFILE---//
 router.get('/profile', ensureLoggedIn('/auth/login'), (req, res) => {
-  res.render('auth/profile', {
-    user: req.user
-  });
+  res.render('auth/profile');
 });
 
 //---PROFILE EDIT RENDER FORM---//
 router.get('/profile/edit', ensureLoggedIn('/login'), (req, res) => {
-  res.render('auth/edit-profile', {
-    user: req.user
-  })
+  res.render('auth/edit-profile')
 })
 
 //---PROFILE EDIT SEND FORM---//
@@ -166,7 +163,7 @@ router.post('/profile/edit', uploadCloud.single('imgFile'), (req, res) => {
 //---LOGOUT---//
 router.get("/logout", (req, res) => {
   req.logout();
-  res.redirect("/");
+  res.redirect("/login");
 });
 
 module.exports = router;

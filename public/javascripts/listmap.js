@@ -46,8 +46,8 @@ function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 11,
     center: {
-      lat: 40.416681,
-      lng: -3.703751
+      lat: 40.416665, 
+      lng: -3.703677
     }
   });
   var geocoder = new google.maps.Geocoder();
