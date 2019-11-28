@@ -13,7 +13,64 @@ router.get('/search', (req, res) => res.render('events/search'))
 
 router.get('/show', (req, res) => res.render('events/show'))
 
+
+
+// Creat an event => Get the view. You can only creat an event if you are logged in
+
 router.get('/create', ensureLoggedIn("/auth/login"), (req, res) => res.render('events/create'))
+
+// Send the data to the DB 
+
+router.post("/create", (req, res) => {
+	const {
+		name,
+		description,
+		type,
+		glutenfree,
+		dairyfree,
+		veg,
+		vegan,
+		shellfish,
+		nuts,
+		date,
+		time,
+		address,
+		forks
+	} = req.body;
+
+	const host = req.user
+
+	Event.create({
+			host,
+			name,
+			description,
+			type,
+			specs: {
+				glutenfree,
+				dairyfree,
+				veg,
+				vegan,
+				shellfish,
+				nuts
+			},
+			date,
+			time,
+			address,
+			forks
+		})
+		.then(x => {
+			res.redirect("/events/show");
+			console.log(req.body);
+		})
+		.catch(err => console.log(err));
+});
+
+
+
+
+
+
+
 
 router.get('/email/:id',  (req, res) => {
 
@@ -33,11 +90,12 @@ router.get('/email/:id',  (req, res) => {
 		})
 
 
+
+		
 router.get(`/confirm`, (req, res) => {
 	console.log('I did enter bitches')
 	let eventId = req.query.host
 
-// findOneAndUpdate(conditions, update, options, (error, doc) => {
 	console.log(eventId)
 	Event.findOne({_id: eventId})
 		.then( elm => {
@@ -117,49 +175,7 @@ router.get("/:id", ensureLoggedIn("/auth/login"), (req, res) => {
 		.catch(err => console.log(err));
 });
 
-router.post("/create", (req, res) => {
-	const {
-		name,
-		description,
-		type,
-		glutenfree,
-		dairyfree,
-		veg,
-		vegan,
-		shellfish,
-		nuts,
-		date,
-		time,
-		address,
-		forks
-	} = req.body;
 
-	const host = req.user
-
-	Event.create({
-			host,
-			name,
-			description,
-			type,
-			specs: {
-				glutenfree,
-				dairyfree,
-				veg,
-				vegan,
-				shellfish,
-				nuts
-			},
-			date,
-			time,
-			address,
-			forks
-		})
-		.then(x => {
-			res.redirect("/events/show");
-			console.log(req.body);
-		})
-		.catch(err => console.log(err));
-});
 
 
 // // DELETE => remove the restaurant from the DB
