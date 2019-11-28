@@ -4,123 +4,102 @@
 
   <h1>All Recipes</h1>
   <div class="row">
-    <div class="col-md-8 recipe-container">
-
+    <div class="col-md-10 recipe-container">
       <p>Filter to find your perfect recipe!</p>
-
     </div>
 
-    <div class="col-md-2">
-
+{{!-- FILTER BOX --}}
+    <div class="col-md-2 filter-box">
       <div class="form-check">
         <input name="see-all" type="checkbox" class="form-check-input recipe-filter" id="see-all">
         <label class="form-check-label" for="see-all">See all recipes</label>
       </div>
-      <br>
-      <hr><br>
+<br>
+      <strong>
+        <p>Dietry Requirements<p></p>
+      </strong>
 
-      <p>Dietry Requirements<p>
+      <div class="form-check">
+        <input name="veg" type="checkbox" class="form-check-input recipe-filter" id="vegetarian">
+        <label class="form-check-label" for="vegetarian">Vegetarian</label>
+      </div>
 
-          <br>
+      <div class="form-check">
+        <input name="vegan" type="checkbox" class="form-check-input recipe-filter" id="vegan">
+        <label class="form-check-label" for="vegan">Vegan</label>
+      </div>
 
-          <div class="form-check">
-            <input name="veg" type="checkbox" class="form-check-input recipe-filter" id="vegetarian">
-            <label class="form-check-label" for="vegetarian">Vegetarian</label>
-          </div>
-          <br>
-          <div class="form-check">
-            <input name="vegan" type="checkbox" class="form-check-input recipe-filter" id="vegan">
-            <label class="form-check-label" for="vegan">Vegan</label>
-          </div>
-          <br>
-          <div class="form-check">
-            <input name="dairyFree" type="checkbox" class="form-check-input recipe-filter" id="dairyFree">
-            <label class="form-check-label" for="dairyFree">Dairy-Free</label>
-          </div>
-          <br>
-          <div class="form-check">
-            <input name="glutenFree" type="checkbox" class="form-check-input recipe-filter" id="glutenFree">
-            <label class="form-check-label" for="glutenFree">Gluten-Free</label>
-          </div>
-          <br>
-          <div class="form-check">
-            <input name="nutFree" type="checkbox" class="form-check-input recipe-filter" id="nutFree">
-            <label class="form-check-label" for="nutFree">Nut-Free</label>
-          </div>
-          <br>
-          <div class="form-check">
-            <input name="shellfishFree" type="checkbox" class="form-check-input recipe-filter" id="shellfishFree">
-            <label class="form-check-label" for="shellfishFree">Shellfish-Free</label>
-          </div>
+      <div class="form-check">
+        <input name="dairyFree" type="checkbox" class="form-check-input recipe-filter" id="dairyFree">
+        <label class="form-check-label" for="dairyFree">Dairy-Free</label>
+      </div>
 
-          <br>
-          <hr><br>
+      <div class="form-check">
+        <input name="glutenFree" type="checkbox" class="form-check-input recipe-filter" id="glutenFree">
+        <label class="form-check-label" for="glutenFree">Gluten-Free</label>
+      </div>
 
-          <p>Meal Type</p>
-          <br>
+      <div class="form-check">
+        <input name="nutFree" type="checkbox" class="form-check-input recipe-filter" id="nutFree">
+        <label class="form-check-label" for="nutFree">Nut-Free</label>
+      </div>
 
-          <div class="form-check">
-            <input name="breakfast" type="checkbox" class="form-check-input recipe-filter" id="breakfast">
-            <label class="form-check-label" for="breakfast">Breakfast</label>
-          </div>
+      <div class="form-check">
+        <input name="shellfishFree" type="checkbox" class="form-check-input recipe-filter" id="shellfishFree">
+        <label class="form-check-label" for="shellfishFree">Shellfish-Free</label>
+      </div>
+<br>
+      <strong>
+        <p>Meal Type</p>
+      </strong>
 
-          <br>
+      <div class="form-check">
+        <input name="breakfast" type="checkbox" class="form-check-input recipe-filter" id="breakfast">
+        <label class="form-check-label" for="breakfast">Breakfast</label>
+      </div>
 
-          <div class="form-check">
-            <input name="lunch" type="checkbox" class="form-check-input recipe-filter" id="lunch">
-            <label class="form-check-label" for="lunch">Lunch</label>
-          </div>
+      <div class="form-check">
+        <input name="lunch" type="checkbox" class="form-check-input recipe-filter" id="lunch">
+        <label class="form-check-label" for="lunch">Lunch</label>
+      </div>
 
-          <br>
+      <div class="form-check">
+        <input name="snack" type="checkbox" class="form-check-input recipe-filter" id="snack">
+        <label class="form-check-label" for="snack">Snack</label>
+      </div>
 
-          <div class="form-check">
-            <input name="snack" type="checkbox" class="form-check-input recipe-filter" id="snack">
-            <label class="form-check-label" for="snack">Snack</label>
-          </div>
-
-          <br>
-
-          <div class="form-check">
-            <input name="dinner" type="checkbox" class="form-check-input recipe-filter" id="dinner">
-            <label class="form-check-label" for="dinner">Dinner</label>
-          </div>
-
-          <br>
-          <hr><br>
-
-          <p>Diet</p>
-
-          <br>
-
-          <div class="form-check">
-            <input name="balanced" type="checkbox" class="form-check-input recipe-filter" id="balanced">
-            <label class="form-check-label" for="balanced">Balanced</label>
-          </div>
-
-          <br>
-
-          <div class="form-check">
-            <input name="highProtein" type="checkbox" class="form-check-input recipe-filter" id="highProtein">
-            <label class="form-check-label" for="highProtein">High-Protein</label>
-          </div>
-
-          <br>
-
-          <div class="form-check">
-            <input name="lowCarb" type="checkbox" class="form-check-input recipe-filter" id="lowCarb">
-            <label class="form-check-label" for="lowCarb">Low-Carb</label>
-          </div>
-
-          <br>
-
-          <div class="form-check">
-            <input name="lowFat" type="checkbox" class="form-check-input recipe-filter" id="lowFat">
-            <label class="form-check-label" for="lowFat">Low-Fat</label>
-          </div>
+      <div class="form-check">
+        <input name="dinner" type="checkbox" class="form-check-input recipe-filter" id="dinner">
+        <label class="form-check-label" for="dinner">Dinner</label>
+      </div>
+<br>
+      <strong>
+        <p>Diet</p>
+      </strong>
+      
+      <div class="form-check">
+        <input name="balanced" type="checkbox" class="form-check-input recipe-filter" id="balanced">
+        <label class="form-check-label" for="balanced">Balanced</label>
+      </div>
+      
+      <div class="form-check">
+        <input name="highProtein" type="checkbox" class="form-check-input recipe-filter" id="highProtein">
+        <label class="form-check-label" for="highProtein">High-Protein</label>
+      </div>
+      
+      <div class="form-check">
+        <input name="lowCarb" type="checkbox" class="form-check-input recipe-filter" id="lowCarb">
+        <label class="form-check-label" for="lowCarb">Low-Carb</label>
+      </div>
+      
+      <div class="form-check">
+        <input name="lowFat" type="checkbox" class="form-check-input recipe-filter" id="lowFat">
+        <label class="form-check-label" for="lowFat">Low-Fat</label>
+      </div>
 
     </div>
 
-  </div>
+</div>
 
 </div>
 

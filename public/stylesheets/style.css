@@ -1,13 +1,19 @@
+/* ORANGE: #f37a00
+RED: #e24a00
+YELLOW: #feb100 */
+
 /* ------------------------ general styles ---------------------- */
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-
 }
-
 a {
   color: black;
 }
 
+h1{
+  text-transform: uppercase;
+  color: #e24a00;
+}
 
 /*---NAVBAR SETTINGS---*/
 .navbar-logo{
@@ -17,12 +23,29 @@ a {
 
 nav {
   background: #e24a00;
+  margin-bottom: 25px;
 }
 
 nav a {
     color: white;
 }
 
+
+/*---RECIPES SEARCH---*/
+
+.filter-box {
+  background-color: #cbc1be;
+  box-shadow: 3px 3px 25px black;
+  padding: 25px;
+  position: fixed;
+  margin-left: 900px;
+  border-radius: 25px;
+}
+
+.recipe-filter p {
+  text-align: center;
+  font-size: 16px;
+}
 
 
 /* ------------------------------ index --------------------------- */
