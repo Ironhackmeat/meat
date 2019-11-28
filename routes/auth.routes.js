@@ -163,7 +163,7 @@ router.post('/profile/edit', uploadCloud.single('imgFile'), (req, res) => {
 //---LOGOUT---//
 router.get("/logout", (req, res) => {
   req.logout();
-  res.redirect("/login");
+  res.redirect("/");
 });
 
 module.exports = router;
