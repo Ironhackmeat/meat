@@ -33,6 +33,14 @@ video {
   object-fit: cover;
   z-index: -100;
 }
+/* ------------------------------ signup --------------------------- */
+
+.background {
+  background: url(https://res.cloudinary.com/darzjo72b/image/upload/v1574944609/meat/tomato2_dzpahx.jpg);
+  background-size: cover;
+
+}
+
 
 /* ----------------------------- profile ------------------------- */
 
