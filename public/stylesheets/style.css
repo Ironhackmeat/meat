@@ -1,13 +1,20 @@
+/* ORANGE: #f37a00
+RED: #e24a00
+YELLOW: #feb100 */
+
 /* ------------------------ general styles ---------------------- */
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   color: rgb(84, 83, 82)
 }
-
 a {
   color: black;
 }
 
+h1{
+  text-transform: uppercase;
+  color: #e24a00;
+}
 
 /*---NAVBAR SETTINGS---*/
 .navbar-logo{
@@ -17,6 +24,7 @@ a {
 
 nav {
   background: #e24a00;
+  margin-bottom: 25px;
 }
 
 nav a {
@@ -24,22 +32,40 @@ nav a {
 }
 
 
+/*---RECIPES SEARCH---*/
+
+.filter-box {
+  background-color: #cbc1be;
+  box-shadow: 3px 3px 25px black;
+  padding: 25px;
+  position: fixed;
+  margin-left: 900px;
+  border-radius: 25px;
+}
+
+.recipe-filter p {
+  text-align: center;
+  font-size: 16px;
+}
+
 
 /* ------------------------------ index --------------------------- */
 
 video {
-  position: fixed;
-
-  top: 40%;
-  left: 50%;
-
   width: 100vw;
   height: 70vh;
-  overflow: hidden;
+
   object-fit: cover;
   z-index: -100;
-  transform: translate(-50%, -50%);
 }
+/* ------------------------------ signup --------------------------- */
+
+.background {
+  background: url(https://res.cloudinary.com/darzjo72b/image/upload/v1574944609/meat/tomato2_dzpahx.jpg);
+  background-size: cover;
+
+}
+
 
 /* ----------------------------- profile ------------------------- */
 
