@@ -1,3 +1,4 @@
+/* ------------------------ general styles ---------------------- */
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
@@ -5,6 +6,41 @@ body {
 a {
   color: black;
 }
+
+
+/*---NAVBAR SETTINGS---*/
+.navbar-logo{
+  width: 150px;
+  height:40px;
+}
+
+nav {
+  background: #e24a00;
+}
+
+nav a {
+    color: white;
+}
+
+
+
+/* ------------------------------ index --------------------------- */
+
+video {
+  position: fixed;
+
+  top: 40%;
+  left: 50%;
+
+  width: 100vw;
+  height: 70vh;
+  overflow: hidden;
+  object-fit: cover;
+  z-index: -100;
+  transform: translate(-50%, -50%);
+}
+
+/* ----------------------------- profile ------------------------- */
 
 .profile-box {
   padding: 10px;
@@ -21,6 +57,9 @@ a {
   margin-top: 50px
 }
 
+/* ------------------------------- maps -----------------------------*/
+
+/*# sourceMappingURL=style.css.map */
 #map {
   height: 60vh;
   width: 60vw;
@@ -31,7 +70,9 @@ a {
   width: 45vw;
 }
 
-/*---RATING---*/
+
+
+/*-------------------------- RATING --------------------*/
 .star-rating__stars {
   position: relative;
   height: 2.5rem;
@@ -89,12 +130,3 @@ a {
 .star-rating__label:hover~.star-rating__label {
   background-image: url("../images/off-star.png");
 }
-
-/* .star-rating__input:focus~.star-rating__focus {
-  position: absolute;
-  top: -.25em;
-  right: -.25em;
-  bottom: -.25em;
-  left: -.25em;
-  outline: 0.25rem solid lightblue;
-} */
