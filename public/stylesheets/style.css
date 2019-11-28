@@ -7,11 +7,12 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   color: rgb(84, 83, 82)
 }
+
 a {
   color: black;
 }
 
-h1{
+h1 {
   text-transform: uppercase;
   color: #e24a00;
 }
@@ -35,18 +36,39 @@ nav a {
 /*---RECIPES SEARCH---*/
 
 .filter-box {
-  background-color: #cbc1be;
-  box-shadow: 3px 3px 25px black;
+  background-color: #f37a00;
+  box-shadow: 3px 3px 25px rgb(84, 83, 82);
   padding: 25px;
   position: fixed;
   margin-left: 900px;
   border-radius: 25px;
+  color: white;
 }
 
 .recipe-filter p {
   text-align: center;
   font-size: 16px;
 }
+
+.recipe-info {
+  padding-right: 200px;
+  font-size: 18px;
+  color: #e24a00;
+}
+
+.recipe-info a {
+  font-size: 14px;
+  color: rgb(84, 83, 82);
+}
+
+.recipe-info img {
+  border-radius: 25px;
+  width: 150px;
+  height: 150px;
+  box-shadow: 3px 3px 25px rgb(84, 83, 82);
+}
+
+
 
 
 /* ------------------------------ index --------------------------- */
