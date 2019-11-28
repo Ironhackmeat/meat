@@ -137,10 +137,7 @@ router.get(`/confirm`, (req, res) => {
 		})
 		.catch(err => console.log(err));
 
-		res.render("events/confirm")
-
 })
-
 
 // The data we'll use for the Map 
 
