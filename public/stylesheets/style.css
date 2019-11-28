@@ -383,3 +383,19 @@ video {
 
 }
 
+<<<<<<< HEAD
+
+/* CREATE EVENT */
+
+.create-background {
+  background: url("https://res.cloudinary.com/darzjo72b/image/upload/v1574968180/meat/travis-yewell-UaQCpG0frpI-unsplash_1_fam8sz.jpg");
+  background-size: cover;
+}
+
+.create-backbox {
+  background: rgba(255, 255, 255, 0.7);
+  padding: 5px;
+  border-radius: 5%;
+}
+=======
+>>>>>>> 0ee04847e7115e47227270d6821c3ba45bae27ac
