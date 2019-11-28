@@ -31,16 +31,19 @@ window.onload = () => {
         container.innerHTML = ""
         for (let i = 0; i < recipes.length; i++) { // foreach?
           container.innerHTML +=
-            `<div class="recipe-info"> 
-            <div class="img">
-              <img src="${recipes[i].recipe.image}" alt="recipeimg">
-            </div>
+            `<div class = "container">
+              <div class="row recipe-info"> 
+                <div class="col-md-4 img">
+                    <img src="${recipes[i].recipe.image}" alt="recipeimg">
+                </div>
             <br>
-      <div class="name">${recipes[i].recipe.label}</div>
-      <br>
-      <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
-      </div>
-      <br> <hr> <br> `
+                <div class="col-md-6">
+                  <div class="name">${recipes[i].recipe.label}</div>
+            <br>
+                  <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
+                </div>
+            </div>
+            <br> <hr> <br>`
         }
       })
     }
@@ -54,16 +57,19 @@ window.onload = () => {
         container.innerHTML = ""
         for (let i = 0; i < recipes.length; i++) {
           container.innerHTML +=
-            `<div class="recipe-info"> 
-            <div class="img">
-              <img src="${recipes[i].recipe.image}" alt="recipeimg">
-            </div>
+            `<div class = "container">
+              <div class="row recipe-info"> 
+                <div class="col-md-4 img">
+                    <img src="${recipes[i].recipe.image}" alt="recipeimg">
+                </div>
             <br>
-           <div class="name">${recipes[i].recipe.label}</div>
-           <br>
-           <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
-           </div>
-           <br> <hr> <br> `
+                <div class="col-md-6">
+                  <div class="name">${recipes[i].recipe.label}</div>
+            <br>
+                  <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
+                </div>
+            </div>
+            <br> <hr> <br>`
         }
       })
     } else {
@@ -71,16 +77,19 @@ window.onload = () => {
         container.innerHTML = ""
         for (let i = 0; i < recipes.length; i++) { // foreach?
           container.innerHTML +=
-            `<div class="recipe-info">
-            <div class="img">
-              <img src="${recipes[i].recipe.image}" alt="recipeimg">
-            </div>
+            `<div class = "container">
+              <div class="row recipe-info"> 
+                <div class="col-md-4 img">
+                    <img src="${recipes[i].recipe.image}" alt="recipeimg">
+                </div>
             <br>
-      <div class="name">${recipes[i].recipe.label}</div>
-      <br>
-       <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
-      </div>
-      <br> <hr> <br> `
+                <div class="col-md-6">
+                  <div class="name">${recipes[i].recipe.label}</div>
+            <br>
+                  <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
+                </div>
+            </div>
+            <br> <hr> <br>`
         }
       })
     }
@@ -93,15 +102,19 @@ window.onload = () => {
         container.innerHTML = ""
         for (let i = 0; i < recipes.length; i++) {
           container.innerHTML +=
-            `<div class="recipe-info"> 
-            <div class="img">
-              <img src="${recipes[i].recipe.image}" alt="recipeimg">
-            </div>
+            `<div class = "container">
+              <div class="row recipe-info"> 
+                <div class="col-md-4 img">
+                    <img src="${recipes[i].recipe.image}" alt="recipeimg">
+                </div>
             <br>
-           <div class="name">${recipes[i].recipe.label}</div>
-           <br>
-           <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
-           <br> <hr> <br> `
+                <div class="col-md-6">
+                  <div class="name">${recipes[i].recipe.label}</div>
+            <br>
+                  <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
+                </div>
+            </div>
+            <br> <hr> <br>`
         }
       })
     } else {
@@ -109,16 +122,19 @@ window.onload = () => {
         container.innerHTML = ""
         for (let i = 0; i < recipes.length; i++) { // foreach?
           container.innerHTML +=
-            `<div class="recipe-info">
-            <div class="img">
-              <img src="${recipes[i].recipe.image}" alt="recipeimg">
-            </div>
+            `<div class = "container">
+              <div class="row recipe-info"> 
+                <div class="col-md-4 img">
+                    <img src="${recipes[i].recipe.image}" alt="recipeimg">
+                </div>
             <br>
-      <div class="name">${recipes[i].recipe.label}</div>
-      <br>
-       <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
-      </div>
-      <br> <hr> <br> `
+                <div class="col-md-6">
+                  <div class="name">${recipes[i].recipe.label}</div>
+            <br>
+                  <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
+                </div>
+            </div>
+            <br> <hr> <br>`
         }
       })
     }
@@ -131,16 +147,19 @@ window.onload = () => {
         container.innerHTML = ""
         for (let i = 0; i < recipes.length; i++) {
           container.innerHTML +=
-            `<div class="recipe-info"> 
-            <div class="img">
-              <img src="${recipes[i].recipe.image}" alt="recipeimg">
-            </div>
+            `<div class = "container">
+              <div class="row recipe-info"> 
+                <div class="col-md-4 img">
+                    <img src="${recipes[i].recipe.image}" alt="recipeimg">
+                </div>
             <br>
-           <div class="name">${recipes[i].recipe.label}</div>
-           <br>
-           <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
-           </div>
-           <br> <hr> <br> `
+                <div class="col-md-6">
+                  <div class="name">${recipes[i].recipe.label}</div>
+            <br>
+                  <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
+                </div>
+            </div>
+            <br> <hr> <br>`
         }
       })
     } else {
@@ -148,16 +167,19 @@ window.onload = () => {
         container.innerHTML = ""
         for (let i = 0; i < recipes.length; i++) { // foreach?
           container.innerHTML +=
-            `<div class="recipe-info">
-            <div class="img">
-              <img src="${recipes[i].recipe.image}" alt="recipeimg">
-            </div>
+            `<div class = "container">
+              <div class="row recipe-info"> 
+                <div class="col-md-4 img">
+                    <img src="${recipes[i].recipe.image}" alt="recipeimg">
+                </div>
             <br>
-      <div class="name">${recipes[i].recipe.label}</div>
-      <br>
-      <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
-      </div>
-      <br> <hr> <br> `
+                <div class="col-md-6">
+                  <div class="name">${recipes[i].recipe.label}</div>
+            <br>
+                  <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
+                </div>
+            </div>
+            <br> <hr> <br>`
         }
       })
     }
@@ -170,16 +192,19 @@ window.onload = () => {
         container.innerHTML = ""
         for (let i = 0; i < recipes.length; i++) {
           container.innerHTML +=
-            `<div class="recipe-info"> 
-            <div class="img">
-              <img src="${recipes[i].recipe.image}" alt="recipeimg">
-            </div>
+            `<div class = "container">
+              <div class="row recipe-info"> 
+                <div class="col-md-4 img">
+                    <img src="${recipes[i].recipe.image}" alt="recipeimg">
+                </div>
             <br>
-           <div class="name">${recipes[i].recipe.label}</div>
-           <br>
-          <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
-           </div>
-           <br> <hr> <br> `
+                <div class="col-md-6">
+                  <div class="name">${recipes[i].recipe.label}</div>
+            <br>
+                  <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
+                </div>
+            </div>
+            <br> <hr> <br>`
         }
       })
     } else {
@@ -187,16 +212,19 @@ window.onload = () => {
         container.innerHTML = ""
         for (let i = 0; i < recipes.length; i++) { // foreach?
           container.innerHTML +=
-            `<div class="recipe-info">
-            <div class="img">
-              <img src="${recipes[i].recipe.image}" alt="recipeimg">
-            </div>
+            `<div class = "container">
+              <div class="row recipe-info"> 
+                <div class="col-md-4 img">
+                    <img src="${recipes[i].recipe.image}" alt="recipeimg">
+                </div>
             <br>
-      <div class="name">${recipes[i].recipe.label}</div>
-      <br>
-       <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
-      </div>
-      <br> <hr> <br> `
+                <div class="col-md-6">
+                  <div class="name">${recipes[i].recipe.label}</div>
+            <br>
+                  <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
+                </div>
+            </div>
+            <br> <hr> <br>`
         }
       })
     }
@@ -209,16 +237,19 @@ window.onload = () => {
         container.innerHTML = ""
         for (let i = 0; i < recipes.length; i++) {
           container.innerHTML +=
-            `<div class="recipe-info"> 
-            <div class="img">
-              <img src="${recipes[i].recipe.image}" alt="recipeimg">
-            </div>
+            `<div class = "container">
+              <div class="row recipe-info"> 
+                <div class="col-md-4 img">
+                    <img src="${recipes[i].recipe.image}" alt="recipeimg">
+                </div>
             <br>
-           <div class="name">${recipes[i].recipe.label}</div>
-           <br>
-           <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
-           </div>
-           <br> <hr> <br> `
+                <div class="col-md-6">
+                  <div class="name">${recipes[i].recipe.label}</div>
+            <br>
+                  <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
+                </div>
+            </div>
+            <br> <hr> <br>`
         }
       })
     } else {
@@ -226,16 +257,19 @@ window.onload = () => {
         container.innerHTML = ""
         for (let i = 0; i < recipes.length; i++) { // foreach?
           container.innerHTML +=
-            `<div class="recipe-info">
-            <div class="img">
-              <img src="${recipes[i].recipe.image}" alt="recipeimg">
-            </div>
+            `<div class = "container">
+              <div class="row recipe-info"> 
+                <div class="col-md-4 img">
+                    <img src="${recipes[i].recipe.image}" alt="recipeimg">
+                </div>
             <br>
-      <div class="name">${recipes[i].recipe.label}</div>
-      <br>
-       <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
-      </div>
-      <br> <hr> <br> `
+                <div class="col-md-6">
+                  <div class="name">${recipes[i].recipe.label}</div>
+            <br>
+                  <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
+                </div>
+            </div>
+            <br> <hr> <br>`
         }
       })
     }
@@ -248,15 +282,19 @@ window.onload = () => {
         container.innerHTML = ""
         for (let i = 0; i < recipes.length; i++) {
           container.innerHTML +=
-            `<div class="recipe-info"> 
-            <div class="img">
-              <img src="${recipes[i].recipe.image}" alt="recipeimg">
-            </div>
+            `<div class = "container">
+              <div class="row recipe-info"> 
+                <div class="col-md-4 img">
+                    <img src="${recipes[i].recipe.image}" alt="recipeimg">
+                </div>
             <br>
-           <div class="name">${recipes[i].recipe.label}</div>
-           <br>
-          <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
-           <br> <hr> <br> `
+                <div class="col-md-6">
+                  <div class="name">${recipes[i].recipe.label}</div>
+            <br>
+                  <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
+                </div>
+            </div>
+            <br> <hr> <br>`
         }
       })
     } else {
@@ -264,16 +302,19 @@ window.onload = () => {
         container.innerHTML = ""
         for (let i = 0; i < recipes.length; i++) { // foreach?
           container.innerHTML +=
-            `<div class="recipe-info">
-            <div class="img">
-              <img src="${recipes[i].recipe.image}" alt="recipeimg">
-            </div>
+            `<div class = "container">
+              <div class="row recipe-info"> 
+                <div class="col-md-4 img">
+                    <img src="${recipes[i].recipe.image}" alt="recipeimg">
+                </div>
             <br>
-      <div class="name">${recipes[i].recipe.label}</div>
-      <br>
-       <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
-      </div>
-      <br> <hr> <br> `
+                <div class="col-md-6">
+                  <div class="name">${recipes[i].recipe.label}</div>
+            <br>
+                  <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
+                </div>
+            </div>
+            <br> <hr> <br>`
         }
       })
     }
@@ -286,16 +327,19 @@ window.onload = () => {
         container.innerHTML = ""
         for (let i = 0; i < recipes.length; i++) {
           container.innerHTML +=
-            `<div class="recipe-info">
-            <div class="img">
-              <img src="${recipes[i].recipe.image}" alt="recipeimg">
-            </div>
+            `<div class = "container">
+              <div class="row recipe-info"> 
+                <div class="col-md-4 img">
+                    <img src="${recipes[i].recipe.image}" alt="recipeimg">
+                </div>
             <br>
-           <div class="name">${recipes[i].recipe.label}</div>
-           <br>
-            <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
-           </div>
-           <br> <hr> <br> `
+                <div class="col-md-6">
+                  <div class="name">${recipes[i].recipe.label}</div>
+            <br>
+                  <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
+                </div>
+            </div>
+            <br> <hr> <br>`
         }
       })
     } else {
@@ -303,16 +347,19 @@ window.onload = () => {
         container.innerHTML = ""
         for (let i = 0; i < recipes.length; i++) { // foreach?
           container.innerHTML +=
-            `<div class="recipe-info">
-            <div class="img">
-              <img src="${recipes[i].recipe.image}" alt="recipeimg">
-            </div>
+            `<div class = "container">
+              <div class="row recipe-info"> 
+                <div class="col-md-4 img">
+                    <img src="${recipes[i].recipe.image}" alt="recipeimg">
+                </div>
             <br>
-      <div class="name">${recipes[i].recipe.label}</div>
-      <br>
-       <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
-      </div>
-      <br> <hr> <br> `
+                <div class="col-md-6">
+                  <div class="name">${recipes[i].recipe.label}</div>
+            <br>
+                  <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
+                </div>
+            </div>
+            <br> <hr> <br>`
         }
       })
     }
@@ -325,16 +372,19 @@ window.onload = () => {
         container.innerHTML = ""
         for (let i = 0; i < recipes.length; i++) {
           container.innerHTML +=
-            `<div class="recipe-info">
-            <div class="img">
-              <img src="${recipes[i].recipe.image}" alt="recipeimg">
-            </div>
+            `<div class = "container">
+              <div class="row recipe-info"> 
+                <div class="col-md-4 img">
+                    <img src="${recipes[i].recipe.image}" alt="recipeimg">
+                </div>
             <br>
-           <div class="name">${recipes[i].recipe.label}</div>
-           <br>
-            <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
-           </div>
-           <br> <hr> <br> `
+                <div class="col-md-6">
+                  <div class="name">${recipes[i].recipe.label}</div>
+            <br>
+                  <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
+                </div>
+            </div>
+            <br> <hr> <br>`
         }
       })
     } else {
@@ -342,16 +392,19 @@ window.onload = () => {
         container.innerHTML = ""
         for (let i = 0; i < recipes.length; i++) { // foreach?
           container.innerHTML +=
-            `<div class="recipe-info">
-            <div class="img">
-              <img src="${recipes[i].recipe.image}" alt="recipeimg">
-            </div>
+            `<div class = "container">
+              <div class="row recipe-info"> 
+                <div class="col-md-4 img">
+                    <img src="${recipes[i].recipe.image}" alt="recipeimg">
+                </div>
             <br>
-      <div class="name">${recipes[i].recipe.label}</div>
-      <br>
-       <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
-      </div>
-      <br> <hr> <br> `
+                <div class="col-md-6">
+                  <div class="name">${recipes[i].recipe.label}</div>
+            <br>
+                  <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
+                </div>
+            </div>
+            <br> <hr> <br>`
         }
       })
     }
@@ -364,16 +417,19 @@ window.onload = () => {
         container.innerHTML = ""
         for (let i = 0; i < recipes.length; i++) {
           container.innerHTML +=
-            `<div class="recipe-info">
-            <div class="img">
-              <img src="${recipes[i].recipe.image}" alt="recipeimg">
-            </div>
+            `<div class = "container">
+              <div class="row recipe-info"> 
+                <div class="col-md-4 img">
+                    <img src="${recipes[i].recipe.image}" alt="recipeimg">
+                </div>
             <br>
-           <div class="name">${recipes[i].recipe.label}</div>
-           <br>
-            <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
-           </div>
-           <br> <hr> <br> `
+                <div class="col-md-6">
+                  <div class="name">${recipes[i].recipe.label}</div>
+            <br>
+                  <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
+                </div>
+            </div>
+            <br> <hr> <br>`
         }
       })
     } else {
@@ -381,16 +437,19 @@ window.onload = () => {
         container.innerHTML = ""
         for (let i = 0; i < recipes.length; i++) { // foreach?
           container.innerHTML +=
-            `<div class="recipe-info">
-            <div class="img">
-              <img src="${recipes[i].recipe.image}" alt="recipeimg">
-            </div>
+            `<div class = "container">
+              <div class="row recipe-info"> 
+                <div class="col-md-4 img">
+                    <img src="${recipes[i].recipe.image}" alt="recipeimg">
+                </div>
             <br>
-      <div class="name">${recipes[i].recipe.label}</div>
-      <br>
-       <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
-      </div>
-      <br> <hr> <br> `
+                <div class="col-md-6">
+                  <div class="name">${recipes[i].recipe.label}</div>
+            <br>
+                  <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
+                </div>
+            </div>
+            <br> <hr> <br>`
         }
       })
     }
@@ -403,16 +462,19 @@ window.onload = () => {
         container.innerHTML = ""
         for (let i = 0; i < recipes.length; i++) {
           container.innerHTML +=
-            `<div class="recipe-info">
-            <div class="img">
-              <img src="${recipes[i].recipe.image}" alt="recipeimg">
-            </div>
+            `<div class = "container">
+              <div class="row recipe-info"> 
+                <div class="col-md-4 img">
+                    <img src="${recipes[i].recipe.image}" alt="recipeimg">
+                </div>
             <br>
-           <div class="name">${recipes[i].recipe.label}</div>
-           <br>
-            <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
-           </div>
-           <br> <hr> <br> `
+                <div class="col-md-6">
+                  <div class="name">${recipes[i].recipe.label}</div>
+            <br>
+                  <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
+                </div>
+            </div>
+            <br> <hr> <br>`
         }
       })
     } else {
@@ -420,16 +482,19 @@ window.onload = () => {
         container.innerHTML = ""
         for (let i = 0; i < recipes.length; i++) { // foreach?
           container.innerHTML +=
-            `<div class="recipe-info">
-            <div class="img">
-              <img src="${recipes[i].recipe.image}" alt="recipeimg">
-            </div>
+            `<div class = "container">
+              <div class="row recipe-info"> 
+                <div class="col-md-4 img">
+                    <img src="${recipes[i].recipe.image}" alt="recipeimg">
+                </div>
             <br>
-      <div class="name">${recipes[i].recipe.label}</div>
-      <br>
-       <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
-      </div>
-      <br> <hr> <br> `
+                <div class="col-md-6">
+                  <div class="name">${recipes[i].recipe.label}</div>
+            <br>
+                  <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
+                </div>
+            </div>
+            <br> <hr> <br>`
         }
       })
     }
@@ -442,16 +507,19 @@ window.onload = () => {
         container.innerHTML = ""
         for (let i = 0; i < recipes.length; i++) {
           container.innerHTML +=
-            `<div class="recipe-info">
-            <div class="img">
-              <img src="${recipes[i].recipe.image}" alt="recipeimg">
-            </div>
+            `<div class = "container">
+              <div class="row recipe-info"> 
+                <div class="col-md-4 img">
+                    <img src="${recipes[i].recipe.image}" alt="recipeimg">
+                </div>
             <br>
-           <div class="name">${recipes[i].recipe.label}</div>
-           <br>
-            <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
-           </div>
-           <br> <hr> <br> `
+                <div class="col-md-6">
+                  <div class="name">${recipes[i].recipe.label}</div>
+            <br>
+                  <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
+                </div>
+            </div>
+            <br> <hr> <br>`
         }
       })
     } else {
@@ -459,16 +527,19 @@ window.onload = () => {
         container.innerHTML = ""
         for (let i = 0; i < recipes.length; i++) { // foreach?
           container.innerHTML +=
-            `<div class="recipe-info">
-            <div class="img">
-              <img src="${recipes[i].recipe.image}" alt="recipeimg">
-            </div>
+            `<div class = "container">
+              <div class="row recipe-info"> 
+                <div class="col-md-4 img">
+                    <img src="${recipes[i].recipe.image}" alt="recipeimg">
+                </div>
             <br>
-      <div class="name">${recipes[i].recipe.label}</div>
-      <br>
-       <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
-      </div>
-      <br> <hr> <br> `
+                <div class="col-md-6">
+                  <div class="name">${recipes[i].recipe.label}</div>
+            <br>
+                  <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
+                </div>
+            </div>
+            <br> <hr> <br>`
         }
       })
     }
@@ -481,16 +552,19 @@ window.onload = () => {
         container.innerHTML = ""
         for (let i = 0; i < recipes.length; i++) {
           container.innerHTML +=
-            `<div class="recipe-info">
-            <div class="img">
-              <img src="${recipes[i].recipe.image}" alt="recipeimg">
-            </div>
+            `<div class = "container">
+              <div class="row recipe-info"> 
+                <div class="col-md-4 img">
+                    <img src="${recipes[i].recipe.image}" alt="recipeimg">
+                </div>
             <br>
-           <div class="name">${recipes[i].recipe.label}</div>
-           <br>
-            <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
-           </div>
-           <br> <hr> <br> `
+                <div class="col-md-6">
+                  <div class="name">${recipes[i].recipe.label}</div>
+            <br>
+                  <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
+                </div>
+            </div>
+            <br> <hr> <br>`
         }
       })
     } else {
@@ -498,16 +572,19 @@ window.onload = () => {
         container.innerHTML = ""
         for (let i = 0; i < recipes.length; i++) { // foreach?
           container.innerHTML +=
-            `<div class="recipe-info">
-            <div class="img">
-              <img src="${recipes[i].recipe.image}" alt="recipeimg">
-            </div>
+            `<div class = "container">
+              <div class="row recipe-info"> 
+                <div class="col-md-4 img">
+                    <img src="${recipes[i].recipe.image}" alt="recipeimg">
+                </div>
             <br>
-      <div class="name">${recipes[i].recipe.label}</div>
-      <br>
-       <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
-      </div>
-      <br> <hr> <br> `
+                <div class="col-md-6">
+                  <div class="name">${recipes[i].recipe.label}</div>
+            <br>
+                  <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
+                </div>
+            </div>
+            <br> <hr> <br>`
         }
       })
     }
@@ -520,16 +597,19 @@ window.onload = () => {
         container.innerHTML = ""
         for (let i = 0; i < recipes.length; i++) {
           container.innerHTML +=
-            `<div class="recipe-info">
-            <div class="img">
-              <img src="${recipes[i].recipe.image}" alt="recipeimg">
-            </div>
+            `<div class = "container">
+              <div class="row recipe-info"> 
+                <div class="col-md-4 img">
+                    <img src="${recipes[i].recipe.image}" alt="recipeimg">
+                </div>
             <br>
-           <div class="name">${recipes[i].recipe.label}</div>
-           <br>
-            <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
-           </div>
-           <br> <hr> <br> `
+                <div class="col-md-6">
+                  <div class="name">${recipes[i].recipe.label}</div>
+            <br>
+                  <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
+                </div>
+            </div>
+            <br> <hr> <br>`
         }
       })
     } else {
@@ -537,16 +617,19 @@ window.onload = () => {
         container.innerHTML = ""
         for (let i = 0; i < recipes.length; i++) { // foreach?
           container.innerHTML +=
-            `<div class="recipe-info">
-            <div class="img">
-              <img src="${recipes[i].recipe.image}" alt="recipeimg">
-            </div>
+            `<div class = "container">
+              <div class="row recipe-info"> 
+                <div class="col-md-4 img">
+                    <img src="${recipes[i].recipe.image}" alt="recipeimg">
+                </div>
             <br>
-      <div class="name">${recipes[i].recipe.label}</div>
-      <br>
-       <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
-      </div>
-      <br> <hr> <br> `
+                <div class="col-md-6">
+                  <div class="name">${recipes[i].recipe.label}</div>
+            <br>
+                  <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
+                </div>
+            </div>
+            <br> <hr> <br>`
         }
       })
     }
@@ -559,16 +642,19 @@ window.onload = () => {
         container.innerHTML = ""
         for (let i = 0; i < recipes.length; i++) {
           container.innerHTML +=
-            `<div class="recipe-info">
-            <div class="img">
-              <img src="${recipes[i].recipe.image}" alt="recipeimg">
-            </div>
+            `<div class = "container">
+              <div class="row recipe-info"> 
+                <div class="col-md-4 img">
+                    <img src="${recipes[i].recipe.image}" alt="recipeimg">
+                </div>
             <br>
-           <div class="name">${recipes[i].recipe.label}</div>
-           <br>
-            <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
-           </div>
-           <br> <hr> <br> `
+                <div class="col-md-6">
+                  <div class="name">${recipes[i].recipe.label}</div>
+            <br>
+                  <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
+                </div>
+            </div>
+            <br> <hr> <br>`
         }
       })
     } else {
@@ -576,16 +662,19 @@ window.onload = () => {
         container.innerHTML = ""
         for (let i = 0; i < recipes.length; i++) { // foreach?
           container.innerHTML +=
-            `<div class="recipe-info">
-            <div class="img">
-              <img src="${recipes[i].recipe.image}" alt="recipeimg">
-            </div>
+            `<div class = "container">
+              <div class="row recipe-info"> 
+                <div class="col-md-4 img">
+                    <img src="${recipes[i].recipe.image}" alt="recipeimg">
+                </div>
             <br>
-      <div class="name">${recipes[i].recipe.label}</div>
-      <br>
-       <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
-      </div>
-      <br> <hr> <br> `
+                <div class="col-md-6">
+                  <div class="name">${recipes[i].recipe.label}</div>
+            <br>
+                  <div class="url"><a href = "${recipes[i].recipe.url}"> See the full recipe </a></div>
+                </div>
+            </div>
+            <br> <hr> <br>`
         }
       })
     }
