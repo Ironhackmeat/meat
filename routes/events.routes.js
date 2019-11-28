@@ -9,19 +9,37 @@ const {
 	ensureLoggedIn
 } = require('connect-ensure-login');
 
+// -------------------------- EVENT DELETE --------------------------- //
 
-// Check if we are using it
+router.get('/delete/:id', (req, res, next) => {
+	Event.remove({id: req.params.id }, function (error) {
+		if (error) {
+			next(error);
+		} else {
+			res.redirect('/event/show');
+		}
+	});
+});
 
+// -------------------------- EVENT DETAILS --------------------------- //
+router.get("/:id", ensureLoggedIn("/auth/login"), (req, res) => {
+	Event.findById(req.params.id)
+		.populate("host")
+		.populate('guests')
+		.then(theEvent => {
+			res.render("events/details", {
+				event: theEvent
+			});
+		})
+		.catch(err => console.log(err));
+});
 
-router.get('/search', (req, res) => res.render('events/search'))
+// -------------------------- EVENT SHOW  --------------------------- //
 
 router.get('/show', (req, res) => res.render('events/show'))
 
-// Creat an event => Get the view. You can only creat an event if you are logged in
-
+// -------------------------- EVENT CREATE --------------------------- //
 router.get('/create', ensureLoggedIn("/auth/login"), (req, res) => res.render('events/create'))
-
-// Send the data to the DB 
 
 router.post("/create", (req, res) => {
 	const {
@@ -67,7 +85,7 @@ router.post("/create", (req, res) => {
 		.catch(err => console.log(err));
 });
 
-// Send email to accept the request.
+// -------------------------- CONFIRMATION EMAIL--------------------------- //
 
 router.get('/email/:id', (req, res) => {
 
@@ -88,10 +106,10 @@ router.get('/email/:id', (req, res) => {
 		})
 })
 
-// We need to push the guest to the event and the event to the guest, checking if they have been alread pushed.
+
+// -------------------------- PUSH EVENTS TO GUESTS & VICE VERSA --------------------------- //
 
 router.get(`/lala`, (req, res) => res.render("events/confirm"))
-
 
 
 		
@@ -154,8 +172,7 @@ router.get(`/confirm`, (req, res) => {
 
 })
 
-
-// The data we'll use for the Map 
+// ---------------------------------------- API ------------------------------------ //
 
 router.get('/api', (req, res, next) => {
 	Event.find()
@@ -181,38 +198,5 @@ router.get('/api/:id', (req, res, next) => {
 		}
 	});
 });
-
-// You have to be logged in to see the details of the event
-
-router.get("/:id", ensureLoggedIn("/auth/login"), (req, res) => {
-	Event.findById(req.params.id)
-		.populate("host")
-		.populate('guests')
-		.then(theEvent => {
-			res.render("events/details", {
-				event: theEvent
-			});
-		})
-		.catch(err => console.log(err));
-});
-
-
-
-
-// // DELETE => remove the restaurant from the DB
-// router.get('/:place_id/delete', (req, res, next) => {
-// 	Place.remove({ _id: req.params.place_id }, function (error, place) {
-// 		if (error) {
-// 			next(error);
-// 		} else {
-// 			res.redirect('/places');
-// 		}
-// 	});
-// });
-
-
-
-
-
 
 module.exports = router 
