@@ -1,12 +1,27 @@
 /* ------------------------ general styles ---------------------- */
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-
 }
 
 a {
   color: black;
 }
+
+
+/*---NAVBAR SETTINGS---*/
+.navbar-logo{
+  width: 150px;
+  height:40px;
+}
+
+nav {
+  background: #e24a00;
+}
+
+nav a {
+    color: white;
+}
+
 
 
 /* ------------------------------ index --------------------------- */
@@ -38,16 +53,18 @@ video {
 
 /* ------------------------------- maps -----------------------------*/
 
-
+/*# sourceMappingURL=style.css.map */
 #map {
-  height: 50vh;
-  width: 80vw;
+  height: 60vh;
+  width: 60vw;
 }
 
 #onemap {
   height: 90vh;
   width: 45vw;
 }
+
+
 
 /*-------------------------- RATING --------------------*/
 .star-rating__stars {
@@ -107,12 +124,3 @@ video {
 .star-rating__label:hover~.star-rating__label {
   background-image: url("../images/off-star.png");
 }
-
-/* .star-rating__input:focus~.star-rating__focus {
-  position: absolute;
-  top: -.25em;
-  right: -.25em;
-  bottom: -.25em;
-  left: -.25em;
-  outline: 0.25rem solid lightblue;
-} */
