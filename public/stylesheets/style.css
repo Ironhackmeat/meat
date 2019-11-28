@@ -30,7 +30,6 @@ h1 {
 
 nav {
   background: #e24a00;
-  margin-bottom: 25px;
 }
 
 nav a {
@@ -38,7 +37,7 @@ nav a {
 }
 
 nav a:hover {
-  color:white;  
+  color: white;
 }
 
 
@@ -77,19 +76,41 @@ nav a:hover {
   box-shadow: 3px 3px 25px rgb(84, 83, 82);
 }
 
-
-
-
 /* ------------------------------ index --------------------------- */
 
 video {
   width: 100vw;
-  height: 70vh;
-
+  height: 60vh;
   object-fit: cover;
   z-index: -100;
 }
 
+.text-align {
+  color: rgb(84, 83, 82);
+  text-align: justify;
+}
+
+.text-align h3 {
+  color: #e24a00;
+  text-transform: uppercase;
+}
+
+.index-h2 {
+  text-transform: uppercase;
+  text-align: center;
+  position: absolute;
+  margin-top: 50vh;
+}
+
+.index-h2 h2 {
+  font-size: 50px;
+  color: white;
+  text-shadow: 3px 3px 10px rgb(84, 83, 82);
+  position: relative;
+  z-index: 100;
+}
+
+/* ------------------------------ signup --------------------------- */
 /* ------------------------------ signup + Login --------------------------- */
 
 .background {
@@ -99,7 +120,7 @@ video {
 
 .box {
   margin-top: 20px;
-  box-shadow: black 3px 3px 15px;
+  box-shadow: black 2px 20px 15px;
 
 }
 
@@ -108,8 +129,9 @@ video {
   margin-left: 220px;
   margin-right: 200px;
 }
+
 .padding-login {
-margin-bottom: 70px;
+  margin-bottom: 70px;
 }
 
 .signup-title {
@@ -134,19 +156,19 @@ margin-bottom: 70px;
   border-radius: 10%;
   color: white;
 }
-
 .error-message {
   font-weight: bolder;
   font-size: 20px;
   padding: 15px;
- 
-  color:#e24a00;
+  color: #e24a00;
 }
+
 .login-button {
   margin: 0 auto;
   padding-left: 50px;
-    padding-right: 50px;
+  padding-right: 50px;
 }
+
 .auth-center {
   text-align: center;
 }
@@ -155,7 +177,9 @@ margin-bottom: 70px;
 
 .profile-box {
   padding: 10px;
-  border: 2px solid black;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: black 2px 20px 15px;
 }
 
 .img-div {
@@ -165,7 +189,13 @@ margin-bottom: 70px;
 }
 
 .box-profile {
-  margin-top: 50px
+  margin-top: 15px
+}
+
+.bg-profile {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
 }
 
 /* ------------------------------- maps -----------------------------*/
@@ -199,16 +229,16 @@ margin-bottom: 70px;
 /*-------------------------- RATING --------------------*/
 .star-rating__stars {
   position: relative;
-  height: 2.5rem;
-  width: 12.5rem;
+  height: 2rem;
+  width: 12rem;
   background: url("../images/off-star.png");
-  background-size: 2.5rem 2.5rem;
+  background-size: 2rem 2rem;
 }
 
 .star-rating__label {
   position: absolute;
   height: 100%;
-  background-size: 2.5rem 2.5rem;
+  background-size: 2rem 2rem;
 }
 
 .star-rating__input {
@@ -299,7 +329,7 @@ margin-bottom: 70px;
   margin-top: 5%
 }
 
-.request-container h1{
+.request-container h1 {
   text-align: center;
   color: #E24A00;
   text-transform: uppercase;
@@ -329,7 +359,7 @@ margin-bottom: 70px;
   margin-top: 5%
 }
 
-.confirm-container h1{
+.confirm-container h1 {
   text-align: center;
   color: #E24A00;
   text-transform: uppercase;
@@ -353,6 +383,7 @@ margin-bottom: 70px;
 
 }
 
+<<<<<<< HEAD
 
 /* CREATE EVENT */
 
@@ -366,3 +397,5 @@ margin-bottom: 70px;
   padding: 5px;
   border-radius: 5%;
 }
+=======
+>>>>>>> 0ee04847e7115e47227270d6821c3ba45bae27ac
