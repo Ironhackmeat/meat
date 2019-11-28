@@ -1,3 +1,4 @@
+/* ------------------------ general styles ---------------------- */
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 
@@ -23,7 +24,25 @@ nav a {
 }
 
 
-/*---PROFILE VIEW---*/
+
+/* ------------------------------ index --------------------------- */
+
+video {
+  position: fixed;
+
+  top: 40%;
+  left: 50%;
+
+  width: 100vw;
+  height: 70vh;
+  overflow: hidden;
+  object-fit: cover;
+  z-index: -100;
+  transform: translate(-50%, -50%);
+}
+
+/* ----------------------------- profile ------------------------- */
+
 .profile-box {
   padding: 10px;
   border: 2px solid black;
@@ -39,20 +58,22 @@ nav a {
   margin-top: 50px
 }
 
+/* ------------------------------- maps -----------------------------*/
 
-/*---DRAW MAP---*/
 /*# sourceMappingURL=style.css.map */
 #map {
   height: 50vh;
   width: 80vw;
 }
+
 #onemap {
   height: 90vh;
   width: 45vw;
 }
 
 
-/*---START RATING---*/
+
+/*-------------------------- RATING --------------------*/
 .star-rating__stars {
   position: relative;
   height: 2.5rem;

@@ -7,7 +7,7 @@
         <h1 style="font-weight: 100">{{this.name}}</h1>
         <br>
         <p>
-        
+
           {{this.host.username}} is hosting this {{this.type}}. <br>
           <a href="/profile/{{this.host._id}}">Check out their profile!</a>
 
@@ -37,12 +37,15 @@
         <p><strong>Address:</strong> {{this.address}}</p>
         <br>
         <p><strong>Number of guests:</strong> {{this.forks}}</p>
-        
+
+        <strong>Guests' Profiles: </strong>
+
         {{#each this.guests}}
 
-        <p> <strong>Guests: </strong><a href="/profile/{{this._id}}">{{this.username}}, </a></p>
+        <span><a href="/profile/{{this._id}}">{{this.username}}, </a></span>
+
         {{/each}}
-        
+        <br><br>
 
         <p>Like this event?<a href="/events/email/{{_id}}" id="sendMail">Send an event request!</a></h4>
 
