@@ -1,6 +1,4 @@
-<script src="/javascripts/uploadbutton.js"></script>
-
-<div class="box card container background" style="width: 65rem">
+<div class="box card container background" style="width: 68rem">
   <div class="card-body margin">
     <h2 class="card-title signup-title">Signup</h2>
 
@@ -9,31 +7,27 @@
       <section class="singup-form">
         <div class="form-group">
           <label for="username">Username</label>
-          <input name="username" type="text" class="form-control" id="username" placeholder="Enter E-mail">
+          <input name="username" type="text" class="form-control" id="username" placeholder="Username">
         </div>
 
         <div class="form-group">
           <label for="email">E-mail</label>
-          <input name="email" type="email" class="form-control" id="email" placeholder="Enter Username">
+          <input name="email" type="email" class="form-control" id="email" placeholder="E-mail">
         </div>
 
         <div class="form-group">
           <label for="password">Password</label>
           <input name="password" type="password" class="form-control" id="password" placeholder="Password">
         </div>
+
+
         {{!----------------------- pic upload ---------------------}}
         <div class="input-group mb-3">
           <div class="custom-file">
             <input type="file" class="custom-file-input" id="inputGroupFile02" />
             <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
           </div>
-<script>
-  $('#inputGroupFile02').on('change', function () {
-    var fileName = $(this).val();
-    $(this).next('.custom-file-label').html(fileName);
-  })
-  
-</script>
+
         </div>
 
         <br>
@@ -78,14 +72,15 @@
           </section>
         </div>
 
-        <br><br>
+        <br>
 
         <div class="col-md-6">
+
           {{#if message }}
           <div class="error-message">{{ message }}</div>
           {{/if}}
-
-          <button class="create-account">Create account</button>
+          <br>
+          <button class="create-account">Create Account</button>
           <br><br>
     </form>
 
@@ -98,3 +93,4 @@
 </div>
 </div>
 </div>
+<script src="/javascripts/uploadbutton.js"></script>

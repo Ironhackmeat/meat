@@ -81,7 +81,7 @@ video {
   z-index: -100;
 }
 
-/* ------------------------------ signup --------------------------- */
+/* ------------------------------ signup + Login --------------------------- */
 
 .background {
   background: url(https://res.cloudinary.com/darzjo72b/image/upload/v1574952064/meat/jakub-kapusnak-sDbj1dFlFPU-unsplash_sm1ahn.jpg);
@@ -90,14 +90,17 @@ video {
 
 .box {
   margin-top: 20px;
-  box-shadow: black 2px 20px 15px;
+  box-shadow: black 3px 3px 15px;
 
 }
 
 .margin {
   margin-top: 80px;
-  margin-left: 210px;
+  margin-left: 220px;
   margin-right: 200px;
+}
+.padding-login {
+margin-bottom: 70px;
 }
 
 .signup-title {
@@ -105,9 +108,9 @@ video {
 }
 
 .checkbox-signup {
- background: rgba(255, 255, 255, 0.7);
- padding: 10px;
- border-radius: 10%;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 10px;
+  border-radius: 10%;
 }
 
 .singup-form label {
@@ -121,7 +124,22 @@ video {
   border: #e24a00;
   border-radius: 10%;
   color: white;
+}
 
+.error-message {
+  font-weight: bolder;
+  font-size: 20px;
+  padding: 15px;
+ 
+  color:#e24a00;
+}
+.login-button {
+  margin: 0 auto;
+  padding-left: 50px;
+    padding-right: 50px;
+}
+.auth-center {
+  text-align: center;
 }
 
 /* ----------------------------- profile ------------------------- */
