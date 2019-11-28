@@ -31,12 +31,6 @@ nav a {
   color: white;
 }
 
-.signup-title {
-  display: inline-block;
-  background: rgba(0, 0, 0, .5);
-  ;
-  text-align: center;
-}
 
 /*---RECIPES SEARCH---*/
 
@@ -68,17 +62,31 @@ video {
 /* ------------------------------ signup --------------------------- */
 
 .background {
-  background: url(https://res.cloudinary.com/darzjo72b/image/upload/v1574952051/meat/brooke-lark-C1fMH2Vej8A-unsplash_focx55.jpg);
+  background: url(https://res.cloudinary.com/darzjo72b/image/upload/v1574952064/meat/jakub-kapusnak-sDbj1dFlFPU-unsplash_sm1ahn.jpg);
   background-size: cover;
 }
 
 .box {
   margin-top: 20px;
-  box-shadow: 8px 20px 10px gray
+  box-shadow: black 2px 20px 15px;
+  
 }
 
+.margin {
+  margin-top: 80px;
+  margin-left: 210px;
+  margin-right: 200px;
+}
 
+.signup-title {
+  text-align: center;
+}
+.checkbox-signup {
+  text-align: center;
+}
+.img-signup {
 
+}
 /* ----------------------------- profile ------------------------- */
 
 .profile-box {
