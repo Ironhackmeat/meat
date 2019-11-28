@@ -19,10 +19,18 @@ function geocodeAddress(geocoder, events, resultsMap) {
     }, function (results, status) {
       if (status === 'OK') {
         resultsMap.setCenter(results[0].geometry.location);
+        
+        var image = {
+        url: "https://res.cloudinary.com/darzjo72b/image/upload/v1574945951/meat/rojo_gqgjjw.png",
+        scaledSize: new google.maps.Size(20, 100),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(0, 0)
+      }
+
         var marker = new google.maps.Marker({
           map: resultsMap,
-          position: results[0].geometry.location
-
+          position: results[0].geometry.location,
+          icon: image
         });
       }
       var contentString = '<h2>' + elm.name + '</h2>' + '<br>' + '<span>This event is a</span>' + '<span>  ' + elm.type + '</span>' + '<span>!!!</span>' + '<br><br>' + '<p>Check for more details</p>' + '<a href="/events/' + elm._id + '">here</a>'
@@ -44,11 +52,13 @@ var map;
 
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 11,
+    zoom: 14,
     center: {
       lat: 40.416665, 
       lng: -3.703677
-    }
+    },
+    styles: mapStyles.orange
+
   });
   var geocoder = new google.maps.Geocoder();
 

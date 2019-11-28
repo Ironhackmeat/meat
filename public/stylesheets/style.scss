@@ -1,3 +1,6 @@
+//WISHES: Quitar el azul de los logos y que sea negrita o algo.
+
+
 /* ------------------------ general styles ---------------------- */
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -34,13 +37,23 @@ a {
 
 
 #map {
-  height: 60vh;
-  width: 60vw;
-
+  height: 100vh;
+  width: 100vw;
+  position: absolute; 
+  top: 0; 
+  bottom: 0; 
+  left: 0; 
+  right: 0;
+  margin-bottom: 0
 }
 
 #onemap {
-  height: 90vh;
+  height: 100%;
+  width: 45vw;
+}
+
+#createmap {
+  height: 100%;
   width: 45vw;
 }
 
@@ -111,3 +124,28 @@ a {
   left: -.25em;
   outline: 0.25rem solid lightblue;
 } */
+
+
+/*-------------------------- EVENTS DETAILS --------------------*/
+
+.details-container {
+  margin-top: 5%
+}
+
+.details-container h1 {
+  color: #E24A00;
+  font-size: 2.5rem;
+  text-transform: uppercase
+}
+
+/*-------------------------- CREATE DETAILS --------------------*/
+
+.create-container {
+  margin-top: 5%
+}
+
+.create-container h1 {
+  color: #E24A00;
+  font-size: 2.5rem;
+  text-transform: uppercase
+}

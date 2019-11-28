@@ -1,10 +1,10 @@
-<div class="container">
+<div class="container details-container">
   <div class="row">
 
     <div class="col-md-6">
       {{#with event}}
-      <div id='eventWrapper' eventId={{this._id}} style="margin-left: 20px">
-        <h1 style="font-weight: 100">{{this.name}}</h1>
+      <div id='eventWrapper' eventId={{this._id}} >
+        <h1>{{this.name}}</h1>
         <br>
         <p>
 
@@ -63,7 +63,8 @@
 </div>
 
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 <script src="/javascripts/onemap.js"></script>
-<script src="/javascripts/nodemailer.js"></script>
+<script src="/javascripts/mapstyle.js"></script>
 <script
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDG88rK2sVwRDbZIJautuIZpNt32kAQpSU&callback=initMap"></script>
