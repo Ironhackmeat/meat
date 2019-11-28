@@ -1,3 +1,5 @@
+
+
 const express = require('express');
 const router = express.Router();
 const Event = require('../models/Event.model');
@@ -8,13 +10,11 @@ const {
 } = require('connect-ensure-login');
 
 
-
+// Check if we are using it
 
 router.get('/search', (req, res) => res.render('events/search'))
 
 router.get('/show', (req, res) => res.render('events/show'))
-
-
 
 // Creat an event => Get the view. You can only creat an event if you are logged in
 
@@ -66,14 +66,8 @@ router.post("/create", (req, res) => {
 		.catch(err => console.log(err));
 });
 
+// Send email to accept the request.
 
-
-
-
-
-
-
-router.get('/email/:id',  (req, res) => {
 router.get('/email/:id', (req, res) => {
 
 	Event.findById(req.params.id)
@@ -91,11 +85,11 @@ router.get('/email/:id', (req, res) => {
 		})
 })
 
-
+// We need to push the guest to the event and the event to the guest, checking if they have been alread pushed.
 
 		
 router.get(`/confirm`, (req, res) => {
-	console.log('I did enter bitches')
+
 	let eventId = req.query.host
 
 	//Primera promesa, os la estudiais mamones. La guardas en una variable
@@ -119,6 +113,7 @@ router.get(`/confirm`, (req, res) => {
 	console.log(eventId)
 	
 	//Lo mismo. Las dos en un array, estudiad el promise all.
+
 	Event.findOne({
 			_id: eventId
 		})
@@ -143,30 +138,9 @@ router.get(`/confirm`, (req, res) => {
 		.catch(err => console.log(err));
 
 })
-})
 
 
-// router.get('/route', (req, res, next) => {
-
-// 	if(event.guests.includes(req.user)) => show message ("already accepted")
-// 	else push to an array in mongoose
-
-
-// });
-
-/*
-
-comprobar si el user esta ya en el evento (user, events.guest)
-				si está redirigir a OK
-				si no
-						guardar en evento, el guest.
-				
-*/
-
-
-
-
-
+// The data we'll use for the Map 
 
 router.get('/api', (req, res, next) => {
 	Event.find()
@@ -192,6 +166,8 @@ router.get('/api/:id', (req, res, next) => {
 		}
 	});
 });
+
+// You have to be logged in to see the details of the event
 
 router.get("/:id", ensureLoggedIn("/auth/login"), (req, res) => {
 	Event.findById(req.params.id)

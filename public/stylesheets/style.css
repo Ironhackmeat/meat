@@ -1,6 +1,5 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-
 }
 
 a {
@@ -22,12 +21,11 @@ a {
   margin-top: 50px
 }
 
-/*# sourceMappingURL=style.css.map */
-
 #map {
-  height: 50vh;
-  width: 80vw;
+  height: 60vh;
+  width: 60vw;
 }
+
 #onemap {
   height: 90vh;
   width: 45vw;
