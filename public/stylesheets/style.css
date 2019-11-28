@@ -7,6 +7,23 @@ a {
   color: black;
 }
 
+
+/*---NAVBAR SETTINGS---*/
+.navbar-logo{
+  width: 150px;
+  height:40px;
+}
+
+nav {
+  background: #e24a00;
+}
+
+nav a {
+    color: white;
+}
+
+
+/*---PROFILE VIEW---*/
 .profile-box {
   padding: 10px;
   border: 2px solid black;
@@ -22,8 +39,9 @@ a {
   margin-top: 50px
 }
 
-/*# sourceMappingURL=style.css.map */
 
+/*---DRAW MAP---*/
+/*# sourceMappingURL=style.css.map */
 #map {
   height: 50vh;
   width: 80vw;
@@ -33,7 +51,8 @@ a {
   width: 45vw;
 }
 
-/*---RATING---*/
+
+/*---START RATING---*/
 .star-rating__stars {
   position: relative;
   height: 2.5rem;
@@ -91,12 +110,3 @@ a {
 .star-rating__label:hover~.star-rating__label {
   background-image: url("../images/off-star.png");
 }
-
-/* .star-rating__input:focus~.star-rating__focus {
-  position: absolute;
-  top: -.25em;
-  right: -.25em;
-  bottom: -.25em;
-  left: -.25em;
-  outline: 0.25rem solid lightblue;
-} */
