@@ -4,8 +4,8 @@ class APIHandler {
   }
 
   // -------------------- FILTERING BY CHECKBOXES -------------------------------//
- 
-  // getFilter(query, []) {
+
+  // getFilter(query = "", ...rest) {
   //   return axios.get(this.BASE_URL + `q=${query}&app_id=edb96150&app_key=8a70cb8c5186d89d4e451e5f99236bb3&from=0&to=100`)
   //  .then(response => response.data.hits)
   // }

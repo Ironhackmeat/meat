@@ -2,8 +2,11 @@ window.onload = () => {
   const edamamAPI = new APIHandler("https://api.edamam.com/search?")
   const container = document.getElementsByClassName("recipe-container")[0]
 
+  const query = query
   const check = [vegetarian, vegan, glutenFree]
 
+  onclick => APIHandler(query, )
+  
   // ------------------ filtering by checkboxes --------------------------//
   
   check.forEach((elm) => {

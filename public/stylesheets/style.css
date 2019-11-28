@@ -32,6 +32,12 @@ nav a {
   color: white;
 }
 
+.signup-title {
+  display: inline-block;
+  background: rgba(0, 0, 0, .5);
+  ;
+  text-align: center;
+}
 
 /*---RECIPES SEARCH---*/
 
@@ -84,10 +90,15 @@ video {
 /* ------------------------------ signup --------------------------- */
 
 .background {
-  background: url(https://res.cloudinary.com/darzjo72b/image/upload/v1574944609/meat/tomato2_dzpahx.jpg);
+  background: url(https://res.cloudinary.com/darzjo72b/image/upload/v1574952051/meat/brooke-lark-C1fMH2Vej8A-unsplash_focx55.jpg);
   background-size: cover;
-
 }
+
+.box {
+  margin-top: 20px;
+  box-shadow: 8px 20px 10px gray
+}
+
 
 
 /* ----------------------------- profile ------------------------- */
