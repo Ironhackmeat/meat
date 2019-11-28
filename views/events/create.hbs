@@ -1,20 +1,29 @@
+<div class="box card container create-background" style="width: 68rem">
+
 
 <div class="container create-container">
 
-  <div class="row">
-
-    <div class="col-ml-6">
-
       <h1>Want to host an event? </h1>
+
+  <div class="row justify-content">
+
+
 
       <form action="/events/create" method="POST" id="form-container">
         <label for="name">Name</label>
         <input id="name" type="text" name="name" placeholder="Name of the event">
 
-        <br><br>
 
         <label for="description">Description</label>
         <input id="description" type="text" name="description" placeholder="Keywords to search">
+            <br><br>
+
+  </div>
+
+    <div class="row">
+
+    <div class="col-md-6">
+
 
         <br><br>
 
@@ -57,6 +66,11 @@
         <input value="true" id="nuts" type="checkbox" name="nuts">
 
         <br><br>
+
+          </div>
+
+
+  </div>
 
         <label for="date">Date of the event</label>
         <input id="date" type="date" name="date">
