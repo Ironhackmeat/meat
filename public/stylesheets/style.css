@@ -156,6 +156,22 @@ video {
   border-radius: 10%;
   color: white;
 }
+.error-message {
+  font-weight: bolder;
+  font-size: 20px;
+  padding: 15px;
+  color: #e24a00;
+}
+
+.login-button {
+  margin: 0 auto;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.auth-center {
+  text-align: center;
+}
 
 /* ----------------------------- profile ------------------------- */
 
