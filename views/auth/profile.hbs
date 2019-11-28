@@ -1,3 +1,4 @@
+<img class="bg-profile" src="https://res.cloudinary.com/darzjo72b/image/upload/v1574942714/meat/tomato_urxxat.jpg" alt="">
 <div class="container box-profile">
   <div class="row justify-content-center">
     <div class="col-md-3 profile-box">
@@ -37,7 +38,6 @@
           <div class="star-rating__focus"></div>
         </div>
       </fieldset>
-      <br>
       <hr>
       <strong>Dietry especs:</strong>
       <br>
@@ -62,9 +62,8 @@
       -Nut Allergy
       {{/if}}
       <br>
-      <br>
       <hr>
-      <button><a href="/auth/profile/edit">Edit</a></button>
+      <button class="login-button"><a href="/auth/profile/edit">Edit</a></button>
     </div>
     <div class="col-md-1"></div>
     <div class="col-md-4">
@@ -76,7 +75,7 @@
     <div class="col-md-4">
       <h2>Activity</h2>
       {{#each this.events}}
-      <li>Has asistido al evento: <strong><a href="/events/{{this._id}}">{{this.name}}</a></strong></li>
+      <li>You request an Event: <strong><a href="/events/{{this._id}}">{{this.name}}</a></strong></li>
       {{/each}}
       {{/with}}
     </div>
