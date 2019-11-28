@@ -12,6 +12,7 @@ const {
 
 // Check if we are using it
 
+
 router.get('/search', (req, res) => res.render('events/search'))
 
 router.get('/show', (req, res) => res.render('events/show'))
@@ -74,7 +75,7 @@ router.get('/email/:id', (req, res) => {
 		.populate("host")
 		.then(theEvent => {
 			let token = "popino"
-
+			
 			mailer.sendMail({
 				from: '"M\'EAT 👻" request@meat-app.com',
 				to: `${theEvent.host.email}`, //El email del Host que va a celebrar el event
@@ -82,10 +83,16 @@ router.get('/email/:id', (req, res) => {
 				text: `http://localhost:3000/events/confirm?host=${theEvent._id}&guestID=${req.user._id}`,
 				html: `<b>http://localhost:3000/events/confirm?host=${theEvent._id}&guestID=${req.user._id}</b>`
 			})
+			.then(x => res.render("events/requested"))
+			.catch(err => console.log(err))
 		})
 })
 
 // We need to push the guest to the event and the event to the guest, checking if they have been alread pushed.
+
+router.get(`/lala`, (req, res) => res.render("events/confirm"))
+
+
 
 		
 router.get(`/confirm`, (req, res) => {
@@ -93,6 +100,8 @@ router.get(`/confirm`, (req, res) => {
 	let eventId = req.query.host
 
 	//Primera promesa, os la estudiais mamones. La guardas en una variable
+	let firstFind =
+	
 	User.findOneAndUpdate({
 			$and: [{
 				_id: req.user._id
@@ -114,6 +123,7 @@ router.get(`/confirm`, (req, res) => {
 	
 	//Lo mismo. Las dos en un array, estudiad el promise all.
 
+	let secondFind =
 	Event.findOne({
 			_id: eventId
 		})
@@ -136,6 +146,11 @@ router.get(`/confirm`, (req, res) => {
 
 		})
 		.catch(err => console.log(err));
+
+		Promise.all([firstFind, secondFind])
+   .then( x => res.render('events/confirm'), {user:req.user})
+   .catch(err => console.log(err))
+
 
 })
 
