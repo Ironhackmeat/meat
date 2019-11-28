@@ -1,14 +1,11 @@
 
-<div class="container">
+<div class="container create-container">
 
   <div class="row">
 
     <div class="col-ml-6">
 
-              <br><br>
-
-
-      <h2>Tu próximo evento está muy cerca. Sólo tienes que crearlo :-)</h2>
+      <h1>Want to host an event? </h1>
 
       <form action="/events/create" method="POST" id="form-container">
         <label for="name">Name</label>
@@ -96,11 +93,6 @@
 
     </div>
 
-    <div class="col-ml-6">
-
-          <figure id="map"></figure>
-    </div>
-
   </div>
 
 
@@ -111,6 +103,7 @@
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 <script src="/javascripts/listmap.js"></script>
+<script src="/javascripts/mapstyle.js"></script>
 
 <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDG88rK2sVwRDbZIJautuIZpNt32kAQpSU&callback=initMap"></script>

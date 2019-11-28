@@ -1,12 +1,20 @@
+/* ORANGE: #f37a00
+RED: #e24a00
+YELLOW: #feb100 */
+
 /* ------------------------ general styles ---------------------- */
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: rgb(84, 83, 82)
 }
-
 a {
   color: black;
 }
 
+h1{
+  text-transform: uppercase;
+  color: #e24a00;
+}
 
 /*---NAVBAR SETTINGS---*/
 .navbar-logo {
@@ -16,6 +24,7 @@ a {
 
 nav {
   background: #e24a00;
+  margin-bottom: 25px;
 }
 
 nav a {
@@ -27,6 +36,22 @@ nav a {
   background: rgba(0, 0, 0, .5);
   ;
   text-align: center;
+}
+
+/*---RECIPES SEARCH---*/
+
+.filter-box {
+  background-color: #cbc1be;
+  box-shadow: 3px 3px 25px black;
+  padding: 25px;
+  position: fixed;
+  margin-left: 900px;
+  border-radius: 25px;
+}
+
+.recipe-filter p {
+  text-align: center;
+  font-size: 16px;
 }
 
 
@@ -75,14 +100,26 @@ video {
 
 /*# sourceMappingURL=style.css.map */
 #map {
-  height: 60vh;
-  width: 60vw;
+  height: 100vh;
+  width: 100vw;
+  position: absolute; 
+  top: 0; 
+  bottom: 0; 
+  left: 0; 
+  right: 0;
+  margin-bottom: 0
 }
 
 #onemap {
-  height: 90vh;
-  width: 45vw;
+  height: 100%;
+  width: 100%;
 }
+
+#createmap {
+  height: 100%;
+  width: 100%;
+}
+
 
 
 
@@ -143,4 +180,29 @@ video {
 
 .star-rating__label:hover~.star-rating__label {
   background-image: url("../images/off-star.png");
+}
+
+
+/*-------------------------- EVENTS DETAILS --------------------*/
+
+.details-container {
+  margin-top: 5%
+}
+
+.details-container h1 {
+  color: #E24A00;
+  font-size: 2.5rem;
+  text-transform: uppercase
+}
+
+/*-------------------------- CREATE DETAILS --------------------*/
+
+.create-container {
+  margin-top: 5%
+}
+
+.create-container h1 {
+  color: #E24A00;
+  font-size: 2.5rem;
+  text-transform: uppercase
 }
