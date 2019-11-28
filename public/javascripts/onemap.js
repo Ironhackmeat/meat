@@ -1,10 +1,3 @@
-function getEvent(geocoder, map) {
-  axios.get("/events/api/:id")
-    .then(response =>
-      geocodeAddress(geocoder, response.data.events, map))
-    .catch(error => console.log(error))
-}
-
 function initMap() {
   var map = new google.maps.Map(document.getElementById('onemap'), {
     zoom: 11,
@@ -15,6 +8,14 @@ function initMap() {
   })
   var geocoder = new google.maps.Geocoder();
   getEvent(geocoder, map)
+}
+
+function getEvent(geocoder, map) {
+  let eventId = document.getElementById('eventWrapper').getAttribute('eventId')
+  axios.get(`/events/api/${eventId}`)
+    .then(response =>
+      geocodeAddress(geocoder, response.data.event, map))
+    .catch(error => console.log(error))
 }
 
 function geocodeAddress(geocoder, event, resultsMap) {

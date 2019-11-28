@@ -5,6 +5,7 @@ const multer = require('multer')
 const uploadCloud = require('../configs/cloudinary.config');
 const {
   ensureLoggedIn,
+  ensureLoggedOut,
 
 } = require('connect-ensure-login');
 const User = require("../models/User.model");
@@ -28,7 +29,7 @@ router.post("/login", passport.authenticate("local", {
 }));
 
 //---SIGNUP---//
-router.get("/signup", (req, res, next) => res.render("auth/signup"))
+router.get("/signup", ensureLoggedOut('/logout'), (req, res, next) => res.render("auth/signup"))
 
 router.post("/signup", uploadCloud.single('imgFile'), (req, res, next) => {
   console.log(req.body)

@@ -9,6 +9,7 @@ const {
 
 
 
+
 router.get('/search', (req, res) => res.render('events/search'))
 
 router.get('/show', (req, res) => res.render('events/show'))
@@ -73,21 +74,22 @@ router.post("/create", (req, res) => {
 
 
 router.get('/email/:id',  (req, res) => {
+router.get('/email/:id', (req, res) => {
 
 	Event.findById(req.params.id)
-	.populate("host")
-	.then(theEvent => {
-		let token = "popino"
+		.populate("host")
+		.then(theEvent => {
+			let token = "popino"
 
-		mailer.sendMail({
-					from: '"M\'EAT 👻" request@meat-app.com',
-					to: `${theEvent.host.email}`, //El email del Host que va a celebrar el event
-					subject: "New request for your event!!!",
-					text: `http://localhost:3000/events/confirm?host=${theEvent._id}&guestID=${req.user._id}`,
-					html: `<b>http://localhost:3000/events/confirm?host=${theEvent._id}&guestID=${req.user._id}</b>`
-				})
+			mailer.sendMail({
+				from: '"M\'EAT 👻" request@meat-app.com',
+				to: `${theEvent.host.email}`, //El email del Host que va a celebrar el event
+				subject: "New request for your event!!!",
+				text: `http://localhost:3000/events/confirm?host=${theEvent._id}&guestID=${req.user._id}`,
+				html: `<b>http://localhost:3000/events/confirm?host=${theEvent._id}&guestID=${req.user._id}</b>`
 			})
 		})
+})
 
 
 
@@ -96,37 +98,63 @@ router.get(`/confirm`, (req, res) => {
 	console.log('I did enter bitches')
 	let eventId = req.query.host
 
+	//Primera promesa, os la estudiais mamones. La guardas en una variable
+	User.findOneAndUpdate({
+			$and: [{
+				_id: req.user._id
+			}, {
+
+				events: {
+					$nin: eventId
+				}
+			}]
+		}, {
+			$push: {
+				events: eventId
+			}
+		})
+		.then(userUpdated => console.log(userUpdated))
+		.catch(err => console.log('seguro que la he cagao', err))
+	// findOneAndUpdate(conditions, update, options, (error, doc) => {
 	console.log(eventId)
-	Event.findOne({_id: eventId})
-		.then( elm => {
+	
+	//Lo mismo. Las dos en un array, estudiad el promise all.
+	Event.findOne({
+			_id: eventId
+		})
+		.then(elm => {
 			let newArr = elm.guests
 
 			newArr.includes(req.user._id) ? null : newArr.push(req.user._id)
 			console.log(newArr)
-			Event.update({_id: eventId} , {guests: newArr})
-			.then(info => {
-				console.log(info)
+			Event.update({
+					_id: eventId
+				}, {
+					guests: newArr
+				})
+				.then(info => {
+					console.log(info)
 
-				Event.findById(eventId).then(e => console.log(e))
-			})
-			.catch(err => console.log(err))			
+					Event.findById(eventId).then(e => console.log(e))
+				})
+				.catch(err => console.log(err))
 
-			})
+		})
+		.catch(err => console.log(err));
 
-	.catch(err => console.log(err));
-	
 })
-	
-
-	// router.get('/route', (req, res, next) => {
-
-	// 	if(event.guests.includes(req.user)) => show message ("already accepted")
-	// 	else push to an array in mongoose
+})
 
 
-	// });
+// router.get('/route', (req, res, next) => {
 
-	/*
+// 	if(event.guests.includes(req.user)) => show message ("already accepted")
+// 	else push to an array in mongoose
+
+
+// });
+
+/*
 
 comprobar si el user esta ya en el evento (user, events.guest)
 				si está redirigir a OK
@@ -136,7 +164,7 @@ comprobar si el user esta ya en el evento (user, events.guest)
 */
 
 
-	
+
 
 
 
@@ -150,9 +178,10 @@ router.get('/api', (req, res, next) => {
 
 router.get('/api/:id', (req, res, next) => {
 	let eventId = req.params.id;
+	console.log(eventId)
 	Event.findOne({
 		_id: eventId
-	
+
 	}, (error, oneEventFromDB) => {
 		if (error) {
 			next(error)
@@ -167,6 +196,7 @@ router.get('/api/:id', (req, res, next) => {
 router.get("/:id", ensureLoggedIn("/auth/login"), (req, res) => {
 	Event.findById(req.params.id)
 		.populate("host")
+		.populate('guests')
 		.then(theEvent => {
 			res.render("events/details", {
 				event: theEvent
@@ -189,9 +219,9 @@ router.get("/:id", ensureLoggedIn("/auth/login"), (req, res) => {
 // 	});
 // });
 
-	
 
 
 
 
-module.exports = router;
+
+module.exports = router 

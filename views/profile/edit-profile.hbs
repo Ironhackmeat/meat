@@ -1,0 +1,42 @@
+<h1>TESTEANDOOO ANDOOO</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <form action="/auth/profile/edit" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="field1">Profile Picture:</label>
+          <input type="file" id="photo" name="imgFile">
+        </div>
+        <div class="form-group">
+          <label for="field2">Email:</label>
+          <input type="text" class="form-control" id="field2" name="email" value="{{this.user.email}}">
+        </div>
+        <div class="form-group">
+          <label for="field3">About me:</label>
+          <input type="text" class="form-control" id="field3" name="bio" value="{{this.user.bio}}">
+        </div>
+        <label for="vegan">Vegan</label>
+        <input value="true" id="vegan" type="checkbox" name="vegan">
+        <br>
+        <label for="dairyFree">Dairy Free</label>
+        <input value="true" id="dairyFree" type="checkbox" name="dairyFree">
+        <br>
+        <label for="veg">Veg</label>
+        <input value="true" id="veg" type="checkbox" name="veg">
+        <br>
+        <label for="glutenFree">Gluten Free</label>
+        <input value="true" id="glutenFree" type="checkbox" name="glutenFree">
+        <br>
+        <label for="shellFishAllergy">Shellfish Allergy</label>
+        <input value="true" id="shellFishAllergy" type="checkbox" name="shellFishAllergy">
+        <br>
+        <label for="nutAllergy">Nuts Allergy</label>
+        <input value="true" id="nutAllergy" type="checkbox" name="nutAllergy">
+        <br>
+        <br>
+        <button type="submit" class="btn btn-dark">Edit Profile</button>
+      </form>
+    </div>
+  </div>
+</div>

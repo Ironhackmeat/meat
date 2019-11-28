@@ -3,10 +3,11 @@
 
     <div class="col-md-6">
       {{#with event}}
-      <div style="margin-left: 20px">
+      <div id='eventWrapper' eventId={{this._id}} style="margin-left: 20px">
         <h1 style="font-weight: 100">{{this.name}}</h1>
         <br>
         <p>
+        
           {{this.host.username}} is hosting this {{this.type}}. <br>
           <a href="/profile/{{this.host._id}}">Check out their profile!</a>
 
@@ -36,6 +37,12 @@
         <p><strong>Address:</strong> {{this.address}}</p>
         <br>
         <p><strong>Number of guests:</strong> {{this.forks}}</p>
+        
+        {{#each this.guests}}
+
+        <p> <strong>Guests: </strong><a href="/profile/{{this._id}}">{{this.username}}, </a></p>
+        {{/each}}
+        
 
         <p>Like this event?<a href="/events/email/{{_id}}" id="sendMail">Send an event request!</a></h4>
 
