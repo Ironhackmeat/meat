@@ -11,7 +11,6 @@ const app = express();
 require('./configs/debug.config')
 require('./configs/locals.config')(app)
 require('./configs/middlewares.config')(app)
-require('./configs/preprocessor.config')(app)
 
 //---HBS CONFIG---//
 hbs.registerHelper('ifUndefined', (value, options) => {
