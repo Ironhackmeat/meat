@@ -76,6 +76,15 @@ nav a:hover {
   box-shadow: 3px 3px 25px rgb(84, 83, 82);
 }
 
+.profile-font {
+  font-size: 16px;
+}
+
+.img-shadow {
+  box-shadow: 3px 3px 25px rgb(84, 83, 82);
+  margin-left: 10px;
+}
+
 /* ------------------------------ index --------------------------- */
 
 video {
@@ -178,14 +187,20 @@ video {
 .profile-box {
   padding: 10px;
   border-radius: 15px;
-  background: rgba(255, 255, 255, 0.7);
-  box-shadow: black 2px 20px 15px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: solid 3px #F37A00;
+}
+
+.profile-box h2 {
+  text-transform: uppercase;
+  color: #e24a00;
 }
 
 .img-div {
   width: 250px;
   height: 250px;
   border-radius: 250px;
+  margin-left: 5px;
 }
 
 .box-profile {
@@ -197,6 +212,16 @@ video {
   width: 100vw;
   height: 100vh;
 }
+
+.edit-button {
+  padding: 2.5px 50px;
+  background: #e24a00;
+  border: #e24a00;
+  border-radius: 10%;
+  color: white;
+  margin-left: 55px;
+}
+
 
 /* ------------------------------- maps -----------------------------*/
 
@@ -229,16 +254,16 @@ video {
 /*-------------------------- RATING --------------------*/
 .star-rating__stars {
   position: relative;
-  height: 2rem;
-  width: 12rem;
+  height: 2.5rem;
+  width: 12.5rem;
   background: url("../images/off-star.png");
-  background-size: 2rem 2rem;
+  background-size: 2.5rem 2.5rem;
 }
 
 .star-rating__label {
   position: absolute;
   height: 100%;
-  background-size: 2rem 2rem;
+  background-size: 2.5rem 2.5rem;
 }
 
 .star-rating__input {
