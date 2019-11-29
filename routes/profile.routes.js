@@ -7,7 +7,7 @@ router.get('/:id', (req, res) => {
   User.findById(req.params.id)
   .populate('events')
   .then(profile => res.render('profile/profile-public', {
-    profile: profile
+    profile
   }))
   		.catch(err => console.log(err));
   		})

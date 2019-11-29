@@ -241,10 +241,12 @@ video {
   margin-left: 55px;
 }
 
+.edit-button:hover {
+  color: white
+}
 
 /* ------------------------------- maps -----------------------------*/
 
-/*# sourceMappingURL=style.css.map */
 #map {
   height: 100vh;
   width: 100vw;
@@ -258,8 +260,8 @@ video {
 
 #onemap {
   height: 100%;
-  width: 100%;
-  box-shadow: black 2px 2px 15px;
+  width: 110%;
+  box-shadow: 1px 3px 5px rgb(84, 83, 82);
 }
 
 #createmap {
@@ -345,10 +347,6 @@ video {
 #details-username {
   font-size: 1.5em;
   text-transform: uppercase;
-}
-
-.details-container a:hover {
-  color: #E24A00
 }
 
 #button-details {
@@ -437,8 +435,6 @@ video {
   box-shadow: black 2px 2px 15px;
 
 }
-
-
 
 /* ------------------------------ CREATE EVENT ----------------------------------------- */
 .create-header {

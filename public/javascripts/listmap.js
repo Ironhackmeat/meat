@@ -22,7 +22,7 @@ function geocodeAddress(geocoder, events, resultsMap) {
         
         var image = {
         url: "https://res.cloudinary.com/darzjo72b/image/upload/v1574945951/meat/rojo_gqgjjw.png",
-        scaledSize: new google.maps.Size(20, 100),
+        scaledSize: new google.maps.Size(15, 80),
         origin: new google.maps.Point(0, 0),
         anchor: new google.maps.Point(0, 0)
       }

@@ -1,8 +1,9 @@
 <img class="bg-profile" src="https://res.cloudinary.com/darzjo72b/image/upload/v1574952060/meat/lauren-mancke-sil2Hx4iupI-unsplash_ypxgds.jpg" alt="">
+
 <div class="container box-profile">
   <div class="row justify-content-center">
     <div class="col-md-3 profile-box">
-      {{#with user}}
+      {{#with profile}}
       <img class="img-div" src="{{this.imgPath}}" alt="{{this.username}} photo">
       <br>
       <hr>
@@ -18,12 +19,12 @@
       "{{this.bio}}"
       <br>
       <br>
-      <strong>Rating:</strong>
+      <strong>Rating:  <span>Coming soon (Spring 2048)</span></strong>
       <br>
       {{this.Rating}}/10
       <br>
       <br>
-      <fieldset class="star-rating  ">
+      <fieldset class="star-rating">
         <div class="star-rating__stars">
           <input class="star-rating__input" type="radio" name="rating" value="1" id="rating-1" />
           <label class="star-rating__label" for="rating-1" aria-label="One"></label>
@@ -38,6 +39,7 @@
           <div class="star-rating__focus"></div>
         </div>
       </fieldset>
+      <br>
       <hr>
       <strong>Dietry especs:</strong>
       <br>
@@ -62,30 +64,33 @@
       -Nut Allergy
       {{/if}}
       <br>
+      <br>
       <hr>
+   
     </div>
     <div class="col-md-1"></div>
-    <div class="col-md-4 profile-font">
+    <div class="col-md-4">
       <h1>Favorites</h1>
-      {{#each this.favoriteRecipes}}
-      <li>{{this}}</li>
-      {{/each}}
-      <li>Crema de calabaza</li>
-      <li>Salmón al horno</li>
-      <li>Tartaletas de manzana</li>
-      <li>Tostada de queso brie</li>
-      <li>Coliflor al horno</li>
-      <li>Rollitos de pollo con queso</li>
-      <li>Mousse de café</li>
-      <li>Pasta con camarones al ajo</li>
-      <li>Lasaña de patata</li>
-      <li>Hojaldres de queso y setas</li>
+      <ul style="list-style-type:none">
+        <li>Crema de calabaza</li>
+        <li>Salmón al horno</li>
+        <li>Tartaletas de manzana</li>
+        <li>Tostada de queso brie</li>
+        <li>Coliflor al horno</li>
+        <li>Rollitos de pollo con queso</li>
+        <li>Mousse de café</li>
+        <li>Pasta con camarones al ajo</li>
+        <li>Lasaña de patata</li>
+        <li>Hojaldres de queso y setas</li>
+      </ul>
     </div>
-    <div class="col-md-4 profile-font">
+    <div class="col-md-4">
       <h1>Activity</h1>
-      {{#each this.events}}
-      <li>You request an Event: <strong><a href="/events/{{this._id}}">{{this.name}}</a></strong></li>
-      {{/each}}
+      <ul style="list-style-type:none">
+        {{#each this.events}}
+          <li>You've requested an event: <strong><a href="/events/{{this._id}}">{{this.name}}</a></strong></li>
+        {{/each}}
+      </ul>
       {{/with}}
     </div>
   </div>
