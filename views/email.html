@@ -1,1 +1,31 @@
-<h4> Hello </h4>
+`<h4> Hello, ${theEvent.host.name} </h4>
+<p>
+  You have a new request for your event ${theEvent.host.name} !
+<br><br>
+
+You can checkout the guets' profile by clicking 
+<a href="http://localhost:3000/profile/${theEvent.guests._id}">here!</a>
+
+If you would like to accept your guest, please click 
+<a href="http://localhost:3000/events/confirm?host=${theEvent._id}&guestID=${req.user._id}">Accept</a>
+
+<br> Otherwise, you can just ignore this email 
+
+<br><br>
+
+We wish you fun at your event!
+
+<br><br>
+
+ Your, <br><br>
+ <strong>M'EAT Team</strong>
+</p>`
+
+
+	const message = `<h4> Hello, ${theEvent.host.username} </h4>
+	<p>You have a new request for your event ${theEvent.name}!<br><br>You can checkout ${req.user._id}'s profile by
+	  clicking <a href="http://localhost:3000/profile/${req.user._id}">here!</a>If you would like to accept your guest,
+	  please click <a
+	    href="http://localhost:3000/events/confirm?host=${theEvent._id}&guestID=${req.user._id}">Accept</a><br> Otherwise,
+	  you can just ignore this email <br><br>We wish you fun at your event!<br><br>Your,<br><br><strong>M'EAT Team</strong>
+	</p>`

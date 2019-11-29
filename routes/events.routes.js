@@ -1,5 +1,3 @@
-
-
 const express = require('express');
 const router = express.Router();
 const Event = require('../models/Event.model');
@@ -11,28 +9,15 @@ const {
 
 // -------------------------- EVENT DELETE --------------------------- //
 
-router.get('/delete/:id', (req, res, next) => {
-	Event.remove({id: req.params.id }, function (error) {
-		if (error) {
-			next(error);
-		} else {
-			res.redirect('/event/show');
-		}
-	});
-});
-
-// -------------------------- EVENT DETAILS --------------------------- //
-router.get("/:id", ensureLoggedIn("/auth/login"), (req, res) => {
-	Event.findById(req.params.id)
-		.populate("host")
-		.populate('guests')
-		.then(theEvent => {
-			res.render("events/details", {
-				event: theEvent
-			});
-		})
-		.catch(err => console.log(err));
-});
+// router.get('/delete/:id', (req, res, next) => {
+// 	Event.remove({id: req.params.id }, function (error) {
+// 		if (error) {
+// 			next(error);
+// 		} else {
+// 			res.redirect('/event/show');
+// 		}
+// 	});
+// });
 
 // -------------------------- EVENT SHOW  --------------------------- //
 
@@ -92,17 +77,20 @@ router.get('/email/:id', (req, res) => {
 	Event.findById(req.params.id)
 		.populate("host")
 		.then(theEvent => {
-			let token = "popino"
-			
+		
+			const message = `<h4> Hello, ${theEvent.host.username} </h4><p>You have a new request for your event ${theEvent.name}!<br><br>You can checkout ${req.user._id}'s profile by clicking <a href="http://localhost:3000/profile/${req.user._id}">here!</a>If you would like to accept your guest, please click <a href="http://localhost:3000/events/confirm?host=${theEvent._id}&guestID=${req.user._id}">Accept</a><br> Otherwise, you can just ignore this email <br><br>We wish you fun at your event!<br><br>Your,<br><br><strong>M'EAT Team</strong>
+</p>`
+
+
 			mailer.sendMail({
-				from: '"M\'EAT 👻" request@meat-app.com',
-				to: `${theEvent.host.email}`, //El email del Host que va a celebrar el event
-				subject: "New request for your event!!!",
-				text: `http://localhost:3000/events/confirm?host=${theEvent._id}&guestID=${req.user._id}`,
-				html: `<b>http://localhost:3000/events/confirm?host=${theEvent._id}&guestID=${req.user._id}</b>`
-			})
-			.then(x => res.render("events/requested"))
-			.catch(err => console.log(err))
+					from: '"M\'EAT 👻" noreplyt@meat-app.com',
+					to: `${theEvent.host.email}`, //El email del Host que va a celebrar el event
+					subject: `A guest has requested your event ${theEvent.name}`,
+					text: `http://localhost:3000/events/confirm?host=${theEvent._id}&guestID=${req.user._id}`,
+					html: `<p> http://localhost:3000/events/confirm?host=${theEvent._id}&guestID=${req.user._id} <p>`
+				})
+				.then(x => res.render("events/requested"))
+				.catch(err => console.log(err));
 		})
 })
 
@@ -112,15 +100,15 @@ router.get('/email/:id', (req, res) => {
 router.get(`/lala`, (req, res) => res.render("events/confirm"))
 
 
-		
+
 router.get(`/confirm`, (req, res) => {
 
 	let eventId = req.query.host
 
 	//Primera promesa, os la estudiais mamones. La guardas en una variable
 	let firstFind =
-	
-	User.findOneAndUpdate({
+
+		User.findOneAndUpdate({
 			$and: [{
 				_id: req.user._id
 			}, {
@@ -138,11 +126,11 @@ router.get(`/confirm`, (req, res) => {
 		.catch(err => console.log('seguro que la he cagao', err))
 	// findOneAndUpdate(conditions, update, options, (error, doc) => {
 	console.log(eventId)
-	
+
 	//Lo mismo. Las dos en un array, estudiad el promise all.
 
 	let secondFind =
-	Event.findOne({
+		Event.findOne({
 			_id: eventId
 		})
 		.then(elm => {
@@ -165,12 +153,13 @@ router.get(`/confirm`, (req, res) => {
 		})
 		.catch(err => console.log(err));
 
-		Promise.all([firstFind, secondFind])
-   .then( x => res.render('events/confirm'), {user:req.user})
-   .catch(err => console.log(err))
+	Promise.all([firstFind, secondFind])
+		.then(x => res.render('events/confirm'), {user: req.user})
+		.catch(err => console.log(err))
 
 
 })
+
 
 // ---------------------------------------- API ------------------------------------ //
 
@@ -199,4 +188,17 @@ router.get('/api/:id', (req, res, next) => {
 	});
 });
 
+
+// -------------------------- EVENT DETAILS --------------------------- //
+router.get("/:id", ensureLoggedIn("/auth/login"), (req, res) => {
+	Event.findById(req.params.id)
+		.populate("host")
+		.populate('guests')
+		.then(theEvent => {
+			res.render("events/details", {
+				event: theEvent
+			});
+		})
+		.catch(err => console.log(err));
+});
 module.exports = router 
