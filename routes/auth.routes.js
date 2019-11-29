@@ -6,13 +6,11 @@ const uploadCloud = require('../configs/cloudinary.config');
 const {
   ensureLoggedIn,
   ensureLoggedOut,
-
 } = require('connect-ensure-login');
 const User = require("../models/User.model");
-
-// Bcrypt to encrypt passwords
 const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
+
 
 //---LOGIN---//
 router.get("/login", (req, res, next) => {
@@ -20,7 +18,6 @@ router.get("/login", (req, res, next) => {
     "message": req.flash("error")
   });
 });
-
 router.post("/login", passport.authenticate("local", {
   successRedirect: "profile",
   failureRedirect: "login",
@@ -29,9 +26,7 @@ router.post("/login", passport.authenticate("local", {
 }));
 
 //---SIGNUP---//
-router.get("/signup", ensureLoggedOut('/'), (req, res, next) => res.render("auth/signup", 
-))
-
+router.get("/signup", ensureLoggedOut('/'), (req, res, next) => res.render("auth/signup", ))
 router.post("/signup", uploadCloud.single('imgFile'), (req, res, next) => {
   console.log(req.body)
   const {
@@ -45,21 +40,18 @@ router.post("/signup", uploadCloud.single('imgFile'), (req, res, next) => {
     shellFishAllergy,
     nutAllergy,
   } = req.body
-
   let imgPath
   let imgName
   if (req.file) {
     imgPath = req.file.url
     imgName = req.file.originalname
   }
-
   if (username === "" || password === "") {
     res.render("auth/signup", {
       message: "Indicate username and password"
     });
     return;
   }
-
   User.findOne({
     username
   }, "username", (err, user) => {
@@ -69,10 +61,8 @@ router.post("/signup", uploadCloud.single('imgFile'), (req, res, next) => {
       });
       return;
     }
-
     const salt = bcrypt.genSaltSync(bcryptSalt);
     const hashPass = bcrypt.hashSync(password, salt);
-
     const newUser = new User({
       username,
       password: hashPass,
@@ -88,7 +78,6 @@ router.post("/signup", uploadCloud.single('imgFile'), (req, res, next) => {
         nutAllergy,
       }
     });
-
     newUser.save()
       .then(() => {
         passport.authenticate("local", {
@@ -99,7 +88,6 @@ router.post("/signup", uploadCloud.single('imgFile'), (req, res, next) => {
         })
         res.redirect("/");
       })
-
       .catch(err => {
         res.render("auth/signup", {
           message: "Something went wrong"
@@ -107,13 +95,12 @@ router.post("/signup", uploadCloud.single('imgFile'), (req, res, next) => {
       })
   });
 });
-
 //---PROFILE---//
-router.get('/profile', ensureLoggedIn('/auth/login'), (req, res) => res.render('auth/profile', {user: req.user}));
-
+router.get('/profile', ensureLoggedIn('/auth/login'), (req, res) => res.render('auth/profile', {
+  user: req.user
+}));
 //---PROFILE EDIT RENDER FORM---//
 router.get('/profile/edit', ensureLoggedIn('/login'), (req, res) => res.render('auth/edit-profile'))
-
 //---PROFILE EDIT SEND FORM---//
 router.post('/profile/edit', uploadCloud.single('imgFile'), (req, res) => {
   const {
@@ -126,14 +113,12 @@ router.post('/profile/edit', uploadCloud.single('imgFile'), (req, res) => {
     shellFishAllergy,
     nutAllergy
   } = req.body
-
   let imgPath
   let imgName
   if (req.file) {
     imgPath = req.file.url
     imgName = req.file.originalname
   }
-
   User.findByIdAndUpdate(req.user._id, {
       email,
       bio,
@@ -153,13 +138,10 @@ router.post('/profile/edit', uploadCloud.single('imgFile'), (req, res) => {
       console.log(req.body)
     })
     .catch(err => console.log(err))
-
 })
-
 //---LOGOUT---//
-router.get("/logout", (req, res) => { 
+router.get("/logout", (req, res) => {
   req.logout();
   res.redirect("/");
 });
-
 module.exports = router;
