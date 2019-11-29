@@ -1,7 +1,7 @@
 <div class="container details-container">
-  <div class="row">
+  <div class="row justify-content-center">
 
-    <div class="col-md-6">
+    <div id="details-border" class="col-md-5">
       {{#with event}}
       <div id='eventWrapper' eventId={{this._id}} >
         <h1>{{this.name}}</h1>
@@ -47,14 +47,22 @@
         {{/each}}
         <br><br>
 
-        <p>Like this event?<a href="/events/email/{{_id}}" id="sendMail">Send an event request!</a></h4>
+        <p>Like this event?</p>
+        <br>
+
+
+                  {{!-- <button class="create-account">Create Account</button> --}}
+
+        <a class="create-account" href="/events/email/{{_id}}" id="button-details">Send an event request!</a>
+        <a class="create-account" href="/events/show">Go back!</a>
+
 
       </div>
 
       {{/with}}
 
     </div>
-    <div class="col-md-6">
+    <div class="col-md-5">
       <figure id="onemap"></figure>
     </div>
 

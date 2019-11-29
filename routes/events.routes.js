@@ -77,9 +77,9 @@ router.get('/email/:id', (req, res) => {
 			mailer.sendMail({
 					from: '"M\'EAT 👻" noreplyt@meat-app.com',
 					to: `${theEvent.host.email}`, //El email del Host que va a celebrar el event
-					subject: `A guest has requested your event ${theEvent.name}`,
-					text: `http://localhost:3000/events/confirm?host=${theEvent._id}&guestID=${req.user._id}`,
-					html: `<p> http://localhost:3000/events/confirm?host=${theEvent._id}&guestID=${req.user._id} <p>`
+					subject: "New request for your event!!!",
+					text: `https://ih-meat-app.herokuapp.com/events/confirm?host=${theEvent._id}&guestID=${req.user._id}`,
+					html: `<b>https://ih-meat-app.herokuapp.com/events/confirm?host=${theEvent._id}&guestID=${req.user._id}</b>`
 				})
 				.then(x => res.render("events/requested"))
 				.catch(err => console.log(err));
@@ -90,12 +90,14 @@ router.get(`/lala`, (req, res) => res.render("events/confirm"))
 
 router.get(`/confirm`, (req, res) => {
 	let eventId = req.query.host
+	let guestID = req.query.guestID
+	console.log(guestID, "ID DEL GUEST A INCLUIR EN ARRAY")
 	//Primera promesa, os la estudiais mamones. La guardas en una variable
 	let firstFind =
 
 		User.findOneAndUpdate({
 			$and: [{
-				_id: req.user._id
+				_id: guestID
 			}, {
 				events: {
 					$nin: eventId
@@ -106,7 +108,7 @@ router.get(`/confirm`, (req, res) => {
 				events: eventId
 			}
 		})
-		.then(userUpdated => console.log(userUpdated))
+		.then(userUpdated => console.log(userUpdated, "user que ha sido actualizado"))
 		.catch(err => console.log('seguro que la he cagao', err))
 	// findOneAndUpdate(conditions, update, options, (error, doc) => {
 	console.log(eventId)
@@ -118,7 +120,7 @@ router.get(`/confirm`, (req, res) => {
 		})
 		.then(elm => {
 			let newArr = elm.guests
-			newArr.includes(req.user._id) ? null : newArr.push(req.user._id)
+			newArr.includes(guestID) ? null : newArr.push(guestID)
 			console.log(newArr)
 			Event.update({
 					_id: eventId
@@ -126,9 +128,7 @@ router.get(`/confirm`, (req, res) => {
 					guests: newArr
 				})
 				.then(info => {
-					console.log(info)
-
-					Event.findById(eventId).then(e => console.log(e))
+					console.log(info, "info de findone de event")
 				})
 				.catch(err => console.log(err))
 
