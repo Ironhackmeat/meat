@@ -47,7 +47,7 @@ nav a:hover {
 /*---RECIPES SEARCH---*/
 
 .filter-box {
-  
+
   border: solid 5px #f37a00;
   padding: 25px;
   position: fixed;
@@ -78,6 +78,7 @@ nav a:hover {
   height: 150px;
   box-shadow: black 2px 2px 7px;
 }
+
 .recipe-title {
   margin-top: 30px;
   margin-bottom: 35px;
@@ -138,7 +139,6 @@ video {
   margin-top: 20px;
   box-shadow: black 2px 2px 15px;
   border-radius: 10px
-
 }
 
 .margin {
@@ -173,6 +173,7 @@ video {
   border-radius: 10%;
   color: white;
 }
+
 .error-message {
   font-weight: bolder;
   font-size: 20px;
@@ -222,12 +223,15 @@ video {
   margin-left: 220px;
   margin-right: 200px;
 }
+
 .padding-editbox {
- padding: 40px 0
+  padding: 40px 0
 }
+
 .edit-background {
   background: url(https://res.cloudinary.com/darzjo72b/image/upload/v1574952060/meat/lauren-mancke-sil2Hx4iupI-unsplash_ypxgds.jpg)
 }
+
 .edit-button {
   padding: 2.5px 50px;
   background: #e24a00;
@@ -351,7 +355,7 @@ video {
   margin-right: 10px
 }
 
-#details-border{
+#details-border {
   border: solid 5px #F37A00;
   padding: 20px 30px 30px 30px;
   margin-right: 90px;
@@ -441,15 +445,15 @@ video {
   margin: 30px 0;
   text-align: center
 }
+
 .create-background-one {
   background: url("https://res.cloudinary.com/darzjo72b/image/upload/v1574952064/meat/jakub-kapusnak-sDbj1dFlFPU-unsplash_sm1ahn.jpg");
-  background-size: 110vh ;
+  background-size: 120% 120%;
   background-repeat: no-repeat;
   background-position-x: 50%;
   background-position-y: 70%
-  
-  
 }
+
 .create-background-two {
   background: url("https://res.cloudinary.com/darzjo72b/image/upload/v1574952060/meat/lauren-mancke-sil2Hx4iupI-unsplash_ypxgds.jpg");
   background-size: cover;
@@ -458,17 +462,19 @@ video {
 .section-two {
   margin-top: 15px;
 }
+
 .all-boxes {
-padding: 30px;
-text-align: center;
-box-shadow: black 1px 1px 12px;
-border-radius: 3px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: black 1px 1px 12px;
+  border-radius: 3px;
 
 }
+
 .create-button {
   text-align: center;
 }
-.all-boxes label {
-    font-weight: 800;
-}
 
+.all-boxes label {
+  font-weight: 800;
+}
