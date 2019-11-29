@@ -1,6 +1,9 @@
 /* ORANGE: #f37a00
 RED: #e24a00
-YELLOW: #feb100 */
+YELLOW: #feb100 
+box-shadow: gray 2px 2px 15px;
+*/
+
 
 /* ------------------------ general styles ---------------------- */
 body {
@@ -44,13 +47,13 @@ nav a:hover {
 /*---RECIPES SEARCH---*/
 
 .filter-box {
-  background-color: #f37a00;
-  box-shadow: 3px 3px 25px rgb(84, 83, 82);
+  
+  border: solid 5px #f37a00;
   padding: 25px;
   position: fixed;
   margin-left: 900px;
   border-radius: 25px;
-  color: white;
+  color: black
 }
 
 .recipe-filter p {
@@ -73,7 +76,20 @@ nav a:hover {
   border-radius: 25px;
   width: 150px;
   height: 150px;
+  box-shadow: black 2px 2px 7px;
+}
+.recipe-title {
+  margin-top: 30px;
+  margin-bottom: 35px;
+}
+
+.profile-font {
+  font-size: 16px;
+}
+
+.img-shadow {
   box-shadow: 3px 3px 25px rgb(84, 83, 82);
+  margin-left: 10px;
 }
 
 /* ------------------------------ index --------------------------- */
@@ -110,7 +126,7 @@ video {
   z-index: 100;
 }
 
-/* ------------------------------ signup --------------------------- */
+
 /* ------------------------------ signup + Login --------------------------- */
 
 .background {
@@ -125,7 +141,7 @@ video {
 }
 
 .margin {
-  margin-top: 80px;
+  margin-top: 90px;
   margin-left: 220px;
   margin-right: 200px;
 }
@@ -179,13 +195,14 @@ video {
   padding: 10px;
   border-radius: 15px;
   background: rgba(255, 255, 255, 0.7);
-  box-shadow: black 2px 20px 15px;
+  box-shadow: black 2px 2px 15px;
 }
 
 .img-div {
   width: 250px;
   height: 250px;
   border-radius: 250px;
+  margin-left: 5px;
 }
 
 .box-profile {
@@ -197,6 +214,16 @@ video {
   width: 100vw;
   height: 100vh;
 }
+
+.edit-button {
+  padding: 2.5px 50px;
+  background: #e24a00;
+  border: #e24a00;
+  border-radius: 10%;
+  color: white;
+  margin-left: 55px;
+}
+
 
 /* ------------------------------- maps -----------------------------*/
 
@@ -214,8 +241,13 @@ video {
 
 #onemap {
   height: 100%;
+<<<<<<< HEAD
   width: 110%;
   box-shadow: 1px 3px 5px rgb(84, 83, 82);
+=======
+  width: 100%;
+  box-shadow: black 2px 2px 15px;
+>>>>>>> 1d8466419db42623a51ae972b2f53a39768186c9
 }
 
 #createmap {
@@ -229,16 +261,16 @@ video {
 /*-------------------------- RATING --------------------*/
 .star-rating__stars {
   position: relative;
-  height: 2rem;
-  width: 12rem;
+  height: 2.5rem;
+  width: 12.5rem;
   background: url("../images/off-star.png");
-  background-size: 2rem 2rem;
+  background-size: 2.5rem 2.5rem;
 }
 
 .star-rating__label {
   position: absolute;
   height: 100%;
-  background-size: 2rem 2rem;
+  background-size: 2.5rem 2.5rem;
 }
 
 .star-rating__input {
@@ -360,7 +392,7 @@ video {
 #hamburger {
   width: 600px;
   border-radius: 2%;
-  box-shadow: 1px 3px 5px rgb(84, 83, 82);
+  box-shadow: black 2px 2px 15px;
 
 }
 
@@ -390,20 +422,30 @@ video {
 #sandwich {
   width: 600px;
   border-radius: 2%;
-  box-shadow: 1px 3px 5px rgb(84, 83, 82);
+  box-shadow: black 2px 2px 15px;
 
 }
 
+<<<<<<< HEAD
 
 /* CREATE EVENT */
+=======
+>>>>>>> 1d8466419db42623a51ae972b2f53a39768186c9
 
+/* ------------------------------ CREATE EVENT ----------------------------------------- */
+.create-header {
+  margin: 20px 0;
+  text-align: center
+}
 .create-background {
   background: url("https://res.cloudinary.com/darzjo72b/image/upload/v1574968180/meat/travis-yewell-UaQCpG0frpI-unsplash_1_fam8sz.jpg");
   background-size: cover;
 }
 
-.create-backbox {
-  background: rgba(255, 255, 255, 0.7);
-  padding: 5px;
-  border-radius: 5%;
+.all-boxes {
+padding: 30px;
+text-align: center;
+}
+.create-button {
+  text-align: center;
 }

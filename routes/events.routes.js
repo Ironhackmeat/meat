@@ -6,8 +6,21 @@ const mailer = require('../configs/nodemailer.config')
 const {
 	ensureLoggedIn
 } = require('connect-ensure-login');
-// Check if we are using it
-router.get('/search', (req, res) => res.render('events/search'))
+
+// -------------------------- EVENT DELETE --------------------------- //
+
+// router.get('/delete/:id', (req, res, next) => {
+// 	Event.remove({id: req.params.id }, function (error) {
+// 		if (error) {
+// 			next(error);
+// 		} else {
+// 			res.redirect('/event/show');
+// 		}
+// 	});
+// });
+
+// -------------------------- EVENT SHOW  --------------------------- //
+
 router.get('/show', (req, res) => res.render('events/show'))
 // Creat an event => Get the view. You can only creat an event if you are logged in
 router.get('/create', ensureLoggedIn("/auth/login"), (req, res) => res.render('events/create'))
@@ -61,17 +74,26 @@ router.get('/email/:id', (req, res) => {
 	Event.findById(req.params.id)
 		.populate("host")
 		.then(theEvent => {
-			let token = "popino"
+		
+			const message = `<h4> Hello, ${theEvent.host.username} </h4><p>You have a new request for your event ${theEvent.name}!<br><br>You can checkout ${req.user._id}'s profile by clicking <a href="http://localhost:3000/profile/${req.user._id}">here!</a>If you would like to accept your guest, please click <a href="http://localhost:3000/events/confirm?host=${theEvent._id}&guestID=${req.user._id}">Accept</a><br> Otherwise, you can just ignore this email <br><br>We wish you fun at your event!<br><br>Your,<br><br><strong>M'EAT Team</strong>
+</p>`
+
 
 			mailer.sendMail({
-					from: '"M\'EAT 👻" request@meat-app.com',
+					from: '"M\'EAT 👻" noreplyt@meat-app.com',
 					to: `${theEvent.host.email}`, //El email del Host que va a celebrar el event
+<<<<<<< HEAD
 					subject: "New request for your event!!!",
 					text: `https://ih-meat-app.herokuapp.com/events/confirm?host=${theEvent._id}&guestID=${req.user._id}`,
 					html: `<b>https://ih-meat-app.herokuapp.com/events/confirm?host=${theEvent._id}&guestID=${req.user._id}</b>`
+=======
+					subject: `A guest has requested your event ${theEvent.name}`,
+					text: `http://localhost:3000/events/confirm?host=${theEvent._id}&guestID=${req.user._id}`,
+					html: `<p> http://localhost:3000/events/confirm?host=${theEvent._id}&guestID=${req.user._id} <p>`
+>>>>>>> 1d8466419db42623a51ae972b2f53a39768186c9
 				})
 				.then(x => res.render("events/requested"))
-				.catch(err => console.log(err))
+				.catch(err => console.log(err));
 		})
 })
 // We need to push the guest to the event and the event to the guest, checking if they have been alread pushed.
@@ -118,18 +140,24 @@ router.get(`/confirm`, (req, res) => {
 				})
 				.then(info => {
 					console.log(info)
+
 					Event.findById(eventId).then(e => console.log(e))
 				})
 				.catch(err => console.log(err))
+
 		})
 		.catch(err => console.log(err));
+
 	Promise.all([firstFind, secondFind])
-		.then(x => res.render('events/confirm'), {
-			user: req.user
-		})
+		.then(x => res.render('events/confirm'), {user: req.user})
 		.catch(err => console.log(err))
+
+
 })
-// The data we'll use for the Map 
+
+
+// ---------------------------------------- API ------------------------------------ //
+
 router.get('/api', (req, res, next) => {
 	Event.find()
 		.then(allEventsFromDB => res.status(200).json({
@@ -152,7 +180,9 @@ router.get('/api/:id', (req, res, next) => {
 		}
 	});
 });
-// You have to be logged in to see the details of the event
+
+
+// -------------------------- EVENT DETAILS --------------------------- //
 router.get("/:id", ensureLoggedIn("/auth/login"), (req, res) => {
 	Event.findById(req.params.id)
 		.populate("host")
@@ -164,14 +194,4 @@ router.get("/:id", ensureLoggedIn("/auth/login"), (req, res) => {
 		})
 		.catch(err => console.log(err));
 });
-// // DELETE => remove the restaurant from the DB
-// router.get('/:place_id/delete', (req, res, next) => {
-//  Place.remove({ _id: req.params.place_id }, function (error, place) {
-//      if (error) {
-//          next(error);
-//      } else {
-//          res.redirect('/places');
-//      }
-//  });
-// });
-module.exports = router
+module.exports = router 

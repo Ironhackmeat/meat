@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="box card container create-background" style="width: 68rem">
 
 
@@ -11,6 +12,13 @@
 
   <div class="col">
   </div>
+=======
+<div class="container">
+  <h1 class= "create-header">Want to host an event? </h1>
+
+  <section>
+    <div class="card all-boxes">
+>>>>>>> 1d8466419db42623a51ae972b2f53a39768186c9
 
   <div class="col">
 
@@ -32,6 +40,7 @@
 
         <label for="description">Description</label><br>
         <input id="description" type="text" name="description" placeholder="Keywords to search">
+<<<<<<< HEAD
 
   </div>
 
@@ -47,58 +56,57 @@
 
 
   </div>
+=======
+>>>>>>> 1d8466419db42623a51ae972b2f53a39768186c9
 
-    <div class="row">
-
-    <div class="col-md-6">
-
-
-        <br><br>
 
         <label for="type">Choose</label>
-
         <select for="type" name="type">
           <option value="breakfast">Breakfast</option>
           <option value="brunch">Brunch</option>
           <option value="lunch">Lunch</option>
           <option value="dinner">Dinner</option>
-        </select>    
+        </select>
+    </div>
+  </section>
 
-        <br><br>
+  <br><br>
+
+  <section>
+    <div class="row justify-content-between">
+
+      <div class="card col-md-5 all-boxes">
 
         <label for="glutenfree">Gluten-free</label>
         <input value="true" id="glutenfree" type="checkbox" name="glutenfree">
 
-        <br><br>
-
-          <label for="dairyfree">Dairy-free</label>
+        <hr>
+       
+        <label for="dairyfree">Dairy-free</label>
         <input value="true" id="dairyfree" type="checkbox" name="dairyfree">
-
-        <br><br>
-          <label for="veg">Veg</label>
+       
+        <hr>
+       
+        <label for="veg">Vegetarian</label>
         <input value="true" id="veg" type="checkbox" name="veg">
+        <hr>
 
-        <br><br>
-
-          <label for="vegan">Vegan</label>
+        <label for="vegan">Vegan</label>
         <input value="true" id="vegan" type="checkbox" name="vegan">
 
-        <br><br>
+        <hr>
 
-          <label for="shellfish">Shellfish</label>
+        <label for="shellfish">Contains Shellfish</label>
         <input value="true" id="shellfish" type="checkbox" name="shellfish">
+        
+        <hr>
 
-        <br><br>
-
-            <label for="nuts">Nuts</label>
+        <label for="nuts">Contains Nuts</label>
         <input value="true" id="nuts" type="checkbox" name="nuts">
-
-        <br><br>
-
-          </div>
+      </div>
 
 
-  </div>
+      <div class="card all-boxes col-md-5">
 
         <label for="date">Date of the event</label>
         <input id="date" type="date" name="date">
@@ -117,29 +125,46 @@
 
         <label for="forks">How many guests do you want?</label>
         <input id="forks" type="text" name="forks" placeholder="4">
-
-        <br>
-
-        {{#if message }}
-          <div class="error-message">{{ message }}</div>
-        {{/if}}
-
-        <br><br>
-
-        <button>Create your next event</button>
-
-        <br><br>
-
-
-      </form>
-
+      </div>
     </div>
+  </section>
 
-  </div>
+<br><br>
 
+  <section class="d-flex justify-content-center">
+
+    {{#if message }}
+    <div class="error-message">{{ message }}</div>
+    {{/if}}
+
+    <br><br>
+
+    <button class="create-account">Create your next event</button>
+
+  </section>
+
+
+  </form>
+
+</div>
 
 
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -148,4 +173,4 @@
 <script src="/javascripts/mapstyle.js"></script>
 
 <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDG88rK2sVwRDbZIJautuIZpNt32kAQpSU&callback=initMap"></script>
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDG88rK2sVwRDbZIJautuIZpNt32kAQpSU&callback=initMap"></script>
