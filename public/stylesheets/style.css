@@ -462,7 +462,7 @@ video {
 .all-boxes {
   padding: 30px;
   text-align: center;
-  box-shadow: black 1px 1px 12px;
+  box-shadow: black 1px 1px 5px;
   border-radius: 3px;
 
 }
