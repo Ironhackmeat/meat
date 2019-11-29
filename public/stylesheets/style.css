@@ -474,3 +474,16 @@ video {
 .all-boxes label {
   font-weight: 800;
 }
+
+/* // ------------------- FRIDGE -----------------------------// */
+
+.fridge-title {
+  margin: 30px 0;
+  text-align: center;
+}
+
+.fridge-text {
+  font-size: 30px;
+  text-align: center
+}
+
