@@ -82,15 +82,9 @@ router.get('/email/:id', (req, res) => {
 			mailer.sendMail({
 					from: '"M\'EAT 👻" noreplyt@meat-app.com',
 					to: `${theEvent.host.email}`, //El email del Host que va a celebrar el event
-<<<<<<< HEAD
 					subject: "New request for your event!!!",
 					text: `https://ih-meat-app.herokuapp.com/events/confirm?host=${theEvent._id}&guestID=${req.user._id}`,
 					html: `<b>https://ih-meat-app.herokuapp.com/events/confirm?host=${theEvent._id}&guestID=${req.user._id}</b>`
-=======
-					subject: `A guest has requested your event ${theEvent.name}`,
-					text: `http://localhost:3000/events/confirm?host=${theEvent._id}&guestID=${req.user._id}`,
-					html: `<p> http://localhost:3000/events/confirm?host=${theEvent._id}&guestID=${req.user._id} <p>`
->>>>>>> 1d8466419db42623a51ae972b2f53a39768186c9
 				})
 				.then(x => res.render("events/requested"))
 				.catch(err => console.log(err));
