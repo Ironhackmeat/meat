@@ -7,26 +7,21 @@ const {
 	ensureLoggedIn
 } = require('connect-ensure-login');
 
-// -------------------------- EVENT DELETE --------------------------- //
-
-// router.get('/delete/:id', (req, res, next) => {
-// 	Event.remove({id: req.params.id }, function (error) {
-// 		if (error) {
-// 			next(error);
-// 		} else {
-// 			res.redirect('/event/show');
-// 		}
-// 	});
-// });
 
 // -------------------------- EVENT SHOW  --------------------------- //
 
 router.get('/show', (req, res) => res.render('events/show'))
-// Creat an event => Get the view. You can only creat an event if you are logged in
-router.get('/create', ensureLoggedIn("/auth/login"), (req, res) => res.render('events/create'))
-// Send the data to the DB 
+
+router.get('/create', ensureLoggedIn("/auth/login"), (req, res) => {
+	Event.findById(req.params.id)
+		.then(event => res.render('events/create', {
+			event: event
+		}))
+})
+
 router.post("/create", (req, res) => {
 	const {
+
 		name,
 		description,
 		type,
@@ -74,7 +69,7 @@ router.get('/email/:id', (req, res) => {
 	Event.findById(req.params.id)
 		.populate("host")
 		.then(theEvent => {
-		
+
 			const message = `<h4> Hello, ${theEvent.host.username} </h4><p>You have a new request for your event ${theEvent.name}!<br><br>You can checkout ${req.user._id}'s profile by clicking <a href="http://localhost:3000/profile/${req.user._id}">here!</a>If you would like to accept your guest, please click <a href="http://localhost:3000/events/confirm?host=${theEvent._id}&guestID=${req.user._id}">Accept</a><br> Otherwise, you can just ignore this email <br><br>We wish you fun at your event!<br><br>Your,<br><br><strong>M'EAT Team</strong>
 </p>`
 
@@ -141,7 +136,9 @@ router.get(`/confirm`, (req, res) => {
 		.catch(err => console.log(err));
 
 	Promise.all([firstFind, secondFind])
-		.then(x => res.render('events/confirm'), {user: req.user})
+		.then(x => res.render('events/confirm'), {
+			user: req.user
+		})
 		.catch(err => console.log(err))
 
 
@@ -186,4 +183,4 @@ router.get("/:id", ensureLoggedIn("/auth/login"), (req, res) => {
 		})
 		.catch(err => console.log(err));
 });
-module.exports = router 
+module.exports = router
