@@ -1,7 +1,8 @@
 <img class="bg-profile" src="https://res.cloudinary.com/darzjo72b/image/upload/v1574952060/meat/lauren-mancke-sil2Hx4iupI-unsplash_ypxgds.jpg" alt="">
 <div class="container box-profile">
-  <div class="row justify-content-center">
-    <div class="col-md-3 profile-box">
+  <div class="row justify-content-around">
+    <div class="col-md-4 profile-box">
+     <div class="create-button">
       {{#with user}}
       <img class="img-div" src="{{this.imgPath}}" alt="{{this.username}} photo">
       <br>
@@ -18,28 +19,33 @@
       "{{this.bio}}"
       <br>
       <br>
-      <strong>Rating: <span>Coming soon (Spring 2048)</span></strong>
+     
+
+      <strong >Rating: <span>Coming soon (Spring 2048)</span></strong>
       <br>
-      {{this.Rating}}/10
+     {{this.Rating}}/10 
       <br>
       <br>
+      </div>
       <fieldset class="star-rating  ">
         <div class="star-rating__stars">
-          <input class="star-rating__input" type="radio" name="rating" value="1" id="rating-1" />
-          <label class="star-rating__label" for="rating-1" aria-label="One"></label>
-          <input class="star-rating__input" type="radio" name="rating" value="2" id="rating-2" />
-          <label class="star-rating__label" for="rating-2" aria-label="Two"></label>
-          <input class="star-rating__input" type="radio" name="rating" value="3" id="rating-3" />
+          <input class="star-rating__input " type="radio" name="rating" value="1" id="rating-1" />
+          <label class="star-rating__label " for="rating-1" aria-label="One"></label>
+          <input class="star-rating__input " type="radio" name="rating" value="2" id="rating-2" />
+          <label class="star-rating__label " for="rating-2" aria-label="Two"></label>
+          <input class="star-rating__input " type="radio" name="rating" value="3" id="rating-3" />
           <label class="star-rating__label" for="rating-3" aria-label="Three"></label>
-          <input class="star-rating__input" type="radio" name="rating" value="4" id="rating-4" />
-          <label class="star-rating__label" for="rating-4" aria-label="Four"></label>
-          <input class="star-rating__input" type="radio" name="rating" value="5" id="rating-5" />
-          <label class="star-rating__label" for="rating-5" aria-label="Five"></label>
+          <input class="star-rating__input " type="radio" name="rating" value="4" id="rating-4" />
+          <label class="star-rating__label " for="rating-4" aria-label="Four"></label>
+          <input class="star-rating__input " type="radio" name="rating" value="5" id="rating-5" />
+          <label class="star-rating__label " for="rating-5" aria-label="Five"></label>
           <div class="star-rating__focus"></div>
         </div>
       </fieldset>
+
+      <section class="create-button">
       <hr>
-      <strong>Dietry especs:</strong>
+      <strong>Dietry Requirements:</strong>
       <br>
       <br>
       {{#if this.specs.vegan}}
@@ -63,10 +69,11 @@
       {{/if}}
       <br>
       <hr>
-      <button class="edit-button"><a href="/auth/profile/edit">Edit</a></button>
+      </section>
+      <button class=" edit-button create-account"><a href="/auth/profile/edit">Edit</a></button>
     </div>
-    <div class="col-md-1"></div>
-    <div class="col-md-4 profile-font">
+    {{!-- <div class="col-md-1"></div> --}}
+    <div class="col-md-3 profile-font">
       <h1>Favorites</h1>
       <ul style="list-style-type:none">
 
@@ -85,7 +92,7 @@
           <li>Hojaldres de queso y setas</li>
       </ul>
     </div>
-    <div class="col-md-4 profile-font">
+    <div class="col-md-3 profile-font">
       <h1>Activity</h1>
       <ul style="list-style-type:none">
 
