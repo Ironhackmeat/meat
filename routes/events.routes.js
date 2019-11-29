@@ -125,7 +125,7 @@ router.get(`/confirm`, (req, res) => {
 		})
 		.then(elm => {
 			let newArr = elm.guests
-			newArr.includes(req.user._id) ? null : newArr.push(req.user._id)
+			newArr.includes(guestID) ? null : newArr.push(guestID)
 			console.log(newArr)
 			Event.update({
 					_id: eventId
