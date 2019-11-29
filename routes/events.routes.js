@@ -4,7 +4,7 @@ const Event = require('../models/Event.model');
 const User = require('../models/User.model');
 const mailer = require('../configs/nodemailer.config')
 const {
-    ensureLoggedIn
+	ensureLoggedIn
 } = require('connect-ensure-login');
 
 // -------------------------- EVENT DELETE --------------------------- //
@@ -26,45 +26,47 @@ router.get('/show', (req, res) => res.render('events/show'))
 router.get('/create', ensureLoggedIn("/auth/login"), (req, res) => res.render('events/create'))
 // Send the data to the DB 
 router.post("/create", (req, res) => {
-    const {
-        name,
-        description,
-        type,
-        glutenfree,
-        dairyfree,
-        veg,
-        vegan,
-        shellfish,
-        nuts,
-        date,
-        time,
-        address,
-        forks
-    } = req.body;
-    const host = req.user
-    Event.create({
-            host,
-            name,
-            description,
-            type,
-            specs: {
-                glutenfree,
-                dairyfree,
-                veg,
-                vegan,
-                shellfish,
-                nuts
-            },
-            date,
-            time,
-            address,
-            forks
-        })
-        .then(x => {
-            res.redirect("/events/show");
-            console.log(req.body);
-        })
-        .catch(err => console.log(err));
+	const {
+		name,
+		description,
+		type,
+		glutenfree,
+		dairyfree,
+		veg,
+		vegan,
+		shellfish,
+		nuts,
+		date,
+		time,
+		address,
+		forks
+	} = req.body;
+
+	const host = req.user
+
+	Event.create({
+			host,
+			name,
+			description,
+			type,
+			specs: {
+				glutenfree,
+				dairyfree,
+				veg,
+				vegan,
+				shellfish,
+				nuts
+			},
+			date,
+			time,
+			address,
+			forks
+		})
+		.then(x => {
+			res.redirect("/events/show");
+			console.log(req.body);
+		})
+		.catch(err => console.log(err));
 });
 // Send email to accept the request.
 router.get('/email/:id', (req, res) => {
@@ -91,12 +93,8 @@ router.get('/email/:id', (req, res) => {
 // We need to push the guest to the event and the event to the guest, checking if they have been alread pushed.
 router.get(`/lala`, (req, res) => res.render("events/confirm"))
 
-
-
 router.get(`/confirm`, (req, res) => {
-
 	let eventId = req.query.host
-
 	//Primera promesa, os la estudiais mamones. La guardas en una variable
 	let firstFind =
 
@@ -104,7 +102,6 @@ router.get(`/confirm`, (req, res) => {
 			$and: [{
 				_id: req.user._id
 			}, {
-
 				events: {
 					$nin: eventId
 				}
@@ -120,14 +117,12 @@ router.get(`/confirm`, (req, res) => {
 	console.log(eventId)
 
 	//Lo mismo. Las dos en un array, estudiad el promise all.
-
 	let secondFind =
 		Event.findOne({
 			_id: eventId
 		})
 		.then(elm => {
 			let newArr = elm.guests
-
 			newArr.includes(req.user._id) ? null : newArr.push(req.user._id)
 			console.log(newArr)
 			Event.update({
@@ -156,26 +151,26 @@ router.get(`/confirm`, (req, res) => {
 // ---------------------------------------- API ------------------------------------ //
 
 router.get('/api', (req, res, next) => {
-    Event.find()
-        .then(allEventsFromDB => res.status(200).json({
-            events: allEventsFromDB
-        }))
-        .catch(err => next(err))
+	Event.find()
+		.then(allEventsFromDB => res.status(200).json({
+			events: allEventsFromDB
+		}))
+		.catch(err => next(err))
 });
 router.get('/api/:id', (req, res, next) => {
-    let eventId = req.params.id;
-    console.log(eventId)
-    Event.findOne({
-        _id: eventId
-    }, (error, oneEventFromDB) => {
-        if (error) {
-            next(error)
-        } else {
-            res.status(200).json({
-                event: oneEventFromDB
-            });
-        }
-    });
+	let eventId = req.params.id;
+	console.log(eventId)
+	Event.findOne({
+		_id: eventId
+	}, (error, oneEventFromDB) => {
+		if (error) {
+			next(error)
+		} else {
+			res.status(200).json({
+				event: oneEventFromDB
+			});
+		}
+	});
 });
 
 
