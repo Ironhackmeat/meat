@@ -67,8 +67,8 @@ router.get('/email/:id', (req, res) => {
 					from: '"M\'EAT 👻" request@meat-app.com',
 					to: `${theEvent.host.email}`, //El email del Host que va a celebrar el event
 					subject: "New request for your event!!!",
-					text: `http://localhost:3000/events/confirm?host=${theEvent._id}&guestID=${req.user._id}`,
-					html: `<b>http://localhost:3000/events/confirm?host=${theEvent._id}&guestID=${req.user._id}</b>`
+					text: `https://ih-meat-app.herokuapp.com/events/confirm?host=${theEvent._id}&guestID=${req.user._id}`,
+					html: `<b>https://ih-meat-app.herokuapp.com/events/confirm?host=${theEvent._id}&guestID=${req.user._id}</b>`
 				})
 				.then(x => res.render("events/requested"))
 				.catch(err => console.log(err))
@@ -79,12 +79,14 @@ router.get(`/lala`, (req, res) => res.render("events/confirm"))
 
 router.get(`/confirm`, (req, res) => {
 	let eventId = req.query.host
+	let guestID = req.query.guestID
+	console.log(guestID, "ID DEL GUEST A INCLUIR EN ARRAY")
 	//Primera promesa, os la estudiais mamones. La guardas en una variable
 	let firstFind =
 
 		User.findOneAndUpdate({
 			$and: [{
-				_id: req.user._id
+				_id: guestID
 			}, {
 				events: {
 					$nin: eventId

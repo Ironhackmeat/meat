@@ -33,7 +33,7 @@ function geocodeAddress(geocoder, events, resultsMap) {
           icon: image
         });
       }
-      var contentString = '<h2>' + elm.name + '</h2>' + '<br>' + '<span>This event is a</span>' + '<span>  ' + elm.type + '</span>' + '<span>!!!</span>' + '<br><br>' + '<p>Check for more details</p>' + '<a href="/events/' + elm._id + '">here</a>'
+      var contentString = '<h2 style="color: #e24a00 text-align: center">' + elm.name + '</h2>' + '<br>' + '<p style="text-align:center">This event is a</p>' + '<p style="text-align:center">  ' + elm.type + '</p>' + '<br><br>' + '<p style="text-align:center">Check for more details</p>' + '<p style="text-align:center">' + '<a href="/events/' + elm._id + '">here</a>'
 
       var infowindow = new google.maps.InfoWindow({
         content: contentString

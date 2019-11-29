@@ -120,7 +120,7 @@ video {
 
 .box {
   margin-top: 20px;
-  box-shadow: black 2px 20px 15px;
+  box-shadow: black 2px 2px 15px;
 
 }
 
@@ -214,7 +214,7 @@ video {
 
 #onemap {
   height: 100%;
-  width: 100%;
+  width: 110%;
   box-shadow: 1px 3px 5px rgb(84, 83, 82);
 }
 
@@ -289,7 +289,7 @@ video {
 /*-------------------------- EVENTS DETAILS --------------------*/
 
 .details-container {
-  margin-top: 5%
+  margin-top: 1%
 }
 
 .details-container h1 {
@@ -307,6 +307,17 @@ video {
   color: #E24A00
 }
 
+#button-details {
+  margin-right: 10px
+}
+
+#details-border{
+  border: solid 5px #F37A00;
+  padding: 20px 30px 30px 30px;
+  margin-right: 90px;
+  box-shadow: 1px 3px 5px rgb(84, 83, 82);
+
+}
 
 
 
@@ -383,7 +394,6 @@ video {
 
 }
 
-<<<<<<< HEAD
 
 /* CREATE EVENT */
 
@@ -397,5 +407,3 @@ video {
   padding: 5px;
   border-radius: 5%;
 }
-=======
->>>>>>> 0ee04847e7115e47227270d6821c3ba45bae27ac
