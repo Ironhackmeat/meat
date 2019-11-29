@@ -177,7 +177,9 @@ video {
 
 .profile-box {
   padding: 10px;
-  border: 2px solid black;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: black 2px 20px 15px;
 }
 
 .img-div {
@@ -187,7 +189,13 @@ video {
 }
 
 .box-profile {
-  margin-top: 50px
+  margin-top: 15px
+}
+
+.bg-profile {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
 }
 
 /* ------------------------------- maps -----------------------------*/
@@ -221,16 +229,16 @@ video {
 /*-------------------------- RATING --------------------*/
 .star-rating__stars {
   position: relative;
-  height: 2.5rem;
-  width: 12.5rem;
+  height: 2rem;
+  width: 12rem;
   background: url("../images/off-star.png");
-  background-size: 2.5rem 2.5rem;
+  background-size: 2rem 2rem;
 }
 
 .star-rating__label {
   position: absolute;
   height: 100%;
-  background-size: 2.5rem 2.5rem;
+  background-size: 2rem 2rem;
 }
 
 .star-rating__input {
@@ -374,3 +382,20 @@ video {
   box-shadow: 1px 3px 5px rgb(84, 83, 82);
 
 }
+
+<<<<<<< HEAD
+
+/* CREATE EVENT */
+
+.create-background {
+  background: url("https://res.cloudinary.com/darzjo72b/image/upload/v1574968180/meat/travis-yewell-UaQCpG0frpI-unsplash_1_fam8sz.jpg");
+  background-size: cover;
+}
+
+.create-backbox {
+  background: rgba(255, 255, 255, 0.7);
+  padding: 5px;
+  border-radius: 5%;
+}
+=======
+>>>>>>> 0ee04847e7115e47227270d6821c3ba45bae27ac

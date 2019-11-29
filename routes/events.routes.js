@@ -4,7 +4,7 @@ const Event = require('../models/Event.model');
 const User = require('../models/User.model');
 const mailer = require('../configs/nodemailer.config')
 const {
-	ensureLoggedIn
+    ensureLoggedIn
 } = require('connect-ensure-login');
 
 // -------------------------- EVENT DELETE --------------------------- //
@@ -22,56 +22,51 @@ const {
 // -------------------------- EVENT SHOW  --------------------------- //
 
 router.get('/show', (req, res) => res.render('events/show'))
-
-// -------------------------- EVENT CREATE --------------------------- //
+// Creat an event => Get the view. You can only creat an event if you are logged in
 router.get('/create', ensureLoggedIn("/auth/login"), (req, res) => res.render('events/create'))
-
+// Send the data to the DB 
 router.post("/create", (req, res) => {
-	const {
-		name,
-		description,
-		type,
-		glutenfree,
-		dairyfree,
-		veg,
-		vegan,
-		shellfish,
-		nuts,
-		date,
-		time,
-		address,
-		forks
-	} = req.body;
-
-	const host = req.user
-
-	Event.create({
-			host,
-			name,
-			description,
-			type,
-			specs: {
-				glutenfree,
-				dairyfree,
-				veg,
-				vegan,
-				shellfish,
-				nuts
-			},
-			date,
-			time,
-			address,
-			forks
-		})
-		.then(x => {
-			res.redirect("/events/show");
-			console.log(req.body);
-		})
-		.catch(err => console.log(err));
+    const {
+        name,
+        description,
+        type,
+        glutenfree,
+        dairyfree,
+        veg,
+        vegan,
+        shellfish,
+        nuts,
+        date,
+        time,
+        address,
+        forks
+    } = req.body;
+    const host = req.user
+    Event.create({
+            host,
+            name,
+            description,
+            type,
+            specs: {
+                glutenfree,
+                dairyfree,
+                veg,
+                vegan,
+                shellfish,
+                nuts
+            },
+            date,
+            time,
+            address,
+            forks
+        })
+        .then(x => {
+            res.redirect("/events/show");
+            console.log(req.body);
+        })
+        .catch(err => console.log(err));
 });
-
-// -------------------------- CONFIRMATION EMAIL--------------------------- //
-
+// Send email to accept the request.
 router.get('/email/:id', (req, res) => {
 
 	Event.findById(req.params.id)
@@ -93,10 +88,7 @@ router.get('/email/:id', (req, res) => {
 				.catch(err => console.log(err));
 		})
 })
-
-
-// -------------------------- PUSH EVENTS TO GUESTS & VICE VERSA --------------------------- //
-
+// We need to push the guest to the event and the event to the guest, checking if they have been alread pushed.
 router.get(`/lala`, (req, res) => res.render("events/confirm"))
 
 
@@ -164,28 +156,26 @@ router.get(`/confirm`, (req, res) => {
 // ---------------------------------------- API ------------------------------------ //
 
 router.get('/api', (req, res, next) => {
-	Event.find()
-		.then(allEventsFromDB => res.status(200).json({
-			events: allEventsFromDB
-		}))
-		.catch(err => next(err))
+    Event.find()
+        .then(allEventsFromDB => res.status(200).json({
+            events: allEventsFromDB
+        }))
+        .catch(err => next(err))
 });
-
 router.get('/api/:id', (req, res, next) => {
-	let eventId = req.params.id;
-	console.log(eventId)
-	Event.findOne({
-		_id: eventId
-
-	}, (error, oneEventFromDB) => {
-		if (error) {
-			next(error)
-		} else {
-			res.status(200).json({
-				event: oneEventFromDB
-			});
-		}
-	});
+    let eventId = req.params.id;
+    console.log(eventId)
+    Event.findOne({
+        _id: eventId
+    }, (error, oneEventFromDB) => {
+        if (error) {
+            next(error)
+        } else {
+            res.status(200).json({
+                event: oneEventFromDB
+            });
+        }
+    });
 });
 
 
