@@ -241,13 +241,8 @@ video {
 
 #onemap {
   height: 100%;
-<<<<<<< HEAD
   width: 110%;
   box-shadow: 1px 3px 5px rgb(84, 83, 82);
-=======
-  width: 100%;
-  box-shadow: black 2px 2px 15px;
->>>>>>> 1d8466419db42623a51ae972b2f53a39768186c9
 }
 
 #createmap {
@@ -333,10 +328,6 @@ video {
 #details-username {
   font-size: 1.5em;
   text-transform: uppercase;
-}
-
-.details-container a:hover {
-  color: #E24A00
 }
 
 #button-details {
@@ -426,11 +417,6 @@ video {
 
 }
 
-<<<<<<< HEAD
-
-/* CREATE EVENT */
-=======
->>>>>>> 1d8466419db42623a51ae972b2f53a39768186c9
 
 /* ------------------------------ CREATE EVENT ----------------------------------------- */
 .create-header {
