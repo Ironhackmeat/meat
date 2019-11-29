@@ -224,6 +224,9 @@ video {
   margin-left: 55px;
 }
 
+.edit-button:hover {
+  color: white
+}
 
 /* ------------------------------- maps -----------------------------*/
 

@@ -18,7 +18,7 @@
       "{{this.bio}}"
       <br>
       <br>
-      <strong>Rating:</strong>
+      <strong>Rating: Comminng soon (Spring 2048)</strong>
       <br>
       {{this.Rating}}/10
       <br>
@@ -87,9 +87,13 @@
     </div>
     <div class="col-md-4 profile-font">
       <h1>Activity</h1>
+      <ul style="list-style-type:none">
+
       {{#each this.events}}
-      <li>You request an Event: <strong><a href="/events/{{this._id}}">{{this.name}}</a></strong></li>
+      <li>You've requested an event: <strong><a href="/events/{{this._id}}">{{this.name}}</a></strong></li>
       {{/each}}
+
+      </ul>
       {{/with}}
     </div>
   </div>
