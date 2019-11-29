@@ -113,7 +113,7 @@ router.get(`/confirm`, (req, res) => {
 				events: eventId
 			}
 		})
-		.then(userUpdated => console.log(userUpdated))
+		.then(userUpdated => console.log(userUpdated, "user que ha sido actualizado"))
 		.catch(err => console.log('seguro que la he cagao', err))
 	// findOneAndUpdate(conditions, update, options, (error, doc) => {
 	console.log(eventId)
@@ -133,9 +133,7 @@ router.get(`/confirm`, (req, res) => {
 					guests: newArr
 				})
 				.then(info => {
-					console.log(info)
-
-					Event.findById(eventId).then(e => console.log(e))
+					console.log(info, "info de findone de event")
 				})
 				.catch(err => console.log(err))
 
