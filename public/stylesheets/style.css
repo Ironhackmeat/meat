@@ -205,6 +205,18 @@ video {
   height: 100vh;
 }
 
+/* ----------------------------- profile EDIT ------------------------- */
+
+.margin-edit {
+  margin-left: 220px;
+  margin-right: 200px;
+}
+.padding-editbox {
+ padding: 40px 0
+}
+.edit-background {
+  background: url(https://res.cloudinary.com/darzjo72b/image/upload/v1574952060/meat/lauren-mancke-sil2Hx4iupI-unsplash_ypxgds.jpg)
+}
 /* ------------------------------- maps -----------------------------*/
 
 /*# sourceMappingURL=style.css.map */
@@ -313,9 +325,6 @@ video {
 .details-container a:hover {
   color: #E24A00
 }
-
-
-
 
 /*-------------------------- CREATE DETAILS --------------------*/
 

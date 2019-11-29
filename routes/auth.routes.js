@@ -100,7 +100,8 @@ router.get('/profile', ensureLoggedIn('/auth/login'), (req, res) => res.render('
   user: req.user
 }));
 //---PROFILE EDIT RENDER FORM---//
-router.get('/profile/edit', ensureLoggedIn('/login'), (req, res) => res.render('auth/edit-profile'))
+router.get('/profile/edit', ensureLoggedIn('/login'), (req, res) => res.render('auth/edit-profile', {user: req.user}))
+
 //---PROFILE EDIT SEND FORM---//
 router.post('/profile/edit', uploadCloud.single('imgFile'), (req, res) => {
   const {
