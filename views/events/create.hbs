@@ -14,8 +14,22 @@
   </div>
 =======
 <div class="container">
-  <h1 class= "create-header">Want to host an event? </h1>
+  <h1 class="create-header">Want to host an event? </h1>
 
+<<<<<<< HEAD
+  <section class="create-background-one">
+    <div class="card all-boxes create-background-two">
+
+      <form class="form-group" action="/events/create" method="POST" id="form-container">
+        <label for="name">Name</label>
+        <input id="name" type="text" name="name" placeholder="Name of the Event" class="form-control">
+        <br> <br>
+
+        <label for="description">Description</label>
+        <input id="description" type="text" name="description" placeholder="Describe your Event" class="form-control">
+        <br>
+        <br>
+=======
   <section>
     <div class="card all-boxes">
 >>>>>>> 1d8466419db42623a51ae972b2f53a39768186c9
@@ -40,7 +54,7 @@
 
         <label for="description">Description</label><br>
         <input id="description" type="text" name="description" placeholder="Keywords to search">
-<<<<<<< HEAD
+
 
   </div>
 
@@ -56,12 +70,9 @@
 
 
   </div>
-=======
->>>>>>> 1d8466419db42623a51ae972b2f53a39768186c9
-
 
         <label for="type">Choose</label>
-        <select for="type" name="type">
+        <select for="type" name="type" class="form-control">
           <option value="breakfast">Breakfast</option>
           <option value="brunch">Brunch</option>
           <option value="lunch">Lunch</option>
@@ -73,97 +84,76 @@
   <br><br>
 
   <section>
-    <div class="row justify-content-between">
+    <div class="row justify-content-around">
 
-      <div class="card col-md-5 all-boxes">
+      <div class="card col-md-5 all-boxes create-background-one">
+        <div class="section-two">
+          <label for="glutenfree">Gluten-free</label>
+          <input value="true" id="glutenfree" type="checkbox" name="glutenfree">
 
-        <label for="glutenfree">Gluten-free</label>
-        <input value="true" id="glutenfree" type="checkbox" name="glutenfree">
+          <hr>
 
-        <hr>
-       
-        <label for="dairyfree">Dairy-free</label>
-        <input value="true" id="dairyfree" type="checkbox" name="dairyfree">
-       
-        <hr>
-       
-        <label for="veg">Vegetarian</label>
-        <input value="true" id="veg" type="checkbox" name="veg">
-        <hr>
+          <label for="dairyfree">Dairy-free</label>
+          <input value="true" id="dairyfree" type="checkbox" name="dairyfree">
 
-        <label for="vegan">Vegan</label>
-        <input value="true" id="vegan" type="checkbox" name="vegan">
+          <hr>
 
-        <hr>
+          <label for="veg">Vegetarian</label>
+          <input value="true" id="veg" type="checkbox" name="veg">
+          <hr>
 
-        <label for="shellfish">Contains Shellfish</label>
-        <input value="true" id="shellfish" type="checkbox" name="shellfish">
-        
-        <hr>
+          <label for="vegan">Vegan</label>
+          <input value="true" id="vegan" type="checkbox" name="vegan">
 
-        <label for="nuts">Contains Nuts</label>
-        <input value="true" id="nuts" type="checkbox" name="nuts">
+          <hr>
+
+          <label for="shellfish">Contains Shellfish</label>
+          <input value="true" id="shellfish" type="checkbox" name="shellfish">
+
+          <hr>
+
+          <label for="nuts">Contains Nuts</label>
+          <input value="true" id="nuts" type="checkbox" name="nuts">
+        </div>
       </div>
 
-
-      <div class="card all-boxes col-md-5">
+      <div class="card all-boxes col-md-5 create-background-one">
 
         <label for="date">Date of the event</label>
-        <input id="date" type="date" name="date">
+        <input id="date" type="date" name="date" class="form-control">
 
         <br><br>
 
         <label for="time">Time</label>
-        <input id="time" type="text" name="time" placeholder="00:00">
+        <input id="time" type="text" name="time" placeholder="00:00" class="form-control">
 
         <br><br>
 
         <label for="address">Address</label>
-        <input id="address" type="text" name="address" placeholder="Calle Pez 9 Madrid">
+        <input id="address" type="text" name="address" placeholder="Calle Pez 9 Madrid" class="form-control">
 
         <br><br>
 
         <label for="forks">How many guests do you want?</label>
-        <input id="forks" type="text" name="forks" placeholder="4">
+        <input id="forks" type="text" name="forks" placeholder="4" class="form-control">
       </div>
     </div>
   </section>
 
-<br><br>
+  <br><br>
 
   <section class="d-flex justify-content-center">
 
-    {{#if message }}
-    <div class="error-message">{{ message }}</div>
-    {{/if}}
-
     <br><br>
 
+
     <button class="create-account">Create your next event</button>
-
+   
   </section>
-
-
   </form>
 
 </div>
-
-
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

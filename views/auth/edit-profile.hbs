@@ -1,40 +1,55 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-3">
-      <form action="/auth/profile/edit" method="POST" enctype="multipart/form-data">
-        <div class="form-group">
-          <label for="field1">Profile Picture:</label>
-          <input type="file" id="photo" name="imgFile">
-        </div>
+
+  <div class="card box auth-center padding-editbox edit-background">
+<h1 class="card-title" card-title> Edit your Profile</h2>
+<form action="/auth/profile/edit" method="POST" enctype="multipart/form-data">
+<div class="margin-edit">
+  {{#with user}}
         <div class="form-group">
           <label for="field2">Email:</label>
-          <input type="text" class="form-control" id="field2" name="email" value="{{this.user.email}}">
+          <input type="text" class="form-control" id="field2" name="email" value="{{this.email}}">
         </div>
+
         <div class="form-group">
           <label for="field3">About me:</label>
-          <input type="text" class="form-control" id="field3" name="bio" value="{{this.user.bio}}">
+          <input type="text" class="form-control" id="field3" name="bio" value="{{this.bio}}">
         </div>
+<br>
+        <div class="input-group mb-3">
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" id="inputGroupFile02">
+            <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+          </div>
+        {{/with}}
+</div>
         <label for="vegan">Vegan</label>
-        <input value="true" id="vegan" type="checkbox" name="vegan">
+        <input value="true" id="vegan" type="checkbox" name="vegan" >
         <br>
-        <label for="dairyFree">Dairy Free</label>
+
+        <label for="dairyFree">Dairy-Free</label>
         <input value="true" id="dairyFree" type="checkbox" name="dairyFree">
         <br>
-        <label for="veg">Veg</label>
+
+        <label for="veg">Vegetarian</label>
         <input value="true" id="veg" type="checkbox" name="veg">
         <br>
-        <label for="glutenFree">Gluten Free</label>
+
+        <label for="glutenFree">Gluten-Free</label>
         <input value="true" id="glutenFree" type="checkbox" name="glutenFree">
         <br>
+
         <label for="shellFishAllergy">Shellfish Allergy</label>
         <input value="true" id="shellFishAllergy" type="checkbox" name="shellFishAllergy">
         <br>
-        <label for="nutAllergy">Nuts Allergy</label>
+        <label for="nutAllergy">Nut Allergy</label>
         <input value="true" id="nutAllergy" type="checkbox" name="nutAllergy">
         <br>
         <br>
-        <button type="submit" class="btn btn-dark">Edit Profile</button>
+        <button type="submit" class="create-account">Edit Profile</button>
       </form>
+
     </div>
   </div>
 </div>
+
+<script src="/javascripts/uploadbutton.js"></script>

@@ -1,7 +1,7 @@
 /* ORANGE: #f37a00
 RED: #e24a00
 YELLOW: #feb100 
-box-shadow: gray 2px 2px 15px;
+box-shadow: black 2px 2px 15px;
 */
 
 
@@ -137,6 +137,7 @@ video {
 .box {
   margin-top: 20px;
   box-shadow: black 2px 2px 15px;
+  border-radius: 10px
 
 }
 
@@ -215,6 +216,18 @@ video {
   height: 100vh;
 }
 
+/* ----------------------------- profile EDIT ------------------------- */
+
+.margin-edit {
+  margin-left: 220px;
+  margin-right: 200px;
+}
+.padding-editbox {
+ padding: 40px 0
+}
+.edit-background {
+  background: url(https://res.cloudinary.com/darzjo72b/image/upload/v1574952060/meat/lauren-mancke-sil2Hx4iupI-unsplash_ypxgds.jpg)
+}
 .edit-button {
   padding: 2.5px 50px;
   background: #e24a00;
@@ -230,7 +243,6 @@ video {
 
 /* ------------------------------- maps -----------------------------*/
 
-/*# sourceMappingURL=style.css.map */
 #map {
   height: 100vh;
   width: 100vw;
@@ -420,21 +432,42 @@ video {
 
 }
 
-
 /* ------------------------------ CREATE EVENT ----------------------------------------- */
 .create-header {
-  margin: 20px 0;
+  margin: 30px 0;
   text-align: center
 }
-.create-background {
-  background: url("https://res.cloudinary.com/darzjo72b/image/upload/v1574968180/meat/travis-yewell-UaQCpG0frpI-unsplash_1_fam8sz.jpg");
+.create-background-one {
+  background: url("https://res.cloudinary.com/darzjo72b/image/upload/v1574952064/meat/jakub-kapusnak-sDbj1dFlFPU-unsplash_sm1ahn.jpg");
+  background-size: 110vh ;
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: 70%
+  
+  
+}
+.create-background-two {
+  background: url("https://res.cloudinary.com/darzjo72b/image/upload/v1574952060/meat/lauren-mancke-sil2Hx4iupI-unsplash_ypxgds.jpg");
   background-size: cover;
 }
-
+.create-background-three {
+  background: url("https://res.cloudinary.com/darzjo72b/image/upload/v1574952068/meat/thought-catalog-EMX1eJ1BcgU-unsplash_n2cnjo.jpg");
+  background-size: cover;
+}
+.section-two {
+  margin-top: 15px;
+}
 .all-boxes {
 padding: 30px;
 text-align: center;
+box-shadow: black 1px 1px 12px;
+border-radius: 3px;
+
 }
 .create-button {
   text-align: center;
 }
+.all-boxes label {
+    font-weight: 800;
+}
+
